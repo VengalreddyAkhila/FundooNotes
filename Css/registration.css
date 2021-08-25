@@ -81,26 +81,48 @@
     flex-direction: column;
     text-align: center;
 }
+.sec2_img{
+    border: 2px solid red;
+    width: 70%;
+    height: 70%;
+    margin-top: 40%;
+}
 .line1{
     margin-top: 5%;
 }
 .link{
     margin-top: 5%;
+    border: 0px;
+    width: 80%;
+    background-color: transparent;
 }
-.line{
-    margin-top: 5%;
+.link:hover{
+    background: skyblue;
 }
+
 .button{
     margin-top: 5%;
     height: 40px;
     display: flex;
     justify-content: space-between;    
 }
+.button_text{
+    width:50%;
+    background-color: transparent;
+    border-radius: none;
+    text-decoration: none;
+    color: white;
+    border: 0px;
+}
+.button_text:hover{
+    background: skyblue;
+}
 .submit_button{
    background-color: blue;
     color: white;
     width: 70px;
     border-radius: 5px;
+    border: 0px;
 }
 .submit_button:hover{
     background: #254fdb;
