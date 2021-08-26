@@ -10,11 +10,11 @@
     <title>Google Account</title>
 </head>
 <body>
-    <div class="section">
+    <div class="header_content">
     <form class="form">
         <div class="section1">
-            <div class="header">
-            <div class="logo">
+            <div class="heading">
+            <div class="main_heading">
                 <span><a1>F</a1></span>
                 <span><a2>u</a2></span>
                 <span><a3>n</a3></span>
@@ -25,45 +25,60 @@
             <div class="sub_heading">
             <h3>Create Your Fundoo Account</h3>
             </div>
-        </div>
-        <div class="sec1">
+        </div>  
+        <div class="label_sec">
         <div class="name">      
             <input class="floating_input" name="" id="first_name" type="name" placeholder=" ">
             <label>First name</label>
-        </div>               
+            <error-output class="text-error" id="name_text" for="text"></error-output>
+            </div>                         
 
         <div class="name">      
             <input  class="floating_input" name="" id="last_name" type="name" placeholder=" ">
             <label>Last name</label>
+            <error-output class="text-error" for="text"></error-output>
         </div>
-        <div class="username">      
+       
+        <div class="floating_text">      
             <input   class="floating_input" type="email" id= "email" name="" placeholder=" ">
             <label>Username</label>
             <span class="gmail">@gmail.com</span>
+            <error-output class="text-error" for="text"></error-output>
         </div>
-        <div class="line1"><h>You can use letters,numbers& periods</h></div>
-        <div class="link"><a href="#" >Use my current email address instead</a></div>
-        <div class="pass">      
+        <div class="line1">
+            <h1>You can use letters,numbers & periods</h1>
+        </div>
+
+        <div class="line2">
+        <a href="" class="line1">Use mycurrent email address instead</a>                
+        </div>  
+
+        <div class="floating_text">      
             <input   type="password" class="floating_input" id="password" placeholder=" ">
             <label>Password</label>
         </div>
-        <div class="pass">      
+        <div class="floating_text">      
             <input   type="password" class="floating_input" id="confirm_password" placeholder=" ">
-            <label>Confirm</label>
+            <label>Confirm</label>       
+            <error-output class="text-error" for="text"></error-output>
         </div>
        
-        <div class="line">
-        <h>Use 8 or more characters with a mix of letters,numbers &<br>symbols</h>
-        </div>
+        <div class="line3">
+            <h1>Use 8 ormore characters with a mix of letters,numbers & symbols</h1>
+            </div>
+        <!-- <div class="box">
+            <input type ="checkbox" id="box" name="" value="">
+            <label class="checkbox_text" for="hr">Show Password</label>
+            </div> -->
         <div class="button">
         <div class="button_text"><a href="../Pages/loginpage.html">Sign in instead</a></div>
-        <button class="submit_button" id="button">Next</button>
+        <button class="submit_button" id="button">Next</button>   
         </div>
         </div>
         </div>
         <div class="section2">
             <img class="sec2_img"src="../Assests/image1.svg" alt="">
-            <div class="sec2_text">One account.All of Google<br> working for you</div>
+            <div class="sec2_text">One account.All of Fundoo<br> working for you</div>
         </div>
     
 

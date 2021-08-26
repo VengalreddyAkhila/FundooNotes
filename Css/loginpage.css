@@ -2,128 +2,182 @@ html,body{
     height: 100%;
     width: 100%;
 }
-.section{
-   height: 100%;
-   
+.header_content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid #d5d2d5;
     border-radius: 10px;
-    width: 40%;
-    height: 100%;
-    margin-left: 30%;
+    height: auto;
+    width: auto;
+    position: relative;
+    box-sizing: inherit;
+}
+.heading{
+    padding-top: 50px;
+    text-align: center;
+    height: 210px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;;
+}
+.main_heading{
     display: flex;
-    flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
-.header{
+
+.heading span a1, a2, a3, a4, a5, a6 {
     text-align: center;
+    font-size: 25px;
 }
-.logo{
-  
-    margin-top: 10%;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.logo span a1{
+
+.heading span a1 {
     color: blue;
 }
-.logo span a2{
+
+.heading span a2 {
     color: red;
 }
-.logo span a3{
+
+.heading span a3 {
     color: yellow;
 }
-.logo span a4{
+
+
+.heading span a4 {
     color: blue;
 }
-.logo span a5{
+
+.heading span a5 {
     color: green;
 }
-.logo span a6{
+
+.heading span a6 {
     color: red;
 }
-.floating_input{
+.heading h2 {
+    font-size: 23px;
+    font-weight: 100;
+    text-align: center;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;  
+}
+  
+.heading h3 {
+    font-size: 16px;
+    font-weight: 50;
+    text-align: center;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;    
+}
+
+.floating_text { 
+    position:relative; 
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+.floating_input , .floating_select {
     border: 1px solid #d5d2d2;
     border-radius: 5px;
-    height: 40px;
-    width: 110%;
+    height: 53px;
+    width: 370px;
     font-size: 15px;
     outline: none;
-    margin: 9px;
 }
-.floating_input:focus{
+  
+.floating_input:focus , .floating_select:focus {
     border: 1.5px solid #1f52f9;
 }
-label{
-    color: #999;
-    font-size: 14px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left:40%;
-    top: 50%;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-.floating_input:focus ~ label,.floating_input:not(:placeholder-shown) ~label{
-    top: -.1px;
-    background: #fff;
-    font-size: 14px;
-    color: #5264AE;
-}
-.sec{
-    display: flex;
-    flex-direction: column;
-    
-}
-.username{
-    display: block;
-}
-.text{
-    margin-top: 10%;
-}
-.text_link{
   
-    width: 45%;
+label {
+    color:#999; 
+    font-size:14px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:55px;
+    top:18px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
 }
-.forgot_class{
-   
-    width: 27%;
+  
+.floating_input:focus ~ label, .floating_input:not(:placeholder-shown) ~ label {
+    top:-8px;
+    background: #fff;
+    font-size:14px;
+    color:#5264AE;
 }
-.button{
-    margin-top: 10%;
-    width: 120%;
-    height: 30px;
-    margin-bottom: 10%;
-    display: flex;
-    justify-content: space-between;
+  
+.floating_select:focus ~ label , .floating_select:not([value=""]):valid ~ label {
+    top:-18px;
+    font-size:14px;
+    color:#5264AE;
 }
-.button_text{
+  
+.floating_input:focus ~ .bar:before, .floating_input:focus ~ .bar:after, .floating_select:focus ~ .bar:before, .floating_select:focus ~ .bar:after {
     width:50%;
-    background-color: transparent;
-    border: 0px;
+}
+  
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.text a {
+
+    display: block;
+    font-family: roboto;
     text-decoration: none;
-    color: white;
-    border: 0px;
+    align-items:initial;
+    padding-left: 40px;
 }
-.button_text:hover{
-    background: skyblue;
+
+.text1 {
+    font-size: 16px;
+    color: #4971f6;
+    padding-top: 12px;
+    padding-left: 16px;
 }
-.submit_button{
-    background-color: blue;
-     color: white;
-     width: 70px;
-     border-radius: 5px;
-     border: 0px;
- }
- .submit_button:hover{
-     background: #254fdb;
- }
- a{
-     text-decoration: none;
- }
+.text2 {
+    font-size: 13px;
+    padding-top: 50px;
+    color: #555;
+    padding-left: 16px;
+}
+
+.text3 {
+    font-size: 16px;
+    color: #4971f6;
+    padding-top: 5px;
+    font-family: arial rounded mt;
+    padding-left: 16px;
+}
+
+.text4 {
+    font-size: 14px;
+    color: #4971f6;
+    padding-top: 50px;
+    padding-left: 16px;
+    font-family: arial rounded mt;
+}
+
+.submit-button {
+    background: #4971f6;
+    border: none;
+    color: #fff;
+    width: 20%;
+    padding: 10px 10px;
+    font-size: 10px;
+    border-radius: 4px; 
+    margin: 1px 0 50px 290px;
+    outline: none;
+}
+
+.submit-button:hover {
+    background: #254fdb;
+}

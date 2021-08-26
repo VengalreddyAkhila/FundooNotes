@@ -1,56 +1,82 @@
 html,body{
     height: 100%;
     width: 100%;
+    margin: 0;
 }
-.section{
-   height: 100%;
-   
-}
-.form{
-    border: 1px solid #d5d2d5;
-    border-radius: 10px;
-    width: 60%;
+.header_content {  
     height: 100%;
-    margin-left: 20%;
     display: flex;
-    flex-direction: row;  
+    align-items: center;
+    justify-content: center;
+}
+.form{   
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    border: 1px solid #d5d2d5;
+    border-radius: 10px;
+    height: 92%;
+    width: auto;
+    position: relative;
+    box-sizing: inherit;
+    padding-bottom: 10px;
 }
 .section1{
-    margin-left: 5%;
-    margin-bottom: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    padding-left: 30px;
     width: 70%;
-
 }
-.logo{
-    margin-top: 10%;
-    font-size: 2rem;
+.heading{ 
+    padding-top: 50px;
+    padding-left: 10px;
+    text-align: left;
+    height: 100px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;;
+}
+.main_heading{
     display: flex;
     justify-content: flex-start;
 }
-.logo span a1{
+.label_sec{
+    margin-top: 5%;
+}
+.heading span a1, a2, a3, a4, a5, a6 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.heading span a1 {
     color: blue;
 }
-.logo span a2{
+
+.heading span a2 {
     color: red;
 }
-.logo span a3{
+
+.heading span a3 {
     color: yellow;
 }
-.logo span a4{
+
+
+.heading span a4 {
     color: blue;
 }
-.logo span a5{
+
+.heading span a5 {
     color: green;
 }
-.logo span a6{
+
+.heading span a6 {
     color: red;
 }
 .sub_heading{   
+    margin-bottom: 10%;
+    font-size: 23px;
     font-weight: 100;
-    font-size: 20px;
-    font-family:'Times New Roman', Times, serif
+    text-align: left;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;  
 }
 
 .name {
@@ -58,24 +84,25 @@ html,body{
     position:relative; 
     display: inline-block;
 }
-.username{
-    position: relative;
-}
-.pass{
-    position: relative;
+.floating_text{
+    position:relative; 
 }
 .floating_input[type="email"]{
-    width: 350px;
+    width: 400px;
 }
-.floating_input[type="password"]{
-    position: relative;
+.floating_text[type="pass"] {   
+    position:relative; 
+    display: inline-block;    
+}
+.floating_text_password { 
+    position:relative; 
     display: inline-block;
 }
 .floating_input{
     border: 1px solid #d5d2d2;
     border-radius: 5px;
     height: 40px;
-    width: 190px;
+    width: 170px;
     font-size: 15px;
     outline: none;
     margin: 9px;
@@ -108,68 +135,115 @@ label{
 }
 .gmail{
     position: relative;
-    margin-bottom: 50px;
+    bottom: 42px;
     left: 57%;
 }
+.checkbox_text{   
+    top: 92%;
+    left: 26%;
+    color: black;
+}
+.box{
 
-.section2{
-    
-    width: 50%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    margin-top: 5%;
+}
+
+.section2{    
+    width: 40%;
 }
 .sec2_img{
-
     width: 70%;
     height: 70%;
     margin-top: 10%;
 }
-.line1{
-    top: 10px;
-}
-.link,a{
-  
-    margin-top: 5%;
-    border: 0px;
-    width: 60%;
-    background-color: transparent;
+.line1 h1 {
+    font-size: 14px;
+    padding-top: 20px;
+    margin: -1px 0 0 14px;
+    width: 310px;
+    color: #555;
     text-decoration: none;
-}
-.link:hover{
-    background: skyblue;
+    font-weight: 100;
 }
 
-.button{
-    margin-top: 5%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;    
+.line2 {
+    padding-top: 20px;
+    padding-bottom: 25px;
 }
-.button_text{
-    width:50%;
-    background-color: transparent;
-    border-radius: none;
+
+.line2 a {
+    font-size: 16px;
+    margin: -1px 0 0 14px;
+    width: 310px;
+    color: #4971f6;
     text-decoration: none;
-    color: white;
-    border: 0px;
 }
-.button_text:hover{
-    background: skyblue;
+  
+.line3 h1{
+    font-size: 14px;
+    margin: 20px 9px;
+    color: #555;
+    display: inline-block;
+    font-family: arial rounded mt;
+    text-decoration: none;
+    font-weight: 100;
 }
-.submit_button{
-   background-color: blue;
-    color: white;
-    width: 70px;
-    border-radius: 5px;
-    border: 0px;
+
+.button {
+    padding-top: 5px;
 }
-.submit_button:hover{
+
+.submit_button {
+    background: #4971f6;
+    border: none;
+    color: #fff;
+    width: 20%;
+    padding: 10px 10px;
+    font-size: 10px;
+    border-radius: 4px; 
+    margin: 1px 0 50px 210px;
+    outline: none;
+}
+
+.submit_button:hover {
     background: #254fdb;
 }
-@media only screen and(max-device-width:900px) {
+
+.button a {
+    font-size: 15px;
+    padding-left: 8px;
+    width: 310px;
+    color: #4971f6;
+    text-decoration: none;
+}
+.gmail {
+    position: relative;
+    display: block;
+    top:-40px;
+    left: 267px;
+    font-family: roboto;
+    color: #333;
+    font-size: 15px;
+    cursor: default;
+}
+.sec2_text {        
+    font-size: 15px;
+    color:black;
+    font-family: arial rounded mt;
+    text-decoration: none;
+    font-weight: 10;    
+    text-align: center;
+    
+}
+
+.sec2_img {
+    width: 80%;   
+}
+  .text-error{
+    font-style: italic;
+    color: red;
+}
+  @media screen and (max-width: 900px) {
     .sec2_img{
         display: none;
     }
@@ -177,6 +251,10 @@ label{
         display: none;
     }
     .form{
-        border: 2px solid red;
+        width: 100%;
     }
+    .floating_input {
+        width: 370px;
+    }
+    
 }
