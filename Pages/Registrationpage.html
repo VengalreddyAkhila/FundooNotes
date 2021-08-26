@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/registration.css">
+    <script  defer src="../js/registration.js"></script>
     <title>Google Account</title>
 </head>
 <body>
@@ -27,35 +28,36 @@
         </div>
         <div class="sec1">
         <div class="name">      
-            <input class="fullname"name="" type="name" placeholder=" ">
+            <input class="floating_input" name="" id="first_name" type="name" placeholder=" ">
             <label>First name</label>
         </div>               
 
         <div class="name">      
-            <input  class="fullname"name=""  type="name" placeholder=" ">
+            <input  class="floating_input" name="" id="last_name" type="name" placeholder=" ">
             <label>Last name</label>
         </div>
-        <div class="user-name">      
-            <input   class="username"type="username" name="" placeholder=" ">
+        <div class="username">      
+            <input   class="floating_input" type="email" id= "email" name="" placeholder=" ">
             <label>Username</label>
             <span class="gmail">@gmail.com</span>
         </div>
         <div class="line1"><h>You can use letters,numbers& periods</h></div>
-        <div class="link"><button><a href="#" >Use my current email address instead</a></button></div>
+        <div class="link"><a href="#" >Use my current email address instead</a></div>
         <div class="pass">      
-            <input   type="password" class="password" id="" placeholder=" ">
+            <input   type="password" class="floating_input" id="password" placeholder=" ">
             <label>Password</label>
         </div>
         <div class="pass">      
-            <input   type="password" class="password" id="" placeholder=" ">
+            <input   type="password" class="floating_input" id="confirm_password" placeholder=" ">
             <label>Confirm</label>
         </div>
+       
         <div class="line">
-        <a href="">Use 8 or more characters with a mix of letters,numbers & symbols</a>
+        <h>Use 8 or more characters with a mix of letters,numbers &<br>symbols</h>
         </div>
         <div class="button">
-        <button class="button_text"><a href="#">Sign in instead</a></button>
-        <button class="submit_button">Next</button>
+        <div class="button_text"><a href="../Pages/loginpage.html">Sign in instead</a></div>
+        <button class="submit_button" id="button">Next</button>
         </div>
         </div>
         </div>
