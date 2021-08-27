@@ -17,7 +17,7 @@ html,body{
     border: 1px solid #d5d2d5;
     border-radius: 10px;
     height: 92%;
-    width: auto;
+    width: 50%;
     position: relative;
     box-sizing: inherit;
     padding-bottom: 10px;
@@ -86,18 +86,12 @@ html,body{
 }
 .floating_text{
     position:relative; 
-}
-.floating_input[type="email"]{
-    width: 400px;
-}
-.floating_text[type="pass"] {   
-    position:relative; 
-    display: inline-block;    
-}
-.floating_text_password { 
-    position:relative; 
     display: inline-block;
 }
+.floating_input[type="email"]{
+    width: 370px;
+}
+
 .floating_input{
     border: 1px solid #d5d2d2;
     border-radius: 5px;
@@ -242,6 +236,9 @@ label{
   .text-error{
     font-style: italic;
     color: red;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
 }
   @media screen and (max-width: 900px) {
     .sec2_img{
@@ -251,10 +248,20 @@ label{
         display: none;
     }
     .form{
+        border: none;
         width: 100%;
     }
     .floating_input {
         width: 370px;
     }
     
+}
+@media  screen and(max-device-width:600px) {
+    .floating_input{
+        width: 370px;
+    }
+    .form{
+        border: none;
+        width: 100%;
+    }
 }

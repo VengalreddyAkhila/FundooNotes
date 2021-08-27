@@ -11,10 +11,9 @@ html,body{
 .form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border: 1px solid #d5d2d5;
     border-radius: 10px;
-    height: auto;
+    height: 80%;
     width: auto;
     position: relative;
     box-sizing: inherit;
@@ -73,7 +72,6 @@ html,body{
     text-align: center;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;    
 }
-
 .floating_text { 
     position:relative; 
     padding-left: 40px;
@@ -128,7 +126,7 @@ label {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.text a {
+.text  {
 
     display: block;
     font-family: roboto;
@@ -136,36 +134,6 @@ label {
     align-items:initial;
     padding-left: 40px;
 }
-
-.text1 {
-    font-size: 16px;
-    color: #4971f6;
-    padding-top: 12px;
-    padding-left: 16px;
-}
-.text2 {
-    font-size: 16px;
-    padding-top: 50px;
-    color: #555;
-    padding-left: 16px;
-}
-
-.text3 {
-    font-size: 16px;
-    color: #4971f6;
-    padding-top: 5px;
-    font-family: arial rounded mt;
-    padding-left: 16px;
-}
-
-.text4 {
-    font-size: 14px;
-    color: #4971f6;
-    padding-top: 50px;
-    padding-left: 16px;
-    font-family: arial rounded mt;
-}
-
 .submit-button {
     background: #4971f6;
     border: none;
@@ -176,6 +144,7 @@ label {
     border-radius: 4px; 
     margin: 1px 0 50px 290px;
     outline: none;
+    margin-top: 5%;
 }
 
 .submit-button:hover {
