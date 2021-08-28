@@ -8,6 +8,8 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 15%;
+    bottom: 15%;
 }
 .form{   
     display: flex;
@@ -17,7 +19,7 @@ html,body{
     border: 1px solid #d5d2d5;
     border-radius: 10px;
     height: 92%;
-    width: 50%;
+    width: 60%;
     position: relative;
     box-sizing: inherit;
     padding-bottom: 10px;
@@ -58,31 +60,27 @@ html,body{
 .heading span a3 {
     color: yellow;
 }
-
-
 .heading span a4 {
     color: blue;
 }
-
 .heading span a5 {
     color: green;
 }
-
 .heading span a6 {
     color: red;
 }
 .sub_heading{   
     margin-bottom: 10%;
-    font-size: 23px;
-    font-weight: 100;
+    font-size: 20px;
+    font-weight: 50;
     text-align: left;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;  
 }
-
 .name {
     margin-top: 5%;
     position:relative; 
     display: inline-block;
+    height: 70px;
 }
 .floating_text{
     position:relative; 
@@ -133,8 +131,8 @@ label{
     left: 57%;
 }
 .checkbox_text{   
-    top: 92%;
-    left: 26%;
+    top: 80%;
+    left: 9%;
     color: black;
 }
 .box{
@@ -152,7 +150,6 @@ label{
 }
 .line1 h1 {
     font-size: 14px;
-    padding-top: 20px;
     margin: -1px 0 0 14px;
     width: 310px;
     color: #555;
@@ -175,7 +172,7 @@ label{
   
 .line3 h1{
     font-size: 14px;
-    margin: 20px 9px;
+    margin: 5px 9px;
     color: #555;
     display: inline-block;
     font-family: arial rounded mt;
@@ -185,6 +182,9 @@ label{
 
 .button {
     padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
 }
 
 .submit_button {
@@ -239,6 +239,7 @@ label{
     display: flex;
     font-size: 10px;
     flex-direction: column;
+
 }
   @media screen and (max-width: 900px) {
     .sec2_img{
@@ -248,20 +249,35 @@ label{
         display: none;
     }
     .form{
+
+        height: 150%;
         border: none;
         width: 100%;
     }
+ 
+    
     .floating_input {
         width: 370px;
     }
+    .sub_heading{
+        width: 100%;
+        margin-bottom: 10%;
+    }
     
 }
-@media  screen and(max-device-width:600px) {
-    .floating_input{
+@media  screen and (max-width:600px) {
+    /* .floating_input{
         width: 370px;
     }
     .form{
         border: none;
         width: 100%;
+    } */
+    .sub_heading{
+        width: 150%;
+        bottom: 10%;       
     }
+    .form{        
+        width: auto;
+    }    
 }

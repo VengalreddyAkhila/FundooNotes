@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded',(event) => {  
 //email validation
 var email = document.querySelector("#email");
 var emailError = document.querySelector("#email_error");
@@ -12,13 +13,6 @@ email.addEventListener("input", function () {
     }
 });
 
-function validateEmptyEmail() { 
-    const email = document.getElementById('email');
-    const emailError = document.getElementById('email-error');
- 
-    if(email.value == "") 
-    emailError.textContent = "enter a email address";    
-};
 // password validation
 var pwd = document.querySelector("#password");
 var textError = document.querySelector("#password_error");
@@ -33,4 +27,5 @@ pwd.addEventListener("input", function () {
     if (!passwordRegex.test(pwd.value)) {
         textError.textContent = "Password Invalid";
     }
+});
 });

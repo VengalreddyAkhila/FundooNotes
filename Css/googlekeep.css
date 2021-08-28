@@ -1,0 +1,31 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.header_content {
+    height: 100%;
+    width: 100%;
+}
+.form_content{
+   width: 100%;
+   height: 20%;
+   border: 1px solid grey;
+
+}
+.section1{
+    display: flex;
+    flex-direction: row;
+}
+.search{
+    width: 40%;
+    border-radius: 10px;
+    height: 70px;
+}
+.fa fa-search{
+    border-radius: 10px;
+}
+/* .navbar_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+} */

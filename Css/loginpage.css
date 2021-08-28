@@ -78,6 +78,7 @@ html,body{
     position:relative; 
     padding-left: 40px;
     padding-right: 40px;
+    margin-top: 5%;
   }
   
 .floating_input , .floating_select {
@@ -165,7 +166,10 @@ label {
     padding-left: 16px;
     font-family: arial rounded mt;
 }
-
+.btn{
+    display: flex;
+    flex-direction: row;
+}
 .submit-button {
     background: #4971f6;
     border: none;

@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/registration.css">
     <script  defer src="../js/registration.js"></script>
-    <title>Google Account</title>
+    <title>Fundoo Account</title>
 </head>
 <body>
     <div class="header_content">
-    <form class="form">
+    <form class="form" name="form" id="form" onsubmit="return validation()" >
         <div class="section1">
             <div class="heading">
             <div class="main_heading">
@@ -28,19 +28,19 @@
         </div>  
         <div class="label_sec">
         <div class="name">      
-            <input class="floating_input" name="" id="first_name" type="name" placeholder=" ">
+            <input class="floating_input" name="firstname" value="" id="first_name" type="name" placeholder=" ">
             <label>First name</label>
-            <error-output class="text-error" id="firstname_text" for="text"></error-output>
+            <error-output class="text-error" id="firstname_error" for="text"></error-output>
             </div>                         
 
         <div class="name">      
-            <input  class="floating_input" name="" id="last_name" type="name" placeholder=" ">
+            <input  class="floating_input" name="lastname" value="" id="last_name" type="name" placeholder=" " >
             <label>Last name</label>
-            <error-output class="text-error" for="lastname_text"></error-output>
+            <error-output class="text-error" id="lastname_error"></error-output>
         </div>
        
-        <div class="floating_text">      
-            <input   class="floating_input" type="email" id= "email" name="" placeholder=" ">
+        <div class="floating_text" >      
+            <input   class="floating_input" type="email" value="" id= "email" name="email" placeholder=" ">
             <label>Username</label>
             <span class="gmail">@gmail.com</span>
             <error-output class="text-error" id="email_error" for="text"></error-output>
@@ -54,12 +54,12 @@
         </div>  
 
         <div class="floating_text">      
-            <input   type="password" class="floating_input" id="password" placeholder=" ">
+            <input   type="password" class="floating_input" name="password" id="password" placeholder=" " >
             <label>Password</label>
             <error-output class="text-error" id="password_error" for="text"></error-output>
         </div>
         <div class="floating_text">      
-            <input   type="password" class="floating_input" id="confirm_password" placeholder=" ">
+            <input   type="password" class="floating_input" name="confirmpassword" id="confirm_password" placeholder=" " >
             <label>Confirm</label>       
             <error-output class="text-error" id="confirmpwd_error" for="text"></error-output>
         </div>
@@ -73,7 +73,7 @@
             </div> -->
         <div class="button">
         <div class="button_text"><a href="../Pages/loginpage.html">Sign in instead</a></div>
-        <button class="submit_button" id="button">Next</button>   
+        <button class="submit_button" type="submit" id="button"  >Next</button>   
         </div>
         </div>
         </div>
