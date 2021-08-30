@@ -86,7 +86,7 @@ html,body{
     position:relative; 
     display: inline-block;
 }
-.floating_input[type="email"]{
+.floating_input[name="email"]{
     width: 370px;
 }
 
@@ -239,6 +239,7 @@ label{
     display: flex;
     font-size: 10px;
     flex-direction: column;
+    margin-left: 10px;
 
 }
   @media screen and (max-width: 900px) {

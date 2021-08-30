@@ -129,6 +129,24 @@ window.addEventListener('DOMContentLoaded',(event) => {
             }
         });
     });
+
+     function next () {
+         console.log("hi");
+         let data={
+             "firstname" : document.getElementById("first_name"),
+             "lastname" : document.getElementById("last_name"),
+             "email" : document.getElementById("email"),
+             "service" : "advance",
+             "password" : document.getElementById("password"),
+             "confirmpassword" : document.getElementById("confirm_password")
+         }
+         makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/user_userSignUp",true,data)
+         .then((Response) => {
+             console.log(Response);
+         })
+         .catch()
+         console.log("error");
+     }
         
        
          

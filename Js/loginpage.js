@@ -29,3 +29,20 @@ pwd.addEventListener("input", function () {
     }
 });
 });
+
+// function next () {
+//     let data={
+//         "firstname" : document.getElementById("first_name"),
+//         "lastname" : document.getElementById("last_name"),
+//         "email" : document.getElementById("email"),
+//         "service" : "advance",
+//         "password" : document.getElementById("password"),
+//         "confirmpassword" : document.getElementById("confirm_password")
+//     }
+//     makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/login",true,data)
+//     .then((Response) => {
+//         console.log(Response);
+//     })
+//     .catch()
+//     console.log("error");
+// }
