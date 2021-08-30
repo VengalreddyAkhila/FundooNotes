@@ -11,7 +11,7 @@ class App {
       this.$notes = document.querySelector("#notes");
       this.$noteTitle = document.querySelector("#note-title");
       this.$noteText = document.querySelector("#note-text");
-      this.$formButtons = document.querySelector("form-buttons");
+      this.$formButtons = document.querySelector("#form-buttons");
       this.$formCloseButton = document.querySelector("#form-close-button");
       this.$modal = document.querySelector(".modal");
       this.$modalTitle = document.querySelector(".modal-title");
@@ -239,7 +239,7 @@ class App {
                 <img class="toolbar-color" data-id=${note.id} src="https://icon.now.sh/palette">
                 <img class="toolbar-delete" data-id=${
                   note.id
-                } src="https://icon.now.sh/delete">
+                } src="../Assests/bin.svg">
               </div>
             </div>
           </div>

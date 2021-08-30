@@ -29,6 +29,14 @@
            
     <input type="text" class="search" placeholder="Search..">
     <button type="submit"><i class="fa fa-search"></i></button>
+    <div class="header-icons">
+        <button class="refresh">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-ccw">
+                        <polyline points="1 4 1 10 7 10" />
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                      </svg>
+        </button>
     <button class="grid">
         <i class="bi bi-grid"></i>
         <img src="../Assests/grid.svg" alt="grid">
@@ -42,7 +50,9 @@
         <img src="../Assests/grid1.svg" alt="grid">
     </button>
     </div>
+    </div>
 </form>
+<div class="section2">
     <div class="navbar_items">
     <img src="../Assests/notes.svg" alt="notes">
     <img src="../Assests/remainder.svg" alt="notes">
@@ -50,13 +60,14 @@
     <img src="../Assests/archive.svg" alt="notes">
     <img src="../Assests/bin.svg" alt="notes">
     </div>
+    <div class="sec2">
     <div id="form-container">
         <form id="form" autocomplete="off">
            <input id="note-title" placeholder="Title" type="text">
            <input id="note-text" placeholder="Take a note..." type="text">
            <!-- <img src="../Assests/brush.svg" alt="">
            <img src="../Assests/image.svg" alt=""> -->
-           <div class="form-buttons" >
+           <div  id="form-buttons" class="form-btn">
                <div class="form_btn">
                <button class="remainder"><img src="../Assests/remainder.svg" alt=""></button>
                <button class="people"><img src="../Assests/people.svg" alt=""></button>
@@ -65,7 +76,10 @@
               <button class="archive"><img src="../Assests/archive.svg" alt=""></button>
               <button class="more"><img src="../Assests/more.svg" alt=""></button>
               </div>
+              <div>
+              <button type="submit" id="submit-button">Submit</button>
               <button class="note_button" type="button" id="form-close-button">Close</button>
+              </div>
            </div>
         </form>
     </div>
@@ -83,6 +97,7 @@
       <div class="color-option" data-color="#a7ffeb" id="teal"></div>
     </div>
     </div>
-    
+    </div>
+    </div>
 </body>
 </html>
