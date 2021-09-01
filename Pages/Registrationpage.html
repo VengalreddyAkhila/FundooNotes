@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/registration.css">
-    <script  defer src="../js/registration.js"></script>
-    <script  defer src="../js/registration.js"></script>
+    
     <title>Fundoo Account</title>
 </head>
 <body>
     <div class="header_content">
-    <form class="form" name="form" id="form"  >
+    <div class="form" name="form" id="form"  >
         <div class="section1">
             <div class="heading">
             <div class="main_heading">
@@ -74,7 +73,7 @@
             </div> -->
         <div class="button">
         <div class="button_text"><a href="../Pages/loginpage.html">Sign in instead</a></div>
-        <button class="submit_button" type="submit" id="button" onclick="next" >Next</button>   
+        <button class="submit_button" type="submit" id="button" onclick="next()" >Next</button>   
         </div>
         </div>
         </div>
@@ -84,8 +83,10 @@
         </div>
     
 
-    </form>
     </div>
+    </div>
+    <script   src="../js/registration.js"></script>
+    <script   src="../service/http_service.js"></script>
 
 </body>
 

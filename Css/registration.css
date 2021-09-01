@@ -250,13 +250,11 @@ label{
         display: none;
     }
     .form{
-
-        height: 150%;
+        height: 70%;       
         border: none;
         width: 100%;
-    }
- 
-    
+        margin-bottom: 30%;
+    }    
     .floating_input {
         width: 370px;
     }
@@ -281,4 +279,10 @@ label{
     .form{        
         width: auto;
     }    
+}
+@media screen and (max-width: 1024px) {
+  .header_content{     
+      height: auto;
+      width: auto;
+  }
 }

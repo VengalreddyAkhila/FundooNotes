@@ -3,7 +3,7 @@ function makePromiseCall(methodtype, url, async = true, data){
   return new Promise(function(resolve,reject){
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-      if(xhttp.status >= 200 && xhttp.status < 300) {
+      if(xhttp.status == 200 && xhttp.status < 300) {
         console.log(xhttp.responseText);
         resolve(xhttp.responseText);
       }
@@ -15,7 +15,12 @@ function makePromiseCall(methodtype, url, async = true, data){
         console.log("xhttp failed");
       }
     };
-    xhttp.open(methodtype,url,async);
-    xhttp.send();
-  })
+    xhttp.open(methodtype,url, async);
+    if (data) {
+      console.log(JSON.stringify(data));
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(JSON.stringify(data));
+  } else xhttp.send();
+  console.log(methodtype + " request sent to the server");
+  });
 }

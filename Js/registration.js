@@ -131,16 +131,15 @@ window.addEventListener('DOMContentLoaded',(event) => {
     });
 
      function next () {
-         console.log("hi");
          let data={
-             "firstname" : document.getElementById("first_name"),
-             "lastname" : document.getElementById("last_name"),
-             "email" : document.getElementById("email"),
+             "firstname" : document.getElementById("first_name").value,
+             "lastname" : document.getElementById("last_name").value,
+             "email" : document.getElementById("email").value + "@gmail.com",
              "service" : "advance",
-             "password" : document.getElementById("password"),
-             "confirmpassword" : document.getElementById("confirm_password")
+             "password" : document.getElementById("password").value,
+             "confirmpassword" : document.getElementById("confirm_password").value
          }
-         makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/user_userSignUp",true,data)
+         makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
          .then((Response) => {
              console.log(Response);
          })
