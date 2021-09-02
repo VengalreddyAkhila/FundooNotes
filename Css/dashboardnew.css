@@ -6,6 +6,7 @@ body {
   
   /*************************************************** NavBar Here *********************************************/
   .navbar {
+  
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -46,7 +47,17 @@ body {
     width: 24px;
     cursor: pointer;
   }
+  .header-icons{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
   
+  }
+.grid, .setting, .grid1, .refresh{
+    background: transparent;
+    border: none;
+}
   .searchBar {
     width: 80%;
     box-sizing: border-box;
@@ -56,7 +67,7 @@ body {
     font-size: 16px;
     background-position: 10px 10px;
     padding: 12px 20px 12px 40px;
-    background-image: url("../assets/search_icon.png");
+    background-image: url("");
     background-position: 10px 10px;
     background-repeat: no-repeat;
   }
@@ -119,9 +130,7 @@ body {
   .myDrawer div:hover .drawer-span {
     display: flex;
     margin-left: 40px;
-  }
-  
-  /************************************************* SnackBar Here ************************************************/
+  } 
   #snackbar {
     visibility: hidden;
     min-width: 250px;
@@ -162,312 +171,8 @@ body {
       bottom: 0;
       opacity: 0;
     }
-  }
-  /*************************************************** User Profile Info Here *********************************************/
-  .userProfile {
-    display: none;
-  }
-  .userProfile .myProfile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    height: 160px;
-    border: 1px solid grey;
-    border-radius: 8px;
-    float: right;
-    margin-right: 5px;
-  }
-  .userProfile .myProfile .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 8px 0 5px 0;
-  }
-  .userProfile .myProfile #name {
-    margin-bottom: 5px;
-  }
-  .userProfile .myProfile #mail {
-    margin-bottom: 15px;
-  }
-  .userProfile .myProfile button {
-    width: 100px;
-    height: 25px;
-    text-decoration: none;
-  }
-  
-  /*************************************************** Add Note Here *********************************************/
-  .add-note {
-    position: absolute;
-    top: 16%;
-    left: 22%;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    box-shadow: 2px 2px 2px 2px #e0e0e0;
-  }
-  
-  .note {
-    width: 600px;
-    height: 45px;
-    font-family: "Noto Sans", sans-serif;
-    text-decoration-color: gainsboro;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    padding-left: 12px;
-  }
-  
-  .sub-note2 {
-    display: none;
-    border: none;
-    outline: none;
-  }
-  
-  .add-note3 {
-    display: none;
-    flex-direction: row;
-  }
-  .add-note3 .btns {
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-  }
-  .add-note3 .btns .myBtns {
-    width: 34px;
-    height: 34px;
-    margin: 0 8px;
-  }
-  .add-note3 button {
-    width: 80px;
-    height: 35px;
-    padding: 8px 20px;
-    background-color: white;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    float: right;
-    margin-right: 15px;
-  }
-  .add-note3 button:hover {
-    background-color: whitesmoke;
-  }
-  .add-note3 .my-Btn-img {
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    padding: 8px;
-  }
-  .add-note3 .my-Btn-img:hover {
-    background-color: whitesmoke;
-  }
-  .add-note3 #add-note-palette:hover .myPalette {
-    display: flex;
-  }
-  
-  /*************************************************** Card Here *********************************************/
-  #card {
-    display: flex;
-    align-items: flex-start;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 800px;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  /******************************************************************************************************************************/
-  .moreBtn {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .moreBtn:hover .dropdown {
-    display: flex;
-  }
-  .moreBtn:hover .note-img {
-    display: flex;
-  }
-  
-  .my-note {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-wrap: anywhere;
-    flex-direction: column;
-    width: 240px;
-    min-height: 120px;
-    border: 2px solid whitesmoke;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  .my-note .title-div, .my-note .note-div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-family: "Noto Sans", sans-serif;
-    text-decoration-color: gainsboro;
-    min-height: 40px;
-    padding: 4px 16px 12px;
-    overflow-wrap: anywhere;
-    outline: none;
-  }
-  .my-note .title-div {
-    font-size: 16px;
-  }
-  .my-note .note-div {
-    font-size: 18px;
-  }
-  .my-note .btns-div {
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .my-note .note-btns {
-    display: flex;
-    align-self: center;
-    width: 34px;
-    height: 34px;
-  }
-  .my-note .note-img {
-    display: none;
-    margin: 8px;
-    border-radius: 50%;
-  }
-  .my-note .note-img:hover {
-    background-color: #e0e0e0;
-  }
-  .my-note .dropdown {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    text-align: start;
-    font-size: 14px;
-    padding: 5px 5px 5px 10px;
-    width: 160px;
-    height: 180px;
-    border: 0px;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
-    background-color: #fff;
-  }
-  .my-note .dropdown .dropdown-item {
-    font-family: "Noto Sans", sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 160px;
-    height: 30px;
-  }
-  .my-note .dropdown .dropdown-item:hover {
-    background-color: whitesmoke;
-  }
-  
-  .my-note:hover .note-img {
-    display: flex;
-  }
-  
-  /*************************************************** Color Palette ******************************************************/
-  .myPalette {
-    display: none;
-    flex-direction: row;
-    align-items: flex-start;
-    z-index: 1;
-    min-width: 100px;
-    min-height: 100px;
-    position: absolute;
-    border-radius: 8px;
-  }
-  .myPalette .color-palette {
-    display: flex;
-    flex-direction: column;
-    width: 35px;
-    border: 1px solid gainsboro;
-    height: 35px;
-    border-radius: 50%;
-  }
-  
-  #palette:hover {
-    display: flex;
-  }
-  #palette:hover .myPalette {
-    display: flex;
-  }
-  
-  /*************************************************** Edit Note ******************************************************/
-  .edit-note {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    margin: auto;
-    height: 135px;
-    border: 1px solid transparent;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 2px 2px #e0e0e0;
-  }
-  
-  .edit {
-    width: 600px;
-    height: 45px;
-    font-family: "Noto Sans", sans-serif;
-    text-decoration-color: gainsboro;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    padding-left: 12px;
-  }
-  
-  .edit-sub-note2 {
-    display: flex;
-    border: none;
-    outline: none;
-  }
-  
-  .edit-note3 {
-    display: flex;
-    flex-direction: row;
-  }
-  .edit-note3 .btns {
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-  }
-  .edit-note3 .btns .myBtns {
-    width: 34px;
-    height: 34px;
-    margin: 0 8px;
-  }
-  .edit-note3 button {
-    width: 80px;
-    height: 35px;
-    padding: 8px 20px;
-    background-color: white;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    float: right;
-    margin-right: 15px;
-  }
-  .edit-note3 button:hover {
-    background-color: whitesmoke;
-  }
-  .edit-note3 .my-Btn-img {
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    padding: 8px;
-  }
-  .edit-note3 .my-Btn-img:hover {
-    background-color: whitesmoke;
-  }
-  
-  /******************************************************************************************************************************/
-  @media only screen and (max-width: 900px) {
+  }  
+    @media only screen and (max-width: 900px) {
     .searchBar {
       width: 100%;
     }
@@ -478,10 +183,6 @@ body {
   
     .subnav-two {
       width: 65%;
-    }
-  
-    .note {
-      width: 550px;
     }
   }
   @media only screen and (max-width: 800px) {

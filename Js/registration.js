@@ -132,12 +132,12 @@ window.addEventListener('DOMContentLoaded',(event) => {
 
      function next () {
          let data={
-             "firstname" : document.getElementById("first_name").value,
-             "lastname" : document.getElementById("last_name").value,
+             "firstName" : document.getElementById("first_name").value,
+             "lastName" : document.getElementById("last_name").value,
              "email" : document.getElementById("email").value + "@gmail.com",
              "service" : "advance",
-             "password" : document.getElementById("password").value,
-             "confirmpassword" : document.getElementById("confirm_password").value
+             "password" : document.getElementById("password").value
+            
          }
          makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
          .then((Response) => {

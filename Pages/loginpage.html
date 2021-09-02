@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/loginpage.css">
-    <script  defer src="../js/loginpage.js"></script>
+
     <title>Google Account</title>
 </head>
 <body>
     <div class="header_content">
-    <form class="form" id="form" onsubmit="return validation()">
+    <div class="form" id="form" onsubmit="return validation()">
             <div class="heading">
                 <div class="main_heading">
                 <span><a1>F</a1></span>
@@ -40,10 +40,12 @@
                     <a href="#" class="text3">Learn more</a>
                     <a href="../Pages/Registrationpage.html" class="text4">Create account</a>
                  
-                    <button class="submit-button" id="button" type="button" >Next</button>
+                    <button class="submit-button" id="button" type="button" onclick="next()">Next</button>
             
                 </div>
-            </form>
             </div>
+            </div>
+            <script   src="../js/loginpage.js"></script>
+            <script   src="../service/http_service.js"></script>
             </body>
             </html>
