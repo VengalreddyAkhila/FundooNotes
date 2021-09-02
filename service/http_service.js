@@ -1,4 +1,4 @@
-function makePromiseCall(methodtype, url, async = true, data){
+function makePromiseCall(methodtype, url, async = true, data , header){
   console.log(url);
   return new Promise(function(resolve,reject){
     let xhttp = new XMLHttpRequest();
@@ -19,6 +19,9 @@ function makePromiseCall(methodtype, url, async = true, data){
     if (data) {
       console.log(JSON.stringify(data));
       xhttp.setRequestHeader("Content-Type", "application/json");
+      if(header = true){
+        xhttp.setRequestHeader("Authorization",localStorage.getItem("token"));
+      }
       xhttp.send(JSON.stringify(data));
   } else xhttp.send();
   console.log(methodtype + " request sent to the server");

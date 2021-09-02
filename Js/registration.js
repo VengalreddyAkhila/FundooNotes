@@ -136,9 +136,8 @@ window.addEventListener('DOMContentLoaded',(event) => {
              "lastName" : document.getElementById("last_name").value,
              "email" : document.getElementById("email").value + "@gmail.com",
              "service" : "advance",
-             "password" : document.getElementById("password").value
-            
-         }
+             "password" : document.getElementById("password").value            
+         }     
          makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
          .then((Response) => {
              console.log(Response);

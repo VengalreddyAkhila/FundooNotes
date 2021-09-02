@@ -38,7 +38,8 @@ function next () {
   };
     makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/login",true,data)
     .then((Response) => {
-        console.log(Response);
+        console.log(JSON.parse(Response).id);
+        localStorage.setItem("token",JSON.parse(Response).id);
     })
     .catch()
     console.log("error");

@@ -124,10 +124,7 @@ closeForm() {
 
 openModal(event) {
   if (event.target.matches('.toolbar-delete')) return;
-
-  //triggered when mouse click near note
    if (event.target.closest('.note')) {
-     // modal will open
       this.$modal.classList.toggle('open-modal');
       this.$modalTitle.value = this.title;
       this.$modalText.value = this.text;
@@ -244,9 +241,22 @@ function addnote () {
       "title" : document.getElementById("note-title").value,
       "description" : document.getElementById("note-text").value,    
   }
+  if(header = true)
   makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes",true,data)
   .then((Response) => {
-      console.log(Response);
+      console.log(JSON.parse(Response).token);
+  })
+  .catch()
+  console.log("error");
+}
+
+
+function getnote () {
+  let data={}
+  if(header = true)
+  makePromiseCall("GET","http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList",true,data)
+  .then((Response) => {
+      console.log(JSON.parse(Response).token);
   })
   .catch()
   console.log("error");
