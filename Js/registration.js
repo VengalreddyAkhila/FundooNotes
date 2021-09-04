@@ -141,6 +141,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
          makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
          .then((Response) => {
              console.log(Response);
+             
          })
          .catch()
          console.log("error");
