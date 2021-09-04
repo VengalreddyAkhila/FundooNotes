@@ -30,36 +30,8 @@ class App {
     // populates the modal with information contained on note
     this.selectNote(event);
     // open the Modal  when clicked on note
-    this.openModal(event);
-    //delete a note with trash icon
-    this.deleteNote(event);
+    this.openModal(event);  
   });
-
-  //EventListener to add tooltip when mouseover
-  document.body.addEventListener('mouseover', event => {
-      this.openTooltip(event);
-   });
-//close the tooltip when mouseout
-   document.body.addEventListener('mouseout', event => {
-       this.closeTooltip(event);
-    });
-
-    // to make the tooltip stay up or close
-    this.$colorTooltip.addEventListener('mouseover', function() {
-    this.style.display = 'flex';
-  });
-
-  this.$colorTooltip.addEventListener('mouseout', function() {
-     this.style.display = 'none';
-  });
-
-  this.$colorTooltip.addEventListener('click', event => {
-       const color = event.target.dataset.color;
-       if (color) {
-         this.editNoteColor(color);
-       }
-    });
-
 
 
 //EventListener to clear the form when submitted
@@ -124,32 +96,21 @@ closeForm() {
 
 openModal(event) {
   if (event.target.matches('.toolbar-delete')) return;
+
+  //triggered when mouse click near note
    if (event.target.closest('.note')) {
+     // modal will open
       this.$modal.classList.toggle('open-modal');
       this.$modalTitle.value = this.title;
       this.$modalText.value = this.text;
    }
 }
+
 closeModal(event) {
     this.editNote();
     this.$modal.classList.toggle('open-modal');
  }
- openTooltip(event) {
-   //make sure only open when it is hovered over
-    if (!event.target.matches('.toolbar-color')) return;
-    this.id = event.target.dataset.id;
-    //get specific coordinates of tooltip
-    const noteCoords = event.target.getBoundingClientRect();
-    //to determine where the user is on the page
-    const horizontal = noteCoords.left + window.scrollX;
-    const vertical = noteCoords.top + window.scrollY;
-    this.$colorTooltip.style.transform = `translate(${horizontal}px, ${vertical}px)`;
-    this.$colorTooltip.style.display = 'flex';
-  }
-  closeTooltip(event) {
-      if (!event.target.matches('.toolbar-color')) return;
-      this.$colorTooltip.style.display = 'none';
-    }
+
 addNote({ title, text}) {
   //add note data
     const newNote = {
@@ -192,15 +153,6 @@ addNote({ title, text}) {
    this.text = $noteText.innerText;
    this.id = $selectedNote.dataset.id;
 }
-
-deleteNote(event) {
-   event.stopPropagation();
-   if (!event.target.matches('.toolbar-delete')) return;
-   const id = event.target.dataset.id;
-   this.notes = this.notes.filter(note => note.id !== Number(id));
-   this.render();
- }
-
  render() {
     this.saveNotes();
     this.displayNotes();
@@ -212,6 +164,7 @@ deleteNote(event) {
     localStorage.setItem('notes', JSON.stringify(this.notes))
   }
 
+
   displayNotes() {
     const hasNotes = this.notes.length > 0;
     this.$placeholder.style.display = hasNotes ? 'none' : 'flex';   
@@ -220,21 +173,49 @@ deleteNote(event) {
           <div class="${note.title && 'note-title'}">${note.title}</div>
           <div class="note-text">${note.text}</div>
           <div class="toolbar-container">
-            <div class="toolbar" style="display:flex; justify-content:space-between">             
-              <button style="border:none;background:transparent"><img class="toolbar-delete" data-id=${note.id} src="../Assests/bin.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-more" data-id=${note.id} src="../Assests/more.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-archive" data-id=${note.id} src="../Assests/archive.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-image" data-id=${note.id} src="../Assests/image.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-color" data-id=${note.id} src="../Assests/pallet.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-people" data-id=${note.id} src="../Assests/people.svg"></button>
-              <button style="border:none;background:transparent"><img class="toolbar-remainder" data-id=${note.id} src="../Assests/remainder.svg"></button>
+            <div class="toolbar" style="display:flex; justify-content:space-between">      
+              
+              <button style="border:none;background:transparent"><img class="toolbar-more" data-id=${note.id} src="../Assests/more_icon.svg"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-archive" data-id=${note.id} src="../Assests/archive_icon.png"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-image" data-id=${note.id} src="../Assests/add_image.svg"></button>
+              <div id="color-palette-dropup" class="dropup" onclick="ColorInDisplay()">
+              <button style="background-color" class="btn dropup-toggle" type="button" id="btn-colors"  data-bs-toggle="dropdown">
+                  <i class="fas fa-palette fa-fw"></i>
+              </button>
+              <div class="color-palette dropdown-menu">
+                  <div class="bg-white circled selected-color"></div>
+                  <div class="bg-red"></div>
+                  <div class="bg-orange"></div>
+                  <div class="bg-yellow"></div>
+                  <div class="bg-green"></div>
+                  <div class="bg-turquoise"></div>
+                  <div class="bg-blue"></div>
+                  <div class="bg-dark-blue"></div>
+                  <div class="bg-purple"></div>
+                  <div class="bg-pink"></div>
+                  <div class="bg-brown"></div>
+                  <div class="bg-grey"></div>
+              </div>
+          </div>
+              <button style="border:none;background:transparent"><img class="toolbar-people" data-id=${note.id} src="../Assests/collaborate.svg"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-remainder" data-id=${note.id} src="../Assests/bell_icon.png"></button>
             </div>
           </div>
         </div>
      `).join("");// adding .join("") will get rid of the commas between our arrays
   }
 }
+
 new App();
+// function ColorInDisplay() {
+//   document.querySelectorAll(".color-palette div").forEach((element) => {
+//     element.addEventListener("click", () => {
+//       document.querySelectorAll(".color-palette div").forEach((element) => {
+//       element.classList.remove("selected-color");
+//     });
+//   });
+// });
+// }
 
 function addnote () {
   let data={
