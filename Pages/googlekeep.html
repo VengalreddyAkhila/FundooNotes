@@ -9,15 +9,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-   
+
 
     <!------------css------------>
     <link rel="stylesheet" href="../css/dashboardnew.css">
     <link rel="stylesheet" href="../css/note.css">
     <link rel="stylesheet" href="../css/color.css">
+    
 
     <title>Fundoo Account</title>
 </head>
@@ -67,14 +70,7 @@
         <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span">Bin</span></div>
     </div>
 
-    <div class="section2">
-        <!-- <div class="modal">
-            <div class="modal-content">
-                <input class="modal-title" placeholder="Title" type="text">
-                <input class="modal-text" placeholder="Take a note..." type="text">
-                <span class="modal-close-button">Close</span>
-            </div>
-        </div> -->
+    <div class="section2">       
         <div id="form-container">
             <form id="form" autocomplete="off">
                 <input id="note-title" placeholder="Title" type="text">
@@ -85,28 +81,30 @@
                         <button class="people"><img src="../Assests/people.svg" alt=""></button>
                         <!-- <button class="pallet"><img src="../Assests/color.svg" alt=""></button> -->
                         <div>
-                        <div id="color-palette-dropup" class="dropup">
-                            <button  class="btn dropup-toggle" type="button" id="btn-colors" data-bs-toggle="dropdown">
-                                <i class="fas fa-palette fa-fw"></i>
-                            </button>
-                            <div class="color-palette dropdown-menu">
-                                <div class="bg-white circled selected-color"></div>
-                                <div class="bg-red"></div>
-                                <div class="bg-orange"></div>
-                                <div class="bg-yellow"></div>
-                                <div class="bg-green"></div>
-                                <div class="bg-turquoise"></div>
-                                <div class="bg-blue"></div>
-                                <div class="bg-dark-blue"></div>
-                                <div class="bg-purple"></div>
-                                <div class="bg-pink"></div>
-                                <div class="bg-brown"></div>
-                                <div class="bg-grey"></div>
+                            <div id="color-palette-dropup" class="dropup">
+                                <button class="btn dropup-toggle" type="button" id="btn-colors"
+                                    data-bs-toggle="dropdown">
+                                    <i class="fas fa-palette fa-fw"></i>
+                                </button>
+                                <div class="color-palette dropdown-menu">
+                                    <div class="bg-white circled selected-color"></div>
+                                    <div class="bg-red"></div>
+                                    <div class="bg-orange"></div>
+                                    <div class="bg-yellow"></div>
+                                    <div class="bg-green"></div>
+                                    <div class="bg-turquoise"></div>
+                                    <div class="bg-blue"></div>
+                                    <div class="bg-dark-blue"></div>
+                                    <div class="bg-purple"></div>
+                                    <div class="bg-pink"></div>
+                                    <div class="bg-brown"></div>
+                                    <div class="bg-grey"></div>
+                                </div>
                             </div>
                         </div>
-                        </div>
                         <button class="image"><img src="../Assests/image.svg" alt=""></button>
-                        <button class="archive" id="archive-button" onclick="Archive()"><img src="../Assests/archive.svg" alt=""></button>
+                        <button class="archive" id="archive-button" onclick="Archive()"><img
+                                src="../Assests/archive.svg" alt=""></button>
                         <button class="more"><img src="../Assests/more.svg" alt=""></button>
                     </div>
                     <div>
@@ -116,17 +114,37 @@
                 </div>
             </form>
         </div>
+        <div class="overlay" id="overlay" style="display:none;"></div>
+        <div class="popup" id="popup" style="display:none;">
+            <div class="popup-inner" id="popup-inner-content">
+            </div>
+            <img src="../Assests/remainder.svg" alt="">
+            <img src="../Assests/people.svg" alt="">
+            <img src="../Assests/pallet.svg" alt="">
+            <img src="../Assests/image.svg" alt="">
+            <img src="../Assests/bin.svg" alt="">            
+            <span class="popup-close-container" id="popup-close-container">
+                <button class="popup-close" id="popup-close" onclick="PopupNotes(), popupClose();">close
+                </button>
+            </span>
+            </span>
+        </div>
         <div id="notes"></div>
         <div id="placeholder">
             <img id="placeholder-logo" src="../Assests/bulb.imgh.svg">
             <p id="placeholder-text">Notes you add appear here</p>
-        </div>     
-         
+        </div>
+
     </div>
     <script src="../js/note.js"></script>
     <script src="../service/http_service.js"></script>
     <script src="../js/dashboard.js"></script>
     <script src="../js/color.js"></script>
+    <script src="../js/updatenotes.js"></script> 
+    <script src="../js/addnotes.js"></script> 
+    <script src="../js/getnotes.js"></script>
+    
+
 </body>
 
 </html>

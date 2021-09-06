@@ -2,6 +2,7 @@
 
 
 .color-palette {
+ 
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 5px 10px 3px;
   width: 160px;
@@ -84,3 +85,5 @@
 .bg-grey {
   background-color: #e8eaed;
 }
+
+

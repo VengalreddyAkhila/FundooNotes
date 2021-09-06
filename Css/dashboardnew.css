@@ -4,7 +4,6 @@ body {
     margin: 0;
   }
   .navbar {
-  
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -268,3 +267,95 @@ body {
       padding: 8px 5px;
     }
   }
+
+/* 
+  popup display note */
+
+  
+.overlay {
+  background:rgba(0,0,0,0.8);
+  opacity:0.8;
+  filter:alpha(opacity=80);
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:100;
+}
+
+.popup{
+  background:white;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:101;
+  width:500px;
+  height:200px;
+  margin:auto;
+  border-radius: 10px;
+}  
+  
+.popup-inner{
+  padding:1em;
+} 
+
+.popup-close {
+  border: none;
+  background-color: white;
+  z-index: 1;
+  position: relative;
+}
+
+.popup-close-container {
+  padding-left: 40px;
+}
+
+.popup-title, .popup-description {
+  width: 100%;
+}
+
+.s3-btn-close { 
+  width: 100%;
+  position: absolute;
+}
+
+input .s3-btn-close{
+  position:absolute;
+  top:-0.5em;
+  right:-0.5em;  
+  background:black;
+  border:solid 2px white;
+  color:white;
+  cursor:pointer;  
+  border-radius:15px;  
+  outline:none;
+} 
+
+.s3-btn{
+  
+  border-radius: 10px;
+  height:50px;
+  cursor:pointer;
+  width: 100%; 
+}
+
+.s3-btn li{
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.popup-title, .popup-description {
+  border: none;
+}
+
+.popup .material-icons-outlined {
+  padding-left: 20px;
+  padding-top: 35px;
+}
+.dropdown-toggle::after {
+  content: none;
+}

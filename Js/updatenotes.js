@@ -1,4 +1,5 @@
-// display note section popup Open method
+// popup Open method
+// const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
 
 function popupOpen(i){
     let selectedItem = notesList[i];
@@ -20,16 +21,16 @@ function popupOpen(i){
     document.getElementById("popup").style.backgroundColor = selectedItem.color;
   }
   
-  // display note section Popup Close method
+  //  Popup Close method
   
   function popupClose(){
     document.getElementById("popup").style.display="none";
     document.getElementById("overlay").style.display="none";
   }
   
-  // display note section color pallet
+  //  color pallet
   
-  function addColorInDisplay(id) {
+  function AddColor() {
     document.querySelectorAll(".color-palette div").forEach((element) => {
       element.addEventListener("click", () => {
         document.querySelectorAll(".color-palette div").forEach((element) => {
@@ -49,33 +50,32 @@ function popupOpen(i){
       .getComputedStyle(element, null)
       .getPropertyValue("background-color");
   
-  
-      let rgb = document.getElementById("item-color").style.backgroundColor;
+      
       let data = {
-          "noteIdList": [id]};
-      data["color"]='#' + rgb.slice(4,-1).split(',').map(x => (+x).toString(16).padStart(2,0)).join('');
+          "noteId": [i],
+          "color" : document.getElementById("form").style.backgroundColor
+      }
       if (header = true)
-      makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes", true, data)
+      makePromiseCall("POST", "Baseurl/notes/changesColorNotes", true, data)
         .then((res) => {
       console.log(res.data);
       }) 
       .catch((err) => {
         console.log(err);
       })
-      getNotes();
     });
     });
   }
     
   // archive in display note section
     
-  function isDisplaynoteArchive(id) {
+  function DisplayNoteArchive() {
     let data = {
-    noteIdList:[id], 
-    isArchived: true
+    "noteId":[i], 
+    "isArchived": true
     };
     if (header = true)
-    makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes", true, data)
+    makePromiseCall("POST", "Baseurl/notes/archiveNotes", true, data)
       .then((res) => {
         console.log((res).data);
     getNotes();
@@ -86,16 +86,16 @@ function popupOpen(i){
   
   // popup update note section
   
-  function addPopupNotes(i) {
+  function PopupNotes() {
    
     let data = {
-    "noteId": i,
+    "noteId": [i],
     "title" : document.getElementById("popup-title").value,
     "description" : document.getElementById("popup-description").value
     }
     console.log(data)
     if (header = true)
-    makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes", true, data)
+    makePromiseCall("POST", "Baseurl/notes/updateNotes", true, data)
       .then((res) => {
         console.log(res.data);
       })
@@ -103,16 +103,13 @@ function popupOpen(i){
   console.log("error");
 }
 
-
-
-
 function trashNotes() {
     let data = {
-      "noteId": i,
+      "noteId": [i],
       "isDeleted": true
     }
     if (header = true)
-      makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes", true, data)
+      makePromiseCall("POST", "Baseurl/notes/trashNotes", true, data)
         .then((res) => {
           console.log(res.data);
           getNotes();

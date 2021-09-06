@@ -5,13 +5,14 @@ function addNote() {
   let data = {
     "title": document.getElementById("note-title").value,
     "description": document.getElementById("note-text").value,
-    "isArchived": document.getElementById("archive"),
+    "isArchived": true,
+    "color" : document.getElementById("form").style.backgroundColor
     
   }
   if (header = true)
-    makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes", true, data)
-      .then((Response) => {
-        console.log(Response.data);
+    makePromiseCall("POST", `${Baseurl}/notes/addNotes`, true, data)
+      .then((res) => {
+        console.log(res.data);
       })
       .catch()
   console.log("error");

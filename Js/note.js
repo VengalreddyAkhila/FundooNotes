@@ -11,13 +11,7 @@ class App {
     this.$noteTitle = document.querySelector("#note-title");
     this.$noteText = document.querySelector("#note-text");
     this.$formButtons = document.querySelector("#form-buttons");
-    this.$formCloseButton = document.querySelector("#form-close-button");
-    this.$modal = document.querySelector(".modal");
-    this.$modalTitle = document.querySelector(".modal-title");
-    this.$modalText = document.querySelector(".modal-text");
-    this.$modalCloseButton = document.querySelector('.modal-close-button');
-    this.$colorTooltip = document.querySelector('#color-tooltip');
-
+    this.$formCloseButton = document.querySelector("#form-close-button");    
     this.render();
     this.addEventListeners();
   }
@@ -27,13 +21,10 @@ class App {
       //event => to get an event and pass it to the call back
       this.handleFormClick(event);
       // populates the modal with information contained on note
-      this.selectNote(event);
-      // open the Modal  when clicked on note
-      this.openModal(event);
+      this.selectNote(event);     
       //delete a note with trash icon
       this.deleteNote(event);
-      //get the notes
-      //this.getnote(event);
+   
     });
 
 
@@ -57,11 +48,7 @@ class App {
       // allows form to close and over ride isFormClicked method
       event.stopPropagation();
       this.closeForm();
-    });
-    //close modal when close button is clicked
-    this.$modalCloseButton.addEventListener('click', event => {
-      this.closeModal(event);
-    })
+    });    
   }
 
 
@@ -95,24 +82,7 @@ class App {
     // to clear the form before closing
     this.$noteTitle.value = "";
     this.$noteText.value = "";
-  }
-
-  openModal(event) {
-    if (event.target.matches('.toolbar-delete')) return;
-
-    //triggered when mouse click near note
-    if (event.target.closest('.note')) {
-      // modal will open
-      this.$modal.classList.toggle('open-modal');
-      this.$modalTitle.value = this.title;
-      this.$modalText.value = this.text;
-    }
-  }
-
-  closeModal(event) {
-    this.editNote();
-    this.$modal.classList.toggle('open-modal');
-  }
+  } 
 
   addNote({ title, text }) {
     //add note data
@@ -128,23 +98,6 @@ class App {
     this.render();
     // closes form after entering a note
     this.closeForm();
-  }
-
-  editNote() {
-    const title = this.$modalTitle.value;
-    const text = this.$modalText.value;
-    this.notes = this.notes.map(note =>
-      //need to convert id from string to number
-      note.id === Number(this.id) ? { ...note, title, text } : note
-    );
-    this.render();
-  }
-
-  editNoteColor(color) {
-    this.notes = this.notes.map(note =>
-      note.id === Number(this.id) ? { ...note, color } : note
-    );
-    this.render();
   }
 
   // populate the modal with title and text from selected note
@@ -217,57 +170,57 @@ class App {
 }
 
 new App();
-function Archive() {
-  archive = !archive;
-}
-Archive();
+// function Archive() {
+//   archive = !archive;
+// }
+// Archive();
 
 
-function addNote() {
-  let data = {
-    "title": document.getElementById("note-title").value,
-    "description": document.getElementById("note-text").value,
-    "isArchived": true,    
-    "color" : document.getElementById("form").style.backgroundColor
-  }
-  if (header = true)
-    makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes", true, data)
-      .then((Response) => {
-        console.log(Response.data);
-      })
-      .catch()
-  console.log("error");
-}
-window.addEventListener('DOMContentLoaded', (event) => {
-  getNotes();
-});
-function getnote () {
-  let data={}
-  if(header = true)
-  makePromiseCall("GET","http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList",true,data)
-  .then((Response) => {
-      console.log(JSON.parse(Response).data);         
-  })
-  .catch()
-  console.log("error");
-}
+// function addNote() {
+//   let data = {
+//     "title": document.getElementById("note-title").value,
+//     "description": document.getElementById("note-text").value,
+//     "isArchived": true,    
+//     "color" : document.getElementById("form").style.backgroundColor
+//   }
+//   if (header = true)
+//     makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes", true, data)
+//       .then((Response) => {
+//         console.log(Response.data);
+//       })
+//       .catch()
+//   console.log("error");
+// }
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   getNotes();
+// });
+// function getnote () {
+//   let data={}
+//   if(header = true)
+//   makePromiseCall("GET","http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList",true,data)
+//   .then((Response) => {
+//       console.log(JSON.parse(Response).data);         
+//   })
+//   .catch()
+//   console.log("error");
+// }
 
 
 
-function trashNotes() {
-  let data = {
-    "noteId": [id],
-    "isDeleted": true
-  }
-  if (header = true)
-    makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes", true, data)
-      .then((res) => {
-        console.log(res.data);
-        getNotes();
-      })
-      .catch()
-  console.log("error");
-}
+// function trashNotes() {
+//   let data = {
+//     "noteId": [note.id],
+//     "isDeleted": true
+//   }
+//   if (header = true)
+//     makePromiseCall("POST", "http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes", true, data)
+//       .then((res) => {
+//         console.log(res.data);
+//         getNotes();
+//       })
+//       .catch()
+//   console.log("error");
+// }
 
 
 

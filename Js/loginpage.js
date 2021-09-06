@@ -30,13 +30,14 @@ pwd.addEventListener("input", function () {
 });
 });
 
+const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
 function next () {
    
  let data = {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-    makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/login",true,data)
+    makePromiseCall("POST","Baseurl/user/login",true,data)
     .then((Response) => {
         console.log(JSON.parse(Response).id);
         localStorage.setItem("token",JSON.parse(Response).id);
