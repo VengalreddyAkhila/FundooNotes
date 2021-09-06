@@ -6,68 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500&display=swap"></link>
  <script src="https://kit.fontawesome.com/18ad07889c.js" crossorigin="anonymous"></script>
- </head>
 
-<body>
-    <!-- Modal to pop up to edit notes -->
-    <div class="modal">
-     <div class="modal-content">
-        <input class="modal-title" placeholder="Title" type="text">
-        <input class="modal-text" placeholder="Take a note..." type="text">
-        <span class="modal-close-button">Close</span>
-      </div>
+ </head>
+ <body>
+  <!-- Modal to pop up to edit notes -->
+  <div class="modal">
+   <div class="modal-content">
+      <input class="modal-title" placeholder="Title" type="text">
+      <input class="modal-text" placeholder="Take a note..." type="text">
+      <span class="modal-close-button">Close</span>
     </div>
-     <main>
-        <header>
-            <img class="header-logo" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png">
-            <h2 class="header-title">Keep</h2>
-        </header>
-        <div id="form-container">
-            <form id="form" autocomplete="off">
-               <input id="note-title" placeholder="Title" type="text">
-               <input id="note-text" placeholder="Take a note..." type="text">
-               <div id="form-buttons" class="form-btn">
-                <div class="form_btn">
-                    <button class="remainder"><img src="../Assests/bell_icon.png" alt=""></button>
-                    <button class="people"><img src="../Assests/collaborate.svg" alt=""></button>
-                    <!-- <button class="pallet"><img src="../Assests/color.svg" alt=""></button> -->
-                    <div>
-                    <div id="color-palette-dropup" class="dropup" onclick="ColorInDisplay()">
-                        <button  class="btn dropup-toggle" type="button" id="btn-colors" data-bs-toggle="dropdown">
-                            <i class="fas fa-palette fa-fw"></i>
-                        </button>
-                        <div class="color-palette dropdown-menu">
-                            <div class="bg-white circled selected-color"></div>
-                            <div class="bg-red"></div>
-                            <div class="bg-orange"></div>
-                            <div class="bg-yellow"></div>
-                            <div class="bg-green"></div>
-                            <div class="bg-turquoise"></div>
-                            <div class="bg-blue"></div>
-                            <div class="bg-dark-blue"></div>
-                            <div class="bg-purple"></div>
-                            <div class="bg-pink"></div>
-                            <div class="bg-brown"></div>
-                            <div class="bg-grey"></div>
-                        </div>
-                    </div>
-                    </div>
-                    <button class="image"><img src="../Assests/add_image.svg" alt=""></button>
-                    <button class="archive"><img src="../Assests/archive_icon.png" alt=""></button>
-                    <button class="more"><img src="../Assests/more_icon.svg" alt=""></button>
-                </div>
-                <div>
-                    <button class="note_button" type="button" id="form-close-button"
-                        onclick="addnote()">Close</button>
-                </div>
-            </div>
-            </form>
-        </div>
-        <div id="notes"></div>
-        <div id="placeholder">
-            <img id="placeholder-logo" src="https://icon.now.sh/lightbulb_outline">
-            <p id="placeholder-text">Notes you add appear here</p>
-        </div>
+  </div>
+   <main>
+      <header>
+          <img class="header-logo" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png">
+          <h2 class="header-title">Keep</h2>
+      </header>
+      <div id="form-container">
+          <form id="form" autocomplete="off">
+             <input id="note-title" placeholder="Title" type="text">
+             <input id="note-text" placeholder="Take a note..." type="text">
+             <div id="form-buttons" class="form-btn">
+              <div class="form_btn">
+                  <button class="remainder"><img src="../Assests/bell_icon.png" alt=""></button>
+                  <button class="people"><img src="../Assests/collaborate.svg" alt=""></button>
+                  <!-- <button class="pallet"><img src="../Assests/color.svg" alt=""></button> -->
+                  <div>
+                  <div id="color-palette-dropup" class="dropup" onclick="ColorInDisplay()">
+                      <button  class="btn dropup-toggle" type="button" id="btn-colors" data-bs-toggle="dropdown">
+                          <i class="fas fa-palette fa-fw"></i>
+                      </button>
+                      <div class="color-palette dropdown-menu">
+                          <div class="bg-white circled selected-color"></div>
+                          <div class="bg-red"></div>
+                          <div class="bg-orange"></div>
+                          <div class="bg-yellow"></div>
+                          <div class="bg-green"></div>
+                          <div class="bg-turquoise"></div>
+                          <div class="bg-blue"></div>
+                          <div class="bg-dark-blue"></div>
+                          <div class="bg-purple"></div>
+                          <div class="bg-pink"></div>
+                          <div class="bg-brown"></div>
+                          <div class="bg-grey"></div>
+                      </div>
+                  </div>
+                  </div>
+                  <button class="image"><img src="../Assests/add_image.svg" alt=""></button>
+                  <button class="archive" id="archive-button" onclick="Archive()"><img src="../Assests/archive_icon.png" alt=""></button>
+                  <button class="more"><img src="../Assests/more_icon.svg" alt=""></button>
+              </div>
+              <div>
+                  <button class="note_button" type="button" id="form-close-button"
+                      onclick="addnote()">Close</button>
+              </div>
+          </div>
+          </form>
+      </div>
+      <div id="notes"></div>
+      <div id="placeholder">
+          <img id="placeholder-logo" src="https://icon.now.sh/lightbulb_outline">
+          <p id="placeholder-text">Notes you add appear here</p>
+      </div>
 
         <!-- tooltip -->
         <div id="color-tooltip">
@@ -525,7 +525,7 @@ input:focus {
      </style>
   </body>
   <script>
-      class App {
+ class App {
   constructor() {
     // JSON.parse turns string into array
     this.notes = JSON.parse(localStorage.getItem('notes')) || [];
@@ -762,11 +762,32 @@ deleteNote(event) {
           <div class="${note.title && 'note-title'}">${note.title}</div>
           <div class="note-text">${note.text}</div>
           <div class="toolbar-container">
-            <div class="toolbar">
-              <img class="toolbar-color" data-id=${note.id} src="../Assests/color.svg">
-              <img class="toolbar-delete" data-id=${
-                note.id
-              } src="../Assests/bin.svg">
+            <div class="toolbar" style="display:flex; justify-content:space-between">      
+              
+              <button style="border:none;background:transparent"><img class="toolbar-delete" data-id=${note.id} src="../Assests/more_icon.svg"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-archive" data-id=${note.id} src="../Assests/archive.svg"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-image" data-id=${note.id} src="../Assests/image.svg"></button>
+              <div id="color-palette-dropup" class="dropup" onclick="ColorInDisplay()">
+              <button class="btn dropup-toggle" type="button" id="btn-colors"  data-bs-toggle="dropdown">
+                <img class="toolbar-color" data-id=${note.id} src="../Assests/color.svg"></button>
+              </button>
+              <div class="color-palette dropdown-menu">
+                  <div class="bg-white circled selected-color"></div>
+                  <div class="bg-red"></div>
+                  <div class="bg-orange"></div>
+                  <div class="bg-yellow"></div>
+                  <div class="bg-green"></div>
+                  <div class="bg-turquoise"></div>
+                  <div class="bg-blue"></div>
+                  <div class="bg-dark-blue"></div>
+                  <div class="bg-purple"></div>
+                  <div class="bg-pink"></div>
+                  <div class="bg-brown"></div>
+                  <div class="bg-grey"></div>
+              </div>
+          </div>
+              <button style="border:none;background:transparent"><img class="toolbar-people" data-id=${note.id} src="../Assests/people.svg"></button>
+              <button style="border:none;background:transparent"><img class="toolbar-remainder" data-id=${note.id} src="../Assests/remainder.svg"></button>
             </div>
           </div>
         </div>

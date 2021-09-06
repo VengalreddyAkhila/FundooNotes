@@ -81,11 +81,11 @@
                 <input id="note-text" placeholder="Take a note..." type="text">
                 <div id="form-buttons" class="form-btn">
                     <div class="form_btn">
-                        <button class="remainder"><img src="../Assests/bell_icon.png" alt=""></button>
-                        <button class="people"><img src="../Assests/collaborate.svg" alt=""></button>
+                        <button class="remainder"><img src="../Assests/remainder.svg" alt=""></button>
+                        <button class="people"><img src="../Assests/people.svg" alt=""></button>
                         <!-- <button class="pallet"><img src="../Assests/color.svg" alt=""></button> -->
                         <div>
-                        <div id="color-palette-dropup" class="dropup" onclick="ColorInDisplay()">
+                        <div id="color-palette-dropup" class="dropup">
                             <button  class="btn dropup-toggle" type="button" id="btn-colors" data-bs-toggle="dropdown">
                                 <i class="fas fa-palette fa-fw"></i>
                             </button>
@@ -105,13 +105,13 @@
                             </div>
                         </div>
                         </div>
-                        <button class="image"><img src="../Assests/add_image.svg" alt=""></button>
-                        <button class="archive"><img src="../Assests/archive_icon.png" alt=""></button>
-                        <button class="more"><img src="../Assests/more_icon.svg" alt=""></button>
+                        <button class="image"><img src="../Assests/image.svg" alt=""></button>
+                        <button class="archive" id="archive-button" onclick="Archive()"><img src="../Assests/archive.svg" alt=""></button>
+                        <button class="more"><img src="../Assests/more.svg" alt=""></button>
                     </div>
                     <div>
                         <button class="note_button" type="button" id="form-close-button"
-                            onclick="addnote()">Close</button>
+                            onclick="addNote()">Close</button>
                     </div>
                 </div>
             </form>
