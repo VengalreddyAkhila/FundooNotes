@@ -3,10 +3,12 @@
 document.getElementById("icons").innerHTML =`
     <span class="material-icons-outlined">
         add_alert
-    </span>   
+    </span>
+    <button id="Button1" class="collaborator-button" value="Click" onclick="switchVisible()"/>
         <span class="material-icons-outlined">
             person_add_alt
-        </span>   
+        </span>
+    </button>
     <div class="btn-group dropup" id="color-palette-dropdown">
         <button type="button" id="btn-colors" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="material-icons-outlined">
@@ -41,6 +43,6 @@ document.getElementById("icons").innerHTML =`
         more_vert
     </span>
     <span class="note-closing">
-    <input type="button" class="note" id="note-close" value="close" onclick="addnote()"/>
+    <input type="button" class="note" id="note-close" value="close" onclick="insert()" onclick="getEmail()"/>
     </span>
 `
