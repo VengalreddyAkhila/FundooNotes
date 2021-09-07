@@ -5,7 +5,7 @@ var colorData = document.getElementById("note-section").style.backgroundColor;
 var ArchiveData = "";
 
 function addNote() {
-  console.log(colorData);
+
   let data = {
     "title": document.getElementById("toggle").value,
     "description": document.getElementById("user-note").value,
@@ -15,7 +15,7 @@ function addNote() {
     data["isArchived"]= ArchiveData;
   }
   if(colorData){
-    data["color"] = colorData;
+    data["color"] = "";
   }
     makePromiseCall("POST", `${Baseurl}/notes/addNotes`, true, data,true)
       .then((res) => {
