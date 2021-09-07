@@ -4,7 +4,7 @@ document.getElementById("icons").innerHTML =`
     <span class="material-icons-outlined">
         add_alert
     </span>
-    <button id="Button1" class="collaborator-button" value="Click" onclick="switchVisible()"/>
+    <button id="Button1" class="collaborator-button" value="Click" />
         <span class="material-icons-outlined">
             person_add_alt
         </span>
@@ -33,7 +33,7 @@ document.getElementById("icons").innerHTML =`
     <span class="material-icons-outlined">
         photo
     </span>
-    <button class="archive-button" id="archive-button" onclick="isArchive()">
+    <button class="archive-button" id="archive-button" onclick="addArchive()">
         <span class="material-icons-outlined">
             archive
         </span>     
@@ -43,6 +43,9 @@ document.getElementById("icons").innerHTML =`
         more_vert
     </span>
     <span class="note-closing">
-    <input type="button" class="note" id="note-close" value="close" onclick="insert()" onclick="getEmail()"/>
+    <input type="button" class="note" id="note-close" value="close" onclick="addNote()" />
     </span>
 `
+
+
+  

@@ -1,68 +1,79 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    getNotes();
+    GetNotes();
   });
-let noteslist = [];
-// const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
-function getNotes() {
-    let data = {}
-    if (header = true)
-        makePromiseCall("GET", `${Baseurl}/notes/getNotesList`, true, data)
-            .then((res) => {
-                console.log(res.data);
-                var nHTML = '';
-                notesList = res.data.data.data;
-
-                for (let i = 0; i < res.data.data.data.length; i++) {
-
-                    if (res.data.data.data[i].isArchived  == false && res.data.data.data[i].isDeleted == false) {                      
-                        nHTML += `<div class="notes" id="notes-section">
-                <div class="items" id="item-color" style="background-color:`+ res.data.data.data[i].color + `">                                       
-                  <button class="s3-btn" name="Open" style="background-color:`+ res.data.data.data[i].color + `" id=` + i + ` onclick="popupOpen();">
-                    <li id="update-title" style="list-style-type:none">` + res.data.data.data[i].title + " " +
-                            `</li>` +
-                            `<li id="update-note" style="list-style-type:none">` + res.data.data.data[i].description +
-                            `</li>` +                            
-                            `</button>  
-                  <div class="sub-buttons" id="display-buttons">
-                   <img src="../Assests/remainder.svg" >
-                    <button><img src="../Assests/people.svg">
-                    </button>
-                    <div class="btn-group dropup" id="color-palette-dropdown">
-                      <button type="button" id=`+ res.data.data.data[i].id + ` style="background-color:` + res.data.data.data[i].color + ` onclick="AddColor()" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                       <img src="../Assests/pallet.svg">
-                      </button>
-                      <div class="color-palette dropdown-menu" id ="color-palette">
-                      <div class="bg-white circled"></div>
-                      <div class="bg-red"></div>
-                      <div class="bg-orange"></div>
-                      <div class="bg-yellow"></div>
-                      <div class="bg-green"></div>
-                      <div class="bg-turquoise"></div>
-                      <div class="bg-blue"></div>
-                      <div class="bg-dark-blue"></div>
-                      <div class="bg-purple"></div>
-                      <div class="bg-pink"></div>
-                      <div class="bg-brown"></div>
-                      <div class="bg-grey"></div>
-                      </div>
-                      </div>
-                     <img src="../Assests/image.svg">
-                      <button class="archive-button" id=`+ res.data.data.data[i].id + ` style="background-color:` + res.data.data.data[i].color + ` onclick="DisplayNoteArchive()">
-                     <img src="../Assests/archive.svg"  >
-                      </button>
-                      
-                      <button id=`+ res.data.data.data[i].id + ` style="background-color:` + res.data.data.data[i].color + `" type="button" class="delete-buttton" onclick="trashNote()">
-                     <img src="../Assests/more.svg">
-                      </button>
-                      </div>
-                      </div> 
-                 </div>     
-                          
-                    `;
-                    }
-                }
-                document.getElementById("item-list").innerHTML = nHTML;
-            })
-            .catch()
-    console.log("error");
-}
+let notesList = [];
+function GetNotes() {
+   // let data = {}
+        makePromiseCall("GET", `${Baseurl}/notes/getNotesList`, true, {},true)
+        .then(res=> {
+          console.log(JSON.parse(res).data.data);
+          var nHTML = '';
+         notesList = JSON.parse(res).data.data;
+          for(let i=0; i < notesList.length; i++) {
+            if( notesList[i].isDeleted == false &&  notesList[i].isArchived == false) {              
+              nHTML += `<div class="notes" id="notes-text">
+                          <div class="items" id="notes-color" style="background-color:`+ notesList[i].color+`">                                       
+                            <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color+`" id=`+i+` onclick="popupOpen(id);">
+                              <li id="update-title" style="list-style-type:none">` +  notesList[i].title + " "+  `</li>` + 
+                              `<li id="update-note" style="list-style-type:none">` +  notesList[i].description + 
+                              `</li>` + 
+                              `<li style="list-style-type:none">` + 
+                              `</li>` + 
+                            `</div>  
+                            <div class="sub-buttons" id="display-buttons">
+                              <span class="material-icons-outlined">
+                                add_alert
+                              </span>
+                              <button id="Button1" class="collaborator-button" style="background-color:`+ notesList[i].color+`" value="Click" >
+                              <span class="material-icons-outlined">
+                                person_add_alt
+                              </span>
+                              </button>
+                              <div class="btn-group dropup" id="color-palette-dropdown">
+                                <button type="button" id=`+ notesList[i].id+` style="background-color:`+ notesList[i].color+`" onclick="addColor()" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span class="material-icons-outlined">
+                                    palette
+                                  </span>
+                                </button>
+                                <div class="color-palette dropdown-menu" id ="color-palette">
+                                <div class="bg-white circled"></div>
+                                <div class="bg-red"></div>
+                                <div class="bg-orange"></div>
+                                <div class="bg-yellow"></div>
+                                <div class="bg-green"></div>
+                                <div class="bg-turquoise"></div>
+                                <div class="bg-blue"></div>
+                                <div class="bg-dark-blue"></div>
+                                <div class="bg-purple"></div>
+                                <div class="bg-pink"></div>
+                                <div class="bg-brown"></div>
+                                <div class="bg-grey"></div>
+                                </div>
+                                </div>
+                                <span class="material-icons-outlined">
+                                  photo
+                                </span>
+                                <button class="archive-button" id=`+ notesList[i].id+` style="background-color:`+ notesList[i].color+`" onclick="ArchiveNote(id)">
+                                <span class="material-icons-outlined">
+                                  archive
+                                </span>  
+                                </button>
+                                
+                                <button id=`+  notesList[i].id +` style="background-color:`+ notesList[i].color+`" type="button" class="delete-buttton" onclick="trashNote(id)">
+                                  <span class="material-icons-outlined">
+                                  more_vert
+                                  </span>
+                                </button>
+                                </div>
+                                </div> 
+                           </div>     
+                                    
+                              `;
+            }
+          }
+          document.getElementById("item-list").innerHTML = nHTML;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }

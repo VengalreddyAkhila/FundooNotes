@@ -8,79 +8,55 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/google_keep.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="../css/dashboardnew.css">
 </head>
 <body>
 
-  <!-- header section -->
-
-  <div class="header-section">
-    <span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-    <span>
-      <img src="../Assests/keep.png">
-    </span>
-    <span class="keep">Fundoo</span>
-      <input class="search-input" id="email" type="" placeholder="search ">
-    <span>
-      <span class="material-icons-outlined">
-        refresh
-      </span>
-    </span>
-    <span> 
-      <span class="material-icons-outlined">
-        grid_view
-      </span>
-    </span>
-    <span>
-      <span class="material-icons-outlined">
-        settings
-      </span>
-    </span>
-    <span>
-    <span class="material-icons-outlined">
-      apps
-    </span>
-    </span>
-  </div>
-  <div id="mySidenav" class="sidenav">
-    <a href="#">Notes</a>
-    <a href="#">Reminders</a>
-    <a href="#">Edit Labels</a>
-    <a href="#">Archive</a>
-    <a href="#">Trash</a>
-  </div>
-  
-  <!-- main section -->
-
-  <div class="main-section-container">
-    <div class="main-section1">
-      <div class="nav-container">
-        <li class="sidenav-note" style="list-style-type: none;">
-          <span class="material-icons-outlined">
-            lightbulb
-          </span>
-        </li>
-        <li class="reminder" style="list-style-type: none;">
-          <span class="material-icons-outlined">
-              notifications
-          </span>
-        </li> 
-        <li class="edit" style="list-style-type: none;">
-          <span class="material-icons-outlined">
-            edit
-          </span>
-        </li> 
-        <li class="archive" style="list-style-type: none;">
-          <span class="material-icons-outlined">
-            archive
-          </span>  
-        </li> 
-        <li class="trash" style="list-style-type: none;">
-          <span class="material-icons-outlined">
-            delete
-          </span>
-        </li> 
-      </div>  
+  <div class="navbar">
+    <div class="subnav-one">
+        <div class="menu-icon" onclick="openDrawer()">&#9776;</div>
+        <div><img src="../Assests/keep.png" class="keep-img"></div>
+        <span class="keep-txt">Fundoo</span>
     </div>
+    <div class="subnav-two">
+        <input class="searchBar" type="text" name="search" placeholder="Search">
+    </div>
+    <!-- <div class="header-icons">
+        <button class="refresh">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-rotate-ccw">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+        </button>
+        <button class="grid">
+            <i class="bi bi-grid"></i>
+            <img src="../Assests/grid.svg" alt="grid">
+        </button>
+        <button class="setting">
+            <i class="bi bi-grid"></i>
+            <img src="../Assests/setting.svg" alt="grid">
+        </button>
+        <button class="grid1">
+            <i class="bi bi-grid"></i>
+            <img src="../Assests/grid1.svg" alt="grid">
+        </button>
+    </div> -->
+</div>
+<div id="snackbar"></div>
+<div class="myDrawer">
+    <div class="notes drawer"><img src="../Assests/notes.svg" alt=""><span class="drawer-span">Notes</span></div>
+    <div class="remainder drawer"><img src="../Assests/remainder.svg" alt=""><span
+            class="drawer-span">Remainder</span></div>
+    <div class="label drawer"><img src="../Assests/editlabels.svg" alt=""><span class="drawer-span">Edit
+            labels</span></div>
+    <div class="archive drawer"><img src="../Assests/archive.svg" alt=""><span class="drawer-span">Archives</span>
+    </div>
+    <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span">Bin</span></div>
+</div>
+
+  <!-- Note section -->
     <div id="main">
         
     <div class="main-section">
@@ -91,7 +67,7 @@
             <div id="content"> 
               <input class="user-note" type="text" id="user-note" placeholder="Take a note..." autocomplete="off"> </input>
               <div class="addnote-collab" id="addnote-collab-h"></div>
-              <!-- icon section -->
+             <!-- note-icons -->
               <div id="icons"></div>
               
             </div>
@@ -99,13 +75,10 @@
         </div>
       </div>    
     </div>    
-
       <!-- display note section   -->
-
       <div id="item-list" class="item-list">          
-      </div>
+      </div>  
     
-      <!-- display note popup section -->
 
       <div class="overlay" id="overlay" style="display:none;"></div>
       <div class="popup" id="popup" style="display:none;">
@@ -130,7 +103,7 @@
           more_vert
         </span> 
         <span class="popup-close-container" id="popup-close-container">
-          <button class="popup-close" id="popup-close" onclick="addPopupNotes(id), popupClose();" >close
+          <button class="popup-close" id="popup-close" onclick="PopupNotes(id), popupClose();" >close
           </button>
         </span>
       </span>
@@ -143,56 +116,16 @@
   </div>    
    
   <!-- js section-->
+ 
+  <script src="../service/http_service.js"></script>
+  <script src="../js/dashboardicons.js"></script>
+  <script src="../js/addnotes.js"></script>
+  <script src="../js/updatenotes.js"></script>
+  <script src="../js/getnotes.js"></script>
+  <script src="../Js/dashboard.js"></script>
+  <script src="../Js/color.js"></script>
 
-  <script src="../js/service.js"></script>
-  <script src="../js/google_keep.js"></script>
-  <script src="../js/dashboard.js" type="text/javascript"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="../js/icons.js"></script>
 
-  <script>
-    document.querySelectorAll(".color-palette div").forEach((element) => {
-        element.addEventListener("click", () => {
-            document.querySelectorAll(".color-palette div").forEach((element) => {
-                element.classList.remove("selected-color");
-            });
-            element.classList.add("selected-color");
-            document.getElementById("note-section").style.backgroundColor = globalThis
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            element.classList.add("selected-color");
-            document.getElementById("user-note").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            element.classList.add("selected-color");
-            document.getElementById("note-close").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            document.getElementById("toggle").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            document.getElementById("archive-button").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            document.getElementById("btn-colors").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            document.getElementById("Button1").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-
-            document.getElementById("popup").style.backgroundColor = window
-            .getComputedStyle(element, null)
-            .getPropertyValue("background-color");
-        });
-    });
-</script>
    
 </body>
 </html> 

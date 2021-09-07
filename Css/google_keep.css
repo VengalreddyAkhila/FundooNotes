@@ -38,12 +38,15 @@ body {
 display: flex;
 flex-direction: row;
 width: 100%;
+
 }
 
 #main {
 transition: margin-left .5s;
 padding: 10px;
 width: 95%;
+
+transform: translate(20px,-500px);
 }
 
 .main-section1 {
@@ -173,6 +176,7 @@ flex-wrap: wrap;
 padding-top: 50px;
 width: 100%;
 position: relative;
+margin-left: 50px;
 }
 
 textarea:focus, input:focus{
@@ -585,7 +589,7 @@ padding:1em;
 
 .popup-close {
 border: none;
-background-color: white;
+background-color:none;
 z-index: 1;
 position: relative;
 }
@@ -667,139 +671,13 @@ background-color: rgba(0,0,0,0.07);;
   height: 80.1px;
   border-radius: 10px;
 }
-
-
-/* media quaries */
-
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
+@media screen and (max-width:900px){
+  .item-list{
+    width: 150%;
+  }
+    .note-section {
+      width: 130%;
+    }
+    
 }
 
-
-@media only screen and (max-width: 980px) {
-
-.search-input, .header-section .material-icons-outlined {
-    display: none;
-}
-
-/* .note-section {
-  border: white;
-  border-radius: 10px;
-  width: 100%;
-} */
-
-.Div1, #Div2 {
-  width: 80%;
-}
-
-}   
-
-@media only screen and (max-width: 980px) {
-
-.Div1, #Div2 {
-  width: 80%;
-}
-}
-
-@media only screen and (max-width: 729px) {
-.Div1, #Div2 {
-  width: 80%;
-  padding-left: 120px;
-}
-.item-list {
-  padding-left: 100px;
-}
-.note-closing {
-  padding-left: px;
-}
-}
-
-@media only screen and (max-width: 500px) {
-.Div1{
-  width: 80%;
-  padding-left: 100px;
-}
-.notes{
-  width: 100%;
-}
-.Div1 {
-  padding-left: 60px;
-}
-.item-list {
-  padding-left: 0px;
-}
-.note {
-  padding-left: 40px;
-}
-}
-
-@media only screen and (max-width: 1022px) {
-.Div1, #Div2 {
-  width: 80%;
-}
-.me-2 {
-  padding-left: 400px;
-}
-
-.note-closing {
-  padding-left: 100px;
-}
-}
-
-
-@media only screen and (max-width: 423px) {
-.note{
-  padding-left: 30px;
-}
-.popup {
-  width: 400px;
-}
-}
-
-@media only screen and (max-width: 500px) {
-.Div1, .Div2{
-  width: 100%;
-  padding-left: 10px;
-}
-.note-closing {
-  padding-left: 5px;
-}
-}
-
-
-
-@media only screen and (max-width: 452px) {
-.Div1, .Div2{
-  width: 100%;
-  /* padding-right: 40px; */
-  padding-left: 10px;
-}
-.note-closing {
-  padding-left: 5px;
-}
-}
-
-@media only screen and (max-width: 313px) {
-.note {
-  padding-left: 0px;
-}
-
-.popup {
-  width: 300px;
-}
-}
-
-
-
-@media only screen and (max-width: 61px) {
-.notes{
-  display: none;
-}
-.note-section{
-  display: none;
-}
-.keep {
-  display: none;
-}
-}

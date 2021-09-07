@@ -1,24 +1,22 @@
 // popup Open method
-// const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
-
 function popupOpen(i){
-    let selectedItem = notesList[i];
-    console.log(selectedItem)
+    let Items = notesList[i];
+    console.log(Items)
     document.getElementById("popup").style.display="block";
     document.getElementById("overlay").style.display="block";
     var nHTML = '';
     nHTML += `                                                        
-             <input type="text" placeholder="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
+             <input type="text" placeholder="`+ Items.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
             `</input>` + 
-            `<input type="text" placeholder="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
+            `<input type="text" placeholder="`+ Items.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
             `</input>` +       
       `
                     
     `
-    console.log(selectedItem.id);
+    console.log(Items.id);
     document.getElementById("popup-inner-content").innerHTML = nHTML; 
-    document.getElementById("popup-close").id = selectedItem.id;
-    document.getElementById("popup").style.backgroundColor = selectedItem.color;
+    document.getElementById("popup-close").id = Items.id;
+    document.getElementById("popup").style.backgroundColor = Items.color;
   }
   
   //  Popup Close method
@@ -27,92 +25,53 @@ function popupOpen(i){
     document.getElementById("popup").style.display="none";
     document.getElementById("overlay").style.display="none";
   }
-  
-  //  color pallet
-  
-  function AddColor() {
-    document.querySelectorAll(".color-palette div").forEach((element) => {
-      element.addEventListener("click", () => {
-        document.querySelectorAll(".color-palette div").forEach((element) => {
-        element.classList.remove("selected-color");
-      });
-      element.classList.add("selected-color");
-      document.getElementById("item-color").style.backgroundColor = window
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
-      document.getElementById("update-title").style.backgroundColor = window
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
-      document.getElementById("update-note").style.backgroundColor = window
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
-      document.getElementById("popup").style.backgroundColor = window
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
-  
-      
-      let data = {
-          "noteId": [i],
-          "color" : document.getElementById("form").style.backgroundColor
-      }
-      if (header = true)
-      makePromiseCall("POST", "Baseurl/notes/changesColorNotes", true, data)
-        .then((res) => {
-      console.log(res.data);
-      }) 
-      .catch((err) => {
-        console.log(err);
-      })
-    });
-    });
-  }
-    
+   
   // archive in display note section
     
-  function DisplayNoteArchive() {
+  function ArchiveNote(id) {
     let data = {
-    "noteId":[i], 
+    "noteId":[id], 
     "isArchived": true
     };
-    if (header = true)
-    makePromiseCall("POST", "Baseurl/notes/archiveNotes", true, data)
+   
+    makePromiseCall("POST", `${Baseurl}/notes/archiveNotes`, true, data,true)
       .then((res) => {
         console.log((res).data);
-    getNotes();
+        GetNotes();
   })
   .catch()
   console.log("error");
-}
+}  
+  // *************************** update note section*****************************8
   
-  // popup update note section
-  
-  function PopupNotes() {
+  function PopupNotes(i) {
    
     let data = {
     "noteId": [i],
     "title" : document.getElementById("popup-title").value,
     "description" : document.getElementById("popup-description").value
     }
-    console.log(data)
-    if (header = true)
-    makePromiseCall("POST", "Baseurl/notes/updateNotes", true, data)
+    console.log(data)   
+    makePromiseCall("POST", `${Baseurl}/notes/updateNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
       })
       .catch()
   console.log("error");
+  GetNotes();
 }
 
-function trashNotes() {
+//*****************TrashNotes************************ */
+
+function trashNotes(id) {
     let data = {
-      "noteId": [i],
+      "noteId": [id],
       "isDeleted": true
-    }
-    if (header = true)
-      makePromiseCall("POST", "Baseurl/notes/trashNotes", true, data)
+    }  
+      makePromiseCall("POST", `${Baseurl}/notes/trashNotes`, true, data,true)
         .then((res) => {
           console.log(res.data);
-          getNotes();
+          GetNotes();
         })
         .catch()
     console.log("error");

@@ -119,7 +119,7 @@ function callGetNotes() {
                           
                           <button id=`+ res.data.data.data[i].id +` style="background-color:`+res.data.data.data[i].color+`" type="button" class="delete-buttton" onclick="trashNote(id)">
                             <span class="material-icons-outlined">
-                              delete
+                            more_vert
                             </span>
                           </button>
                           </div>
@@ -238,15 +238,7 @@ function addColorInDisplay(id) {
     document.getElementById("notes-section").style.backgroundColor = window
     .getComputedStyle(element, null)
     .getPropertyValue("background-color");
-    // document.getElementById("update-title").style.backgroundColor = window
-    // .getComputedStyle(element, null)
-    // .getPropertyValue("background-color");
-    // document.getElementById("update-note").style.backgroundColor = window
-    // .getComputedStyle(element, null)
-    // .getPropertyValue("background-color");
-    // document.getElementById("popup").style.backgroundColor = window
-    // .getComputedStyle(element, null)
-    // .getPropertyValue("background-color");
+    
 
 
     let rgb = document.getElementById("item-color").style.backgroundColor;
