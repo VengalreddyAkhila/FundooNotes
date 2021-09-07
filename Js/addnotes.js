@@ -5,6 +5,7 @@ var colorData = document.getElementById("note-section").style.backgroundColor;
 var ArchiveData = "";
 
 function addNote() {
+  console.log(colorData);
   let data = {
     "title": document.getElementById("toggle").value,
     "description": document.getElementById("user-note").value,
@@ -47,6 +48,8 @@ function addColor() {
     document.getElementById("notes-text").style.backgroundColor = window
     .getComputedStyle(element, null)
     .getPropertyValue("background-color");
+   
+
 
 
     var changecolor = document.getElementById("notes-color").style.backgroundColor;

@@ -23,12 +23,10 @@ function GetNotes() {
                             <div class="sub-buttons" id="display-buttons">
                               <span class="material-icons-outlined">
                                 add_alert
-                              </span>
-                              <button id="Button1" class="collaborator-button" style="background-color:`+ notesList[i].color+`" value="Click" >
+                              </span>                             
                               <span class="material-icons-outlined">
                                 person_add_alt
-                              </span>
-                              </button>
+                              </span>                             
                               <div class="btn-group dropup" id="color-palette-dropdown">
                                 <button type="button" id=`+ notesList[i].id+` style="background-color:`+ notesList[i].color+`" onclick="addColor()" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                   <span class="material-icons-outlined">

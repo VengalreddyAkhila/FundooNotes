@@ -1,22 +1,22 @@
 // popup Open method
 function popupOpen(i){
-    let Items = notesList[i];
-    console.log(Items)
+    let selectedItem = notesList[i];
+    console.log(selectedItem)
     document.getElementById("popup").style.display="block";
     document.getElementById("overlay").style.display="block";
     var nHTML = '';
     nHTML += `                                                        
-             <input type="text" placeholder="`+ Items.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
+             <input type="text" placeholder="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
             `</input>` + 
-            `<input type="text" placeholder="`+ Items.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
+            `<input type="text" placeholder="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
             `</input>` +       
       `
                     
     `
-    console.log(Items.id);
+    console.log(selectedItem.id);
     document.getElementById("popup-inner-content").innerHTML = nHTML; 
-    document.getElementById("popup-close").id = Items.id;
-    document.getElementById("popup").style.backgroundColor = Items.color;
+    document.getElementById("popup-close").id = selectedItem.id;
+    document.getElementById("popup").style.backgroundColor = selectedItem.color;
   }
   
   //  Popup Close method
@@ -30,10 +30,10 @@ function popupOpen(i){
     
   function ArchiveNote(id) {
     let data = {
-    "noteId":[id], 
+    "noteIdList":[id], 
     "isArchived": true
     };
-   
+  
     makePromiseCall("POST", `${Baseurl}/notes/archiveNotes`, true, data,true)
       .then((res) => {
         console.log((res).data);
@@ -42,16 +42,16 @@ function popupOpen(i){
   .catch()
   console.log("error");
 }  
-  // *************************** update note section*****************************8
+  //  update note section
   
-  function PopupNotes(i) {
+  function Update_Notes(i) {
    
     let data = {
     "noteId": [i],
     "title" : document.getElementById("popup-title").value,
     "description" : document.getElementById("popup-description").value
     }
-    console.log(data)   
+    console.log(data)  
     makePromiseCall("POST", `${Baseurl}/notes/updateNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
@@ -61,13 +61,14 @@ function popupOpen(i){
   GetNotes();
 }
 
-//*****************TrashNotes************************ */
 
-function trashNotes(id) {
+
+function trashNote(id) {
+ 
     let data = {
-      "noteId": [id],
+      "noteIdList": [id],
       "isDeleted": true
-    }  
+    } 
       makePromiseCall("POST", `${Baseurl}/notes/trashNotes`, true, data,true)
         .then((res) => {
           console.log(res.data);
