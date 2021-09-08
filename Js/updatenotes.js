@@ -1,27 +1,27 @@
-// popup Open method
-function popupOpen(i){
-    let selectedItem = notesList[i];
-    console.log(selectedItem)
-    document.getElementById("popup").style.display="block";
-    document.getElementById("overlay").style.display="block";
-    var nHTML = '';
-    nHTML += `                                                        
-             <input type="text" placeholder="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
-            `</input>` + 
-            `<input type="text" placeholder="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
-            `</input>` +       
-      `
-                    
+//************************** form Open ***************************
+function FormOpen(i){
+  let selectedItem = notesList[i];
+  console.log(selectedItem)
+  document.getElementById("popup").style.display="block";
+  document.getElementById("overlay").style.display="block";
+  var nHTML = '';
+  nHTML += `                                                           
+           <input type="text" placeholder="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
+          `</input>` + 
+          `<input type="text" placeholder="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
+          `</input>` +       
     `
-    console.log(selectedItem.id);
-    document.getElementById("popup-inner-content").innerHTML = nHTML; 
-    document.getElementById("popup-close").id = selectedItem.id;
-    document.getElementById("popup").style.backgroundColor = selectedItem.color;
-  }
+                  
+  `
+  console.log(selectedItem.id);
+  document.getElementById("popup-inner-content").innerHTML = nHTML; 
+  document.getElementById("popup-close").id = selectedItem.id;
+  document.getElementById("popup").style.backgroundColor = selectedItem.color;
+}
   
-  //  Popup Close method
+  //************************form Close **************************
   
-  function popupClose(){
+  function FormClose(){
     document.getElementById("popup").style.display="none";
     document.getElementById("overlay").style.display="none";
   }
@@ -39,26 +39,30 @@ function popupOpen(i){
         console.log((res).data);
         GetNotes();
   })
-  .catch()
-  console.log("error");
-}  
-  //  update note section
+  .catch((err) => {
+    console.log(err);
+        })
+      }
+  //*************** update note section**************
   
   function Update_Notes(i) {
    
     let data = {
-    "noteId": [i],
+    
     "title" : document.getElementById("popup-title").value,
-    "description" : document.getElementById("popup-description").value
+    "description" : document.getElementById("popup-description").value,
+    "noteId": i
     }
     console.log(data)  
     makePromiseCall("POST", `${Baseurl}/notes/updateNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
+        GetNotes();
       })
-      .catch()
-  console.log("error");
-  GetNotes();
+      .catch((err) => {
+        console.log(err);
+            })
+  
 }
 
 
@@ -74,6 +78,7 @@ function trashNote(id) {
           console.log(res.data);
           GetNotes();
         })
-        .catch()
-    console.log("error");
+        .catch((err) => {
+          console.log(err);
+              })
   }

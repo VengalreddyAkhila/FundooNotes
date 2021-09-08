@@ -21,7 +21,7 @@
     <div class="subnav-two">
         <input class="searchBar" type="text" name="search" placeholder="Search">
     </div>
-    <!-- <div class="header-icons">
+     <!-- <div class="header-icons">
         <button class="refresh">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -42,7 +42,7 @@
             <i class="bi bi-grid"></i>
             <img src="../Assests/grid1.svg" alt="grid">
         </button>
-    </div> -->
+    </div>  -->
 </div>
 <div id="snackbar"></div>
 <div class="myDrawer">
@@ -73,12 +73,13 @@
             </div>
           </div>
         </div>
-      </div>    
+      </div>  
+      
     </div>    
+
       <!-- display note section   -->
       <div id="item-list" class="item-list">          
-      </div>  
-    
+      </div>     
 
       <div class="overlay" id="overlay" style="display:none;"></div>
       <div class="popup" id="popup" style="display:none;">
@@ -90,9 +91,27 @@
         <span class="material-icons-outlined">
           person_add_alt
         </span>
-        <span class="material-icons-outlined">
-          palette
-        </span>
+        <div class="btn-group dropup" id="color-palette-dropdown">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-icons-outlined">
+              palette
+          </span>
+          </button>
+          <div class="color-palette dropdown-menu" id ="color-palette">
+              <div class="bg-white circled"></div>
+              <div class="bg-red"></div>
+              <div class="bg-orange"></div>
+              <div class="bg-yellow"></div>
+              <div class="bg-green"></div>
+              <div class="bg-turquoise"></div>
+              <div class="bg-blue"></div>
+              <div class="bg-dark-blue"></div>
+              <div class="bg-purple"></div>
+              <div class="bg-pink"></div>
+              <div class="bg-brown"></div>
+              <div class="bg-grey"></div>
+          </div>
+      </div>
         <span class="material-icons-outlined">
           photo
         </span>
@@ -103,7 +122,7 @@
           more_vert
         </span> 
         <span class="popup-close-container" id="popup-close-container">
-          <button class="popup-close" id="popup-close" onclick="Update_Notes(id), popupClose();" >close
+          <button class="popup-close" id="popup-close" onclick="Update_Notes(id), FormClose();" >close
           </button>
         </span>
       </span>
@@ -113,10 +132,9 @@
         <img id="placeholder-logo" src="../Assests/bulb.imgh.svg">
         <p id="placeholder-text">Notes you add appear here</p>
     </div>
-  </div>    
-   
-  <!-- js section-->
- 
+    
+  </div>     
+  <!-- js section--> 
   <script src="../service/http_service.js"></script>
   <script src="../js/dashboardicons.js"></script>
   <script src="../js/addnotes.js"></script>

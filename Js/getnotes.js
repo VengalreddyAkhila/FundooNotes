@@ -10,17 +10,17 @@ function GetNotes() {
           var nHTML = '';
          notesList = JSON.parse(res).data.data;
           for(let i=0; i < notesList.length; i++) {
-            if( notesList[i].isDeleted == false &&  notesList[i].isArchived == false) {              
+            if( notesList[i].isDeleted  != true &&  notesList[i].isArchived != true) {              
               nHTML += `<div class="notes" id="notes-text">
                           <div class="items" id="notes-color" style="background-color:`+ notesList[i].color+`">                                       
-                            <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color+`" id=`+i+` onclick="popupOpen(id);">
+                            <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color+`" id=`+i+` onclick="FormOpen(id);">
                               <li id="update-title" style="list-style-type:none">` +  notesList[i].title + " "+  `</li>` + 
                               `<li id="update-note" style="list-style-type:none">` +  notesList[i].description + 
                               `</li>` + 
                               `<li style="list-style-type:none">` + 
                               `</li>` + 
                             `</div>  
-                            <div class="sub-buttons" id="display-buttons">
+                            <div class="sub-buttons" id="display-buttons" >
                               <span class="material-icons-outlined">
                                 add_alert
                               </span>                             
@@ -28,7 +28,7 @@ function GetNotes() {
                                 person_add_alt
                               </span>                             
                               <div class="btn-group dropup" id="color-palette-dropdown">
-                                <button type="button" id=`+ notesList[i].id+` style="background-color:`+ notesList[i].color+`" onclick="addColor()" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" id=`+ notesList[i].id+` style="background-color:`+ notesList[i].color+`" onclick="addColor(id)" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                   <span class="material-icons-outlined">
                                     palette
                                   </span>

@@ -1,22 +1,24 @@
 // ************************* ADD----NOTE ***************
 
 const Baseurl = "http://fundoonotes.incubation.bridgelabz.com/api";
-var colorData = document.getElementById("note-section").style.backgroundColor;
 var ArchiveData = "";
 
 function addNote() {
 
+  let colorData = document.getElementById("note-section").style.backgroundColor;
+  console.log(colorData);
   let data = {
     "title": document.getElementById("toggle").value,
-    "description": document.getElementById("user-note").value,
-    
+    "description": document.getElementById("user-note").value,  
+    "color"   :  '#' + colorData .slice(4,-1).split(',').map(x => (+x).toString(16).padStart(2,0)).join('')
   } 
   if(ArchiveData){
     data["isArchived"]= ArchiveData;
   }
-  if(colorData){
-    data["color"] = "";
-  }
+  // if( colorData != ''){   
+  //   data["color"] = Number(colorData).toString(16); 
+  // }
+ 
     makePromiseCall("POST", `${Baseurl}/notes/addNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
@@ -35,7 +37,8 @@ function addArchive() {
 
 //**********change color*********** */
 
-function addColor() {
+function addColor(id) {
+  
   document.querySelectorAll(".color-palette div").forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelectorAll(".color-palette div").forEach((element) => {
@@ -48,17 +51,14 @@ function addColor() {
     document.getElementById("notes-text").style.backgroundColor = window
     .getComputedStyle(element, null)
     .getPropertyValue("background-color");
-   
-
-
-
-    var changecolor = document.getElementById("notes-color").style.backgroundColor;
+    document.getElementById("display-buttons").style.backgroundColor = window
+    .getComputedStyle(element, null)
+    .getPropertyValue("background-color"); 
+    let changeColor = document.getElementById("notes-color").style.backgroundColor;
     let data = {
-      "noteId": [id]
-    }
-      if(changecolor){
-        data["color"] = changecolor;
-      }    
+      "noteIdList": [id],
+      "color"  : '#' + changeColor .slice(4,-1).split(',').map(x => (+x).toString(16).padStart(2,0)).join('')
+    }         
   makePromiseCall("POST", `${Baseurl}/notes/changesColorNotes`, true, data,true)
     .then((res) => {
   console.log(res.data);

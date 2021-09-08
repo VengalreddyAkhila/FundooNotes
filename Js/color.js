@@ -1,44 +1,5 @@
 //*********************color-pallet***********************
 
-    // Select clicked color
-//     element.classList.add("selected-color");
-//     document.getElementById("note-title").style.backgroundColor = window
-//       .getComputedStyle(element, null)
-//       .getPropertyValue("background-color");
-
-//     element.classList.add("selected-color");
-//     document.getElementById("note-text").style.backgroundColor = window
-//       .getComputedStyle(element, null)
-//       .getPropertyValue("background-color")
-
-//       element.classList.add("selected-color");
-//       document.getElementById("form-buttons").style.backgroundColor = window
-//         .getComputedStyle(element, null)
-//         .getPropertyValue("background-color")
-
-//         element.classList.add("selected-color");
-//         document.getElementById("form-container").style.backgroundColor = window
-//           .getComputedStyle(element, null)
-//           .getPropertyValue("background-color")
-        
-//           element.classList.add("selected-color");
-//         document.getElementById("form-close-button").style.backgroundColor = window
-//           .getComputedStyle(element, null)
-//           .getPropertyValue("background-color")         
-          
-//   });
-// });
-
-
-
-
-
-
-
-
-
-
-
 document.querySelectorAll(".color-palette div").forEach((element) => {
   element.addEventListener("click", () => {
     document.querySelectorAll(".color-palette div").forEach((element) => {

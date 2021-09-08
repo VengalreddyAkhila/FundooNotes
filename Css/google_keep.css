@@ -44,8 +44,8 @@ width: 100%;
 #main {
 transition: margin-left .5s;
 padding: 10px;
-width: 95%;
-
+width: 100%;
+margin-left: 5%;
 transform: translate(20px,-500px);
 }
 
@@ -248,7 +248,7 @@ opacity: 0.71;
 .sub-buttons .material-icons-outlined{
 color: #202124;
 opacity: 0.71;
-padding-top: 6px;
+padding-top: 10px;
 }
 
 .Div2-contents h1 {
