@@ -46,11 +46,12 @@ function FormOpen(i){
   //*************** update note section**************
   
   function Update_Notes(i) {
-   
+    let changeColor = document.getElementById("notes-color").style.backgroundColor;
     let data = {
-    
+      
     "title" : document.getElementById("popup-title").value,
     "description" : document.getElementById("popup-description").value,
+    "color": '#' + changeColor.slice(4, -1).split(',').map(x => (+x).toString(16).padStart(2, 0)).join(''),
     "noteId": i
     }
     console.log(data)  
@@ -65,7 +66,7 @@ function FormOpen(i){
   
 }
 
-
+//***************TreashNote********************** */
 
 function trashNote(id) {
  

@@ -38,10 +38,8 @@ document.querySelectorAll(".color-palette div").forEach((element) => {
 
     document.getElementById("popup").style.backgroundColor = window
       .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
+      .getPropertyValue("background-color"); 
 
-      document.getElementById("popup-close").style.backgroundColor = window
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
+   
   });
 });
