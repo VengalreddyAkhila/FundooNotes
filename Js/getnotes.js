@@ -35,7 +35,6 @@ function NavbarArchive() {
     .catch((err) => {
       console.log(err);
     })
-
 }
 
 //********************NavbarTrash*************************** */
@@ -51,6 +50,7 @@ function NavbarTrash() {
     .catch((err) => {
       console.log(err);
     })
+    GetNotes();
 }
 
 
@@ -64,8 +64,10 @@ function notesContent(notesList) {
                             <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
         `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
         `</li>` +
+       
         `<li style="list-style-type:none">` +
         `</li>` +
+   
         `</div>  
                  
                    <div class="sub-buttons" id="display-buttons" >

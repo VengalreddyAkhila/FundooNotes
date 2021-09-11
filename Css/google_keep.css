@@ -688,7 +688,7 @@ background-color: rgba(0,0,0,0.07);;
     width: 120%;
   }
   .notes{
-    width: 22%;
+    width: 28%;
   }
 }
 @media screen and (max-width:900px){
@@ -699,7 +699,7 @@ background-color: rgba(0,0,0,0.07);;
       width: 100%;
     }
     .notes{
-      width: 27%;
+      width: 32%;
     }
     #main{
   
@@ -719,18 +719,17 @@ background-color: rgba(0,0,0,0.07);;
 }
 
  @media screen and (max-width:600px){
-   .notes{
-     width: 32%;
-   }
+   
    .main-section{
     width: 120%;
   }
    
  }
- @media screen  and (max-width:400px){
+ @media screen  and (max-width:500px){
    .notes{
-     width: 42%;
+     width: 62%;
    }
+  
  }
 
   

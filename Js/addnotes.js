@@ -30,12 +30,13 @@ function addNote() {
 };
 function closeNote(){
   document.getElementById("toggle").value = "";
- document.getElementById("user-note").value = "";
+ document.getElementById("user-note").value = ""; 
 
   $(".note-section-toggle").attr('placeholder', 'Take a note...');
   $(".main-section").css('height', '45px'); 
   $(".user-note").css('display', 'none');
   $(".icons").css('display', 'none');
+  $("#color-palette").css('display','none');
  
   
 
