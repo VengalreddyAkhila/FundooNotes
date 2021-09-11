@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/google_keep.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../css/dashboardnew.css">
 </head>
 <body>
@@ -20,6 +21,8 @@
     </div>
     <div class="subnav-two">
         <input class="searchBar" type="text" name="search" placeholder="Search">
+        <button class="subnav-three" onclick="Profile()"><img src="../Assests/avtarimg.png" alt="Avatar"
+          class="avatar"></button>
     </div>
      <!-- <div class="header-icons">
         <button class="refresh">
@@ -51,9 +54,12 @@
             class="drawer-span">Remainder</span></div>
     <div class="label drawer"><img src="../Assests/editlabels.svg" alt=""><span class="drawer-span">Edit
             labels</span></div>
-    <div class="archive drawer"><img src="../Assests/archive.svg" alt=""><span class="drawer-span">Archives</span>
-    </div>
-    <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span">Bin</span></div>
+    <button onclick="NavbarArchive ()" style="background: transparent;border: none;">
+    <div class="archive drawer"><img src="../Assests/archive.svg" alt=""><span class="drawer-span" >Archives</span>
+    </div></button>
+    <button onclick="NavbarTrash()"  style="background: transparent;border: none;" >
+    <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span" >Bin</span></div>
+    </button>
 </div>
 
   <!-- Note section -->
@@ -68,7 +74,7 @@
               <input class="user-note" type="text" id="user-note" placeholder="Take a note..." autocomplete="off"> </input>
               <div class="addnote-collab" id="addnote-collab-h"></div>
              <!-- note-icons -->
-              <div id="icons"></div>
+              <div class="icons" id="icons"></div>
               
             </div>
           </div>
@@ -91,8 +97,8 @@
         <span class="material-icons-outlined">
           person_add_alt
         </span>
-        <div class="btn-group dropup" id="color-palette-dropdown">
-          <button type="button" id="btn-colors" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="btn-group dropup" id="color-palette-dropdown" style="background: transparent;border: none;">
+          <button type="button" id="display-color" onclick="displayColor(id)" class="btn btn-secondary-color dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="material-icons-outlined">
               palette
           </span>
@@ -115,14 +121,18 @@
         <span class="material-icons-outlined">
           photo
         </span>
+        <button  class="archive-btn" id="archive-btn" onclick="displayArchive(id)" style="background: transparent;border: none;">
         <span class="material-icons-outlined">
           archive
         </span>  
+        </button>
+        <button class="trash-btn" id="trash-btn" onclick="displayTrash(id)" style="background: transparent;border: none;">
         <span class="material-icons-outlined">
           more_vert
         </span> 
-        <span class="popup-close-container" id="popup-close-container">
-          <button class="popup-close" id="popup-close" onclick="Update_Notes(id), FormClose();" >close
+        </button>
+        <span class="popup-close-container" id="popup-close-container" >
+          <button class="popup-close" id="popup-close" style="background: transparent;border: none;" onclick="Update_Notes(id), FormClose();" >close
           </button>
         </span>
       </span>

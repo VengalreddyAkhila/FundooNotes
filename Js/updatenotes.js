@@ -46,12 +46,10 @@ function FormOpen(i){
   //*************** update note section**************
   
   function Update_Notes(i) {
-    let changeColor = document.getElementById("notes-color").style.backgroundColor;
     let data = {
       
     "title" : document.getElementById("popup-title").value,
     "description" : document.getElementById("popup-description").value,
-    "color": '#' + changeColor.slice(4, -1).split(',').map(x => (+x).toString(16).padStart(2, 0)).join(''),
     "noteId": i
     }
     console.log(data)  
@@ -83,3 +81,53 @@ function trashNote(id) {
           console.log(err);
               })
   }
+
+
+  function displayArchive(id){
+    let data = {
+      "noteIdList":[id], 
+      "isArchived": true
+      };    
+      makePromiseCall("POST", `${Baseurl}/notes/archiveNotes`, true, data,true)
+        .then((res) => {
+          console.log((res).data);
+          GetNotes();
+    })
+    .catch((err) => {
+      console.log(err);
+          })
+  }
+
+  
+function displayTrash(id) {
+ 
+  let data = {
+    "noteIdList": [id],
+    "isDeleted": true
+  } 
+    makePromiseCall("POST", `${Baseurl}/notes/trashNotes`, true, data,true)
+      .then((res) => {
+        console.log(res.data);
+        GetNotes();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+}
+
+function displayColor(id){
+ 
+  let changeColor = document.getElementById("popup").style.backgroundColor;
+      let data = {
+        "noteIdList": [id],
+        "color": '#' + changeColor.slice(4, -1).split(',').map(x => (+x).toString(16).padStart(2, 0)).join('')
+      }
+      makePromiseCall("POST", `${Baseurl}/notes/changesColorNotes`, true, data, true)
+        .then((res) => {
+          console.log(res.data);
+          GetNotes();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+}

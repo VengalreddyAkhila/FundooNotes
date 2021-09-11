@@ -8,8 +8,8 @@ function openDrawer() {
         $(".drawer").css("border-radius", "0px 25px 25px 0px");
         $(".drawer-span").css("display", "flex");
         $(".drawer-span").css("margin-left", "40px");
-        $(".add-note").css("left", "35%");
-        $("#card").css("left", "25%");
+        $("#main").css("left", "35%");
+        $(".icons").css("left", "25%");
     }
     else {
         flag = true;
@@ -17,8 +17,8 @@ function openDrawer() {
         $(".drawer").css("border-radius", "50%");
         $(".myDrawer").css("width", "65px");
         $(".drawer-span").css("display", "none");
-        $(".add-note").css("left", "22%");
-        $("#card").css("left", "20%");
+        $("#main").css("left", "22%");
+        $(".icons").css("left", "20%");
     }
 }
 

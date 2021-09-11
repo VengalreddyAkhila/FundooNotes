@@ -17,10 +17,10 @@ function addNote() {
   if (colorData != '') {
     data["color"] = '#' + colorData.slice(4, -1).split(',').map(x => (+x).toString(16).padStart(2, 0)).join('')
   }
-
   makePromiseCall("POST", `${Baseurl}/notes/addNotes`, true, data, true)
     .then((res) => {
       console.log(res.data);
+      closeNote();
       GetNotes();
     })
     .catch((err) => {
@@ -28,7 +28,18 @@ function addNote() {
     })
 
 };
+function closeNote(){
+  document.getElementById("toggle").value = "";
+ document.getElementById("user-note").value = "";
 
+  $(".note-section-toggle").attr('placeholder', 'Take a note...');
+  $(".main-section").css('height', '45px'); 
+  $(".user-note").css('display', 'none');
+  $(".icons").css('display', 'none');
+ 
+  
+
+}
 //*********Archive ************* */
 
 function addArchive() {

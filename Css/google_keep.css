@@ -167,6 +167,7 @@ flex-direction: row;
 flex-wrap: wrap;
 margin: 10px;
 justify-content: space-between;
+transition-duration: 0.218s;
 }
 
 .item-list {
@@ -174,7 +175,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 padding-top: 50px;
-width: 100%;
+width: 110%;
 position: relative;
 margin-left: 50px;
 }
@@ -567,6 +568,7 @@ bottom:0px;
 left:0px;
 right:0px;
 z-index:100;
+width: 120%;
 }
 
 .popup{
@@ -675,23 +677,57 @@ background-color: rgba(0,0,0,0.07);;
   height: 80.1px;
   border-radius: 10px;
 }
-@media screen and (max-width:900px){
-  .item-list{
-    width: 150%;
-  }
-    .note-section {
-      width: 130%;
-    }
-    
-}
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-  
+@media screen and (max-width:1100px){
+  .note-section{
+    width: 120%;
+  }
+  .notes{
+    width: 22%;
+  }
+}
+@media screen and (max-width:900px){
+  .item-list{
+    width: 150%;
+  }
+    .note-section {
+      width: 180%;
+    }
+    .notes{
+      width: 27%;
+    }
+}
+@media screen and (max-width:800px){
+  .main-section{
+    width: 150%;
+  }
+  .note-section{
+    width: 150%;
+  }
+  .note{
+    padding-left: 50px;
+  }
+}
 
- 
+ @media screen and (max-width:600px){
+   .notes{
+     width: 32%;
+   }
+   .main-section{
+    width: 120%;
+  }
+   
+ }
+ @media screen  and (max-width:400px){
+   .notes{
+     width: 42%;
+   }
+ }
 
   
   
