@@ -8,7 +8,7 @@ function openDrawer() {
         $(".drawer").css("border-radius", "0px 25px 25px 0px");
         $(".drawer-span").css("display", "flex");
         $(".drawer-span").css("margin-left", "40px");
-        $(".main-section").css("left", "35%");
+        $(".main-section").css("left", "45%");
         $(".item-list").css("left", "15%");
     }
     else {

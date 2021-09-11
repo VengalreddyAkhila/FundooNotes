@@ -31,16 +31,17 @@ pwd.addEventListener("input", function () {
 });
 
 const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
-function next () {
-    window.location.href="http://localhost:5500/pages/googlekeep.html";  
+function next () { 
  let data = {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-    makePromiseCall("POST","Baseurl/user/login",true,data)
+    makePromiseCall("POST",`${Baseurl}/user/login`,true,data)
     .then((Response) => {
         console.log(JSON.parse(Response).id);
+        window.location.href="http://localhost:5500/pages/googlekeep.html";
         localStorage.setItem("token",JSON.parse(Response).id);
+       
     })
     .catch()
     console.log("error");

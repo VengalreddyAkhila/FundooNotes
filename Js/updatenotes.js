@@ -16,6 +16,9 @@ function FormOpen(i){
   console.log(selectedItem.id);
   document.getElementById("popup-inner-content").innerHTML = nHTML; 
   document.getElementById("popup-close").id = selectedItem.id;
+  document.getElementById("display-color").id = selectedItem.id;
+  document.getElementById("archive-btn").id = selectedItem.id;
+  document.getElementById("trash-btn").id = selectedItem.id;
   document.getElementById("popup").style.backgroundColor = selectedItem.color;
 }
   
@@ -83,6 +86,7 @@ function trashNote(id) {
   }
 
 /****************Archive in Update section*************** */
+
   function displayArchive(id){
     let data = {   
       "isArchived": true,
@@ -91,7 +95,7 @@ function trashNote(id) {
       makePromiseCall("POST", `${Baseurl}/notes/archiveNotes`, true, data,true)
         .then((res) => {
           console.log((res).data);
-          GetNotes();
+          
     })
     .catch((err) => {
       console.log(err);
@@ -110,7 +114,7 @@ function displayTrash(id) {
     makePromiseCall("POST", `${Baseurl}/notes/trashNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
-        GetNotes();
+       
       })
       .catch((err) => {
         console.log(err);
@@ -129,8 +133,7 @@ function displayColor(id){
       makePromiseCall("POST", `${Baseurl}/notes/changesColorNotes`, true, data, true)
         .then((res) => {
           console.log(res.data);
-          Update_Notes();
-          GetNotes();
+          Update_Notes();         
         })
         .catch((err) => {
           console.log(err);
