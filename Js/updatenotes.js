@@ -64,7 +64,7 @@ function FormOpen(i){
   
 }
 
-//***************TreashNote********************** */
+//***************TrashNote in display note section********************** */
 
 function trashNote(id) {
  
@@ -82,7 +82,7 @@ function trashNote(id) {
               })
   }
 
-
+/****************Archive in Update section*************** */
   function displayArchive(id){
     let data = {
       "noteIdList":[id], 
@@ -98,7 +98,8 @@ function trashNote(id) {
           })
   }
 
-  
+/******************trash in Update section*************************************** */  
+
 function displayTrash(id) {
  
   let data = {
@@ -115,6 +116,8 @@ function displayTrash(id) {
       })
 }
 
+/***********************color in update section*********************************88  */
+
 function displayColor(id){
  
   let changeColor = document.getElementById("popup").style.backgroundColor;
@@ -125,6 +128,7 @@ function displayColor(id){
       makePromiseCall("POST", `${Baseurl}/notes/changesColorNotes`, true, data, true)
         .then((res) => {
           console.log(res.data);
+          Update_Notes();
           GetNotes();
         })
         .catch((err) => {

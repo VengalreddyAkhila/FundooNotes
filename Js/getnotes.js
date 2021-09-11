@@ -26,7 +26,11 @@ function NavbarArchive() {
     .then(res => {
       console.log(JSON.parse(res).data.data);
       notesList = JSON.parse(res).data.data;
-      notesContent(notesList,"NavbarArchive");
+      let dataObj = notesList;
+      let archNote = dataObj.filter(
+        (i) => (i.isArchived) === true
+      );
+      notesContent(archNote);
     })
     .catch((err) => {
       console.log(err);
@@ -41,7 +45,7 @@ function NavbarTrash() {
     .then(res => {
       console.log(JSON.parse(res).data.data);
       notesList = JSON.parse(res).data.data;
-      notesContent(notesList,"NavbarTrash");
+      notesContent(notesList);
 
     })
     .catch((err) => {
@@ -50,7 +54,7 @@ function NavbarTrash() {
 }
 
 
-function notesContent(notesList, notestring) {
+function notesContent(notesList) {
   var nHTML = '';
   for (let i = 0; i < notesList.length; i++) {
     if (notesList[i].isDeleted != true && notesList[i].isArchived != true) {
@@ -64,7 +68,7 @@ function notesContent(notesList, notestring) {
         `</li>` +
         `</div>  
                  
-                 nHtml +=   <div class="sub-buttons" id="display-buttons" >
+                   <div class="sub-buttons" id="display-buttons" >
                             <span class="material-icons-outlined">
                               add_alert
                             </span>                             

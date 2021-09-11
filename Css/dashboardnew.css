@@ -181,8 +181,15 @@ body {
     }
   
     .subnav-two {
-      margin-right: 20%;
-      width: 55%;
+
+           width: 65%;
+    }
+    .subnav-three{
+      margin-left: 20%;
+    }
+    .navbar{
+    
+      width: 110%;
     }
     
   }

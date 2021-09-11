@@ -693,18 +693,22 @@ background-color: rgba(0,0,0,0.07);;
 }
 @media screen and (max-width:900px){
   .item-list{
-    width: 150%;
+    width: 100%;
   }
     .note-section {
-      width: 180%;
+      width: 100%;
     }
     .notes{
       width: 27%;
     }
+    #main{
+  
+      width: 100%;
+    }
 }
 @media screen and (max-width:800px){
   .main-section{
-    width: 150%;
+    width: 100%;
   }
   .note-section{
     width: 150%;
