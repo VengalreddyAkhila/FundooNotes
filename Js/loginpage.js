@@ -32,7 +32,7 @@ pwd.addEventListener("input", function () {
 
 const Baseurl =  "http://fundoonotes.incubation.bridgelabz.com/api";
 function next () {
-   
+    window.location.href="http://localhost:5500/pages/googlekeep.html";  
  let data = {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,

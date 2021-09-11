@@ -131,6 +131,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
     });
 
      function next () {
+        window.location.href="http://localhost:5500/pages/loginpage.html"; 
          let data={
              "firstName" : document.getElementById("first_name").value,
              "lastName" : document.getElementById("last_name").value,
