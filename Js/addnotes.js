@@ -9,6 +9,7 @@ function addNote() {
   let data = {
     "title": document.getElementById("toggle").value,
     "description": document.getElementById("user-note").value,
+    "collaberators" : [collabList[0]]
 
   }
   if (ArchiveData) {

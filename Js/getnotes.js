@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   GetNotes();
 });
-
+let collabList=[];
+let searchResults=[];
+let displayColabList=[];
 let notesList = [];
 function GetNotes() {
   // let data = {}
@@ -12,13 +14,17 @@ function GetNotes() {
       notesList = JSON.parse(res).data.data;
       for (let i = 0; i < notesList.length; i++) {
         if (notesList[i].isDeleted == false && notesList[i].isArchived == false) {
+          let colString ="";
+          for(let j=0; j<notesList[i].collaborators.length; j++){
+            colString += notesList[i].collaborators[i].email, " ,";
+          }
           nHTML += `<div class="notes" id="notes-text">
                           <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
                             <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
                               <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
             `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
             `</li>` +
-            `<li style="list-style-type:none">` +
+            `<li style="list-style-type:none">` + colString +
             `</li>` +
             `</div>  
                             <div class="sub-buttons" id="display-buttons">

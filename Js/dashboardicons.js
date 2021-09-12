@@ -4,7 +4,7 @@ document.getElementById("icons").innerHTML =`
     <span class="material-icons-outlined">
         add_alert
     </span>
-    <button id="Button1" class="collaborator-button" value="Click" />
+    <button id="Button1" class="collaborator-button" value="Click" onclick="opencollab()"/>
         <span class="material-icons-outlined">
             person_add_alt
         </span>
@@ -43,7 +43,7 @@ document.getElementById("icons").innerHTML =`
         more_vert
     </span>
     <span class="note-closing">
-    <input type="button" class="note" id="note-close" value="close" onclick="addNote()" />
+    <input type="button" class="note" id="note-close" value="close" onclick="addNote(),getEmail();" />
     </span>
 `
 
