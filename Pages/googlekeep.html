@@ -87,24 +87,16 @@
         <div class="Div2-contents">
           <h1>Collaborators</h1>       
                  
-           <div class="default-email-container">
+           <div class="default-email-container" id="owneremail">
             <div class="default-email" id="default-email" ></div> 
-          </div>
-             
-           <div class="collab-email" id="collab-email" ></div>
-
+          </div>      
           <div class="collab-dropdown">
             <div class="dropdown">
               <i class="fa fa-user-plus" aria-hidden="true"></i> 
-              <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="search-email" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="search()">          
-              </input>
-              <button type="button" id="add-collab" class="add-collab" >
-                <i class="fa fa-check" aria-hidden="true"></i>
-                </button> 
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">                
-                <div id="colab-list" class="collab-list">
-                </div>
-              </ul>
+              <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
+              </input>              
+             <ul class="dropdown-menu dropdown-menu-dark"  id="mail-list" aria-labelledby="dropdownMenuButton2">           
+            </ul>
             </div>            
           </div>  
 

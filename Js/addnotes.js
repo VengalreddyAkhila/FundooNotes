@@ -2,14 +2,12 @@
 
 const Baseurl = "http://fundoonotes.incubation.bridgelabz.com/api";
 var ArchiveData = "";
-
 function addNote() {
-
   let colorData = document.getElementById("note-section").style.backgroundColor;
   let data = {
     "title": document.getElementById("toggle").value,
-    "description": document.getElementById("user-note").value
-
+    "description": document.getElementById("user-note").value,
+    "collaberators": []
 
   }
   if (ArchiveData) {
@@ -38,7 +36,7 @@ function closeNote(){
   $(".main-section").css('height', '45px'); 
   $(".user-note").css('display', 'none');
   $(".icons").css('display', 'none');
-  $(".icons").css('display','none');
+
  
   
 

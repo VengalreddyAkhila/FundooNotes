@@ -29,17 +29,6 @@ var navState=0;
 toggle.addEventListener("click", function() {
     content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
 });
-function openNav() {
-    console.log(document.getElementById("mySidenav").style.width)
-      document.getElementById("mySidenav").style.width =document.getElementById("mySidenav").style.width==="250px"?"0px":"250px";
-      document.getElementById("main").style.marginLeft =document.getElementById("main").style.marginLeft==="250px"?"0px":"250px";
-  
-    }
-    
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
 
-    }
 
   

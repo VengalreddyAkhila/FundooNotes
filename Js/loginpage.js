@@ -43,7 +43,6 @@ function next () {
         localStorage.setItem("token",JSON.parse(Response).id);
         localStorage.getItem('firstname',JSON.parse(Response).id);
         localStorage.getItem('lastname',JSON.parse(Response).id);
-       
     })
     .catch()
     console.log("error");
