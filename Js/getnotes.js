@@ -1,12 +1,8 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   GetNotes();
 });
-let collabList=[];
-let searchResults=[];
-let displayColabList=[];
 let notesList = [];
 function GetNotes() {
-  // let data = {}
   makePromiseCall("GET", `${Baseurl}/notes/getNotesList`, true, {}, true)
     .then(res => {
       console.log(JSON.parse(res).data.data);
@@ -14,24 +10,21 @@ function GetNotes() {
       notesList = JSON.parse(res).data.data;
       for (let i = 0; i < notesList.length; i++) {
         if (notesList[i].isDeleted == false && notesList[i].isArchived == false) {
-          let colString ="";
-          for(let j=0; j<notesList[i].collaborators.length; j++){
-            colString += notesList[i].collaborators[i].email, " ,";
-          }
+        
           nHTML += `<div class="notes" id="notes-text">
                           <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
                             <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
                               <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
             `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
             `</li>` +
-            `<li style="list-style-type:none">` + colString +
+            `<li style="list-style-type:none">` +
             `</li>` +
             `</div>  
                             <div class="sub-buttons" id="display-buttons">
                               <span class="material-icons-outlined">
                                 add_alert
                               </span>
-                              <button id="Button1" class="collaborator-button" style="background-color:`+ notesList[i].color + `" value="Click" >
+                              <button id="Button1" class="collaborator-button" value="Click" >
                               </span>                             
                               <span class="material-icons-outlined">
                                 person_add_alt
@@ -39,7 +32,7 @@ function GetNotes() {
                               </button>
                               </span>                             
                               <div class="btn-group dropup" id="color-palette-dropdown">
-                                <button type="button" id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `" onclick="addColor()" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `" onclick="addColor(id)" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                   <span class="material-icons-outlined">
                                     palette
                                   </span>
@@ -94,10 +87,10 @@ function NavbarArchive() {
     .then(res => {
       console.log(JSON.parse(res).data.data);
       notesList = JSON.parse(res).data.data;
-      let dataObj = notesList;
-      let archNote = dataObj.filter(
-        (i) => (i.isArchived) === true
-      );
+       let dataObj = notesList;
+       let archNote = dataObj.filter(
+         (i) => (i.isArchived) === true
+       );
       notesContent(archNote);
     })
     .catch((err) => {
@@ -117,7 +110,7 @@ function NavbarTrash() {
         //if( notesList[i].isDeleted == false &&  notesList[i].isArchived == false) {              
         nHTML += `<div class="notes" id="notes-text">
                        <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
-                         <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
+                         <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` >
                            <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
           `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
           `</li>` +
@@ -155,7 +148,7 @@ function notesContent(notesList) {
     // if (notesList[i].isDeleted != true && notesList[i].isArchived != true) {
     nHTML += `<div class="notes" id="notes-text">
                         <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
-                          <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
+                          <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + `>
                             <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
       `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
       `</li>` +
@@ -173,7 +166,7 @@ function notesContent(notesList) {
                               person_add_alt
                             </span>                             
                             <div class="btn-group dropup" id="color-palette-dropdown">
-                              <button type="button" id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `" onclick="addColor(id)" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <button type="button" id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `"  class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="material-icons-outlined">
                                   palette
                                 </span>

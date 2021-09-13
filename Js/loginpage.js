@@ -41,7 +41,8 @@ function next () {
         console.log(JSON.parse(Response).id);
         window.location.href="http://localhost:5500/pages/googlekeep.html";
         localStorage.setItem("token",JSON.parse(Response).id);
-        localStorage.getItem("token",JSON.parse(Response).id);
+        localStorage.getItem('firstname',JSON.parse(Response).id);
+        localStorage.getItem('lastname',JSON.parse(Response).id);
        
     })
     .catch()

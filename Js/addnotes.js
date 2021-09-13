@@ -8,8 +8,8 @@ function addNote() {
   let colorData = document.getElementById("note-section").style.backgroundColor;
   let data = {
     "title": document.getElementById("toggle").value,
-    "description": document.getElementById("user-note").value,
-    "collaberators" : [collabList[0]]
+    "description": document.getElementById("user-note").value
+
 
   }
   if (ArchiveData) {
@@ -32,12 +32,13 @@ function addNote() {
 function closeNote(){
   document.getElementById("toggle").value = "";
  document.getElementById("user-note").value = ""; 
+ document.getElementById("Div1").style.backgroundColor = "";
 
   $(".note-section-toggle").attr('placeholder', 'Take a note...');
   $(".main-section").css('height', '45px'); 
   $(".user-note").css('display', 'none');
   $(".icons").css('display', 'none');
-  $("#color-palette").css('display','none');
+  $(".icons").css('display','none');
  
   
 
@@ -51,7 +52,7 @@ function addArchive() {
 //**********change color*********** */
 
 function addColor(id) {
-
+ console.log(id);
   document.querySelectorAll(".color-palette div").forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelectorAll(".color-palette div").forEach((element) => {
@@ -76,17 +77,17 @@ function addColor(id) {
         document.getElementById("btn-colors").style.backgroundColor = window
         .getComputedStyle(element, null)
         .getPropertyValue("background-color");
-        document.getElementById("popup-close-container").style.backgroundColor = window
+        // document.getElementById("popup-close-container").style.backgroundColor = window
+        // .getComputedStyle(element, null)
+        // .getPropertyValue("background-color");
+
+      document.getElementById("update-title").style.backgroundColor = window
         .getComputedStyle(element, null)
         .getPropertyValue("background-color");
 
-      // document.getElementById("update-title").style.backgroundColor = window
-      //   .getComputedStyle(element, null)
-      //   .getPropertyValue("background-color");
-
-      // document.getElementById("update-note").style.backgroundColor = window
-      //   .getComputedStyle(element, null)
-      //   .getPropertyValue("background-color");
+      document.getElementById("update-note").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
       
 
 

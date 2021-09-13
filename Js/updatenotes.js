@@ -6,19 +6,57 @@ function FormOpen(i){
   document.getElementById("overlay").style.display="block";
   var nHTML = '';
   nHTML += `                                                           
-           <input type="text" placeholder="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
+           <input type="text" value="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
           `</input>` + 
-          `<input type="text" placeholder="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
-          `</input>` +       
-    `
-                  
-  `
+          `<input type="text" value="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
+          `</input>` + `
+ <span class="material-icons-outlined">
+  add_alert
+</span>
+<span class="material-icons-outlined">
+  person_add_alt
+</span>
+<div class="btn-group dropup" id="color-palette-dropdown" >
+  <button type="button" id="display-color" style="background: transparent;border: none;" onclick="displayColor('`+ selectedItem.id + `')" class="btn btn-secondary-color dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <span class="material-icons-outlined">
+      palette
+  </span>
+  </button>
+  <div class="color-palette dropdown-menu" id ="color-palette">
+      <div class="bg-white circled"></div>
+      <div class="bg-red"></div>
+      <div class="bg-orange"></div>
+      <div class="bg-yellow"></div>
+      <div class="bg-green"></div>
+      <div class="bg-turquoise"></div>
+      <div class="bg-blue"></div>
+      <div class="bg-dark-blue"></div>
+      <div class="bg-purple"></div>
+      <div class="bg-pink"></div>
+      <div class="bg-brown"></div>
+      <div class="bg-grey"></div>
+  </div>
+</div>
+<span class="material-icons-outlined">
+  photo
+</span>
+<button  class="archive-btn" id="archive-btn" onclick="displayArchive('`+ selectedItem.id + `')" style="background: transparent;border: none;">
+<span class="material-icons-outlined">
+  archive
+</span>  
+</button>
+<button class="trash-btn" id= "trash-btn" onclick="displayTrash('`+ selectedItem.id + `')" style="background: transparent;border: none;">
+<span class="material-icons-outlined">
+  more_vert
+</span> 
+</button>
+<span class="popup-close-container" id="popup-close-container" >
+  <button class="popup-close" id="popup-close" style="background: transparent;border: none;" onclick="Update_Notes('`+ selectedItem.id + `')" >close
+  </button>
+</span>
+</span>`
   console.log(selectedItem.id);
   document.getElementById("popup-inner-content").innerHTML = nHTML; 
-  document.getElementById("popup-close").id = selectedItem.id;
-  document.getElementById("display-color").id = selectedItem.id;
-  document.getElementById("archive-btn").id = selectedItem.id;
-  document.getElementById("trash-btn").id = selectedItem.id;
   document.getElementById("popup").style.backgroundColor = selectedItem.color;
 }
   
@@ -48,7 +86,8 @@ function FormOpen(i){
       }
   //*************** update note section**************
   
-  function Update_Notes(i) {
+  function Update_Notes(i) {   
+  
     let data = {
       
     "title" : document.getElementById("popup-title").value,
@@ -59,12 +98,14 @@ function FormOpen(i){
     makePromiseCall("POST", `${Baseurl}/notes/updateNotes`, true, data,true)
       .then((res) => {
         console.log(res.data);
+        FormClose();
         GetNotes();
+
       })
       .catch((err) => {
         console.log(err);
             })
-  
+ 
 }
 
 //***************TrashNote in display note section********************** */
@@ -124,6 +165,42 @@ function displayTrash(id) {
 /***********************color in update section*********************************88  */
 
 function displayColor(id){
+  console.log(id) ;
+  document.querySelectorAll(".color-palette div").forEach((element) => {
+    element.addEventListener("click", () => {
+      document.querySelectorAll(".color-palette div").forEach((element) => {
+        element.classList.remove("selected-color");
+      });
+      element.classList.add("selected-color");
+      document.getElementById("notes-color").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
+      document.getElementById("notes-text").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
+      document.getElementById("display-buttons").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
+      document.getElementById("color-palette-dropdown").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+        document.getElementById("btn-colors").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+        document.getElementById("popup").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
+      document.getElementById("update-title").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
+      document.getElementById("update-note").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
  
   let changeColor = document.getElementById("popup").style.backgroundColor;
       let data = {
@@ -132,10 +209,12 @@ function displayColor(id){
       }
       makePromiseCall("POST", `${Baseurl}/notes/changesColorNotes`, true, data, true)
         .then((res) => {
-          console.log(res.data);
-          Update_Notes();         
+          console.log(res.data);      
         })
         .catch((err) => {
           console.log(err);
         })
+      });
+    });
+      
 }
