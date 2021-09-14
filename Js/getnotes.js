@@ -24,7 +24,7 @@ function GetNotes() {
                               <span class="material-icons-outlined">
                                 add_alert
                               </span>
-                              <button id="Button1" class="collaborator-button" value="Click" >
+                              <button id="Button1" class="collaborator-button"   style="background: transparent;border: none;"  value="Click" onclick="opendisplaycollab()">
                               </span>                             
                               <span class="material-icons-outlined">
                                 person_add_alt

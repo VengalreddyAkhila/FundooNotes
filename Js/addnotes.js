@@ -2,13 +2,17 @@
 
 const Baseurl = "http://fundoonotes.incubation.bridgelabz.com/api";
 var ArchiveData = "";
+let collabList = [];
+
 function addNote() {
+  console.log(collabList);
   let colorData = document.getElementById("note-section").style.backgroundColor;
   let data = {
     "title": document.getElementById("toggle").value,
-    "description": document.getElementById("user-note").value,
-    "collaberators": []
-
+    "description": document.getElementById("user-note").value
+  }
+  if(collabList.length > 0){
+    data["collaberators"] = JSON.stringify[collabList]
   }
   if (ArchiveData) {
     data["isArchived"] = ArchiveData;

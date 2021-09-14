@@ -89,13 +89,15 @@
                  
            <div class="default-email-container" id="owneremail">
             <div class="default-email" id="default-email" ></div> 
-          </div>      
+          </div>    
+          <div class="collab-email" id="collab-email" ></div>  
           <div class="collab-dropdown">
             <div class="dropdown">
               <i class="fa fa-user-plus" aria-hidden="true"></i> 
               <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
-              </input>              
-             <ul class="dropdown-menu dropdown-menu-dark"  id="mail-list" aria-labelledby="dropdownMenuButton2">           
+              </input>      
+                  
+             <ul class="dropdown-menu dropdown-menu-dark"  id="collab-list" aria-labelledby="dropdownMenuButton2">           
             </ul>
             </div>            
           </div>  
@@ -104,7 +106,7 @@
               <div class="btn-group me-2" role="group" aria-label="First group">
                 <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
                 <div class="btn">                
-                  <button type="button" class="btn btn-primary"   onclick="addnote()">Save</button>
+                  <button type="button" class="btn btn-primary"   onclick="addNote()">Save</button>
                 </div>
               </div>
             </div>
@@ -116,19 +118,49 @@
       <div id="item-list" class="item-list">          
       </div>     
 
-      <div class="overlay" id="overlay" style="display:none;"></div>
+      <div class="overlay" id="overlay" style="display:none;">
       <div class="popup" id="popup" style="display:none;">
         <div class="popup-inner" id="popup-inner-content">  
         </div>  
           
     </div>
+    </div>
+    <div id="Div3">
+      <div class="Div3-contents">
+        <h1>Collaborators</h1>       
+               
+         <div class="default-email-container" id="owneremail">
+          <div class="default-email" id="default-email" ></div> 
+        </div>    
+        <div class="collab-email" id="collab-email" ></div>  
+        <div class="collab-dropdown">
+          <div class="dropdown">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> 
+            <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
+            </input>      
+                
+           <ul class="dropdown-menu dropdown-menu-dark"  id="mail-list" aria-labelledby="dropdownMenuButton2">           
+          </ul>
+          </div>            
+        </div>  
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
+              <div class="btn">                
+                <button type="button" class="btn btn-primary"   onclick="addnote()">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>  
+        </div>
     <div id="notes"></div>
     <div id="placeholder">
         <img id="placeholder-logo" src="../Assests/bulb.imgh.svg">
         <p id="placeholder-text">Notes you add appear here</p>
     </div>
     
-  </div>     
+  </div>  
   <!-- js section--> 
   <script src="../service/http_service.js"></script>
   <script src="../js/dashboardicons.js"></script>

@@ -10,12 +10,17 @@ function FormOpen(i){
           `</input>` + 
           `<input type="text" value="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
           `</input>` + `
+          
  <span class="material-icons-outlined">
   add_alert
 </span>
+<button id="Button1" class="collaborator-button"  style="background: transparent;border: none;"  value="Click" onclick="opendisplaycollab()">
+</span>                             
 <span class="material-icons-outlined">
   person_add_alt
 </span>
+</button>
+</span> 
 <div class="btn-group dropup" id="color-palette-dropdown" >
   <button type="button" id="display-color" style="background: transparent;border: none;" onclick="displayColor('`+ selectedItem.id + `')" class="btn btn-secondary-color dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
   <span class="material-icons-outlined">
