@@ -12,7 +12,7 @@ function addNote() {
     "description": document.getElementById("user-note").value
   }
   if(collabList.length > 0){
-    data["collaberators"] = JSON.stringify[collabList]
+    data["collaberators"] = [JSON.stringify(collabList)]
   }
   if (ArchiveData) {
     data["isArchived"] = ArchiveData;

@@ -31,7 +31,7 @@ function usersearch(){
     usersearchList = JSON.parse(res).data.details;
     var nHTML = '';
     for(let i=0; i< usersearchList.length; i++) {
-    nHTML += ` <li style="list-style-type:none"><div id=` + usersearchList[i].email+ ` onclick = "selectemail(id)">` + usersearchList[i].email+ `</div> </li>`;
+    nHTML += ` <li style="list-style-type:none"><div id=` + i + ` onclick = "selectemail(id)">` + usersearchList[i].email+ `</div> </li>`;
     }
     document.getElementById("collab-list").innerHTML = nHTML  ;
 
@@ -44,8 +44,9 @@ function usersearch(){
 
 function selectemail(i){
   console.log(i);
-   document.querySelector('#searchemail').value = i ;
-   collabList.push([i])  
+   document.querySelector('#searchemail').value = usersearchList[i].email ;
+   collabList.push(usersearchList[i])
+   console.log(usersearchList[i])
 }
 
 
