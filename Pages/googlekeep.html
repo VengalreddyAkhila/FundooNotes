@@ -74,7 +74,9 @@
             <input class="note-section-toggle" id="toggle" placeholder="Title" autocomplete="off"></input>
             <div id="content"> 
               <input class="user-note" type="text" id="user-note" placeholder="Take a note..." autocomplete="off"> </input>
-              <div class="addnote-collab" id="addnote-collab-h"></div>
+              <div class="collab-avtar">
+                <div class = "collab-avtar-image" id = "collab-avtar-image"></div>
+              </div>
              <!-- note-icons -->
               <div class="icons" id="icons"></div>
               
@@ -88,15 +90,16 @@
           <h1>Collaborators</h1>       
                  
            <div class="default-email-container" id="owneremail">
+        
             <div class="default-email" id="default-email" ></div> 
-          </div>    
-          <div class="collab-email" id="collab-email" ></div>  
+          </div>  
+          
           <div class="collab-dropdown">
             <div class="dropdown">
-              <i class="fa fa-user-plus" aria-hidden="true"></i> 
+              <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
               <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
               </input>      
-                  
+            
              <ul class="dropdown-menu dropdown-menu-dark"  id="collab-list" aria-labelledby="dropdownMenuButton2">           
             </ul>
             </div>            
@@ -106,7 +109,7 @@
               <div class="btn-group me-2" role="group" aria-label="First group">
                 <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
                 <div class="btn">                
-                  <button type="button" class="btn btn-primary"   >Save</button>
+                  <button type="button" class="btn btn-primary" onclick="addCollab()"  >Save</button>
                 </div>
               </div>
             </div>
@@ -121,25 +124,26 @@
       <div class="overlay" id="overlay" style="display:none;">
       <div class="popup" id="popup" style="display:none;">
         <div class="popup-inner" id="popup-inner-content">  
+          
         </div>  
           
-    </div>
     </div>
     <div id="Div3">
       <div class="Div3-contents">
         <h1>Collaborators</h1>       
                
          <div class="default-email-container" id="owneremail">
+      
           <div class="default-email" id="default-email" ></div> 
-        </div>    
-        <div class="collab-email" id="collab-email" ></div>  
+        </div>  
+        
         <div class="collab-dropdown">
           <div class="dropdown">
-            <i class="fa fa-user-plus" aria-hidden="true"></i> 
+            <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
             <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
             </input>      
-                
-           <ul class="dropdown-menu dropdown-menu-dark"  id="mail-list" aria-labelledby="dropdownMenuButton2">           
+          
+           <ul class="dropdown-menu dropdown-menu-dark"  id="collab-list" aria-labelledby="dropdownMenuButton2">           
           </ul>
           </div>            
         </div>  
@@ -148,12 +152,14 @@
             <div class="btn-group me-2" role="group" aria-label="First group">
               <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
               <div class="btn">                
-                <button type="button" class="btn btn-primary"   onclick="addnote()">Save</button>
+                <button type="button" class="btn btn-primary"   >Save</button>
               </div>
             </div>
           </div>
         </div>  
         </div>
+    </div>
+ 
     <div id="notes"></div>
     <div id="placeholder">
         <img id="placeholder-logo" src="../Assests/bulb.imgh.svg">

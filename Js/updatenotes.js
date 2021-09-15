@@ -23,7 +23,7 @@ function FormOpen(i){
 </span> 
 <div class="btn-group dropup" id="color-palette-dropdown" >
   <button type="button" id="display-color" style="background: transparent;border: none;" onclick="displayColor('`+ selectedItem.id + `')" class="btn btn-secondary-color dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-  <span class="material-icons-outlined">
+  <span class="material-icons-outlined" style="padding-top:18px">
       palette
   </span>
   </button>

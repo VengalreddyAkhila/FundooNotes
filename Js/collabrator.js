@@ -8,8 +8,8 @@ function opencollab() {
         if (document.getElementById('Div1').style.display == 'none') {
             document.getElementById('Div1').style.display = 'block';
             document.getElementById('Div2').style.display = 'none';
-            document.getElementById('owneremail').innerHTML = 'Akhila Reddy';
-           // document.getElementById('default-email').innerHTML = 'akhila.it1801@gmail.com';
+            //document.getElementById('owneremail').innerHTML = 'Akhila Reddy';
+           document.getElementById('default-email').innerHTML = 'akhila.it1801@gmail.com';
         }
         else {
             document.getElementById('Div1').style.display = 'none';
@@ -46,8 +46,35 @@ function selectemail(i){
   console.log(i);
    document.querySelector('#searchemail').value = usersearchList[i].email ;
    collabList.push(usersearchList[i])
-   console.log(usersearchList[i])
+   let collabEmail = usersearchList[i].email;
+  // collabEmail.charAt(0);
+   displayList.push(collabEmail[0])
 }
+
+let displayList = [];
+function addCollab(){  
+  var nHTML = '';
+  for(let i=0; i< displayList.length; i++){
+    nHTML +=  ` <li style="list-style-type:none"><div id=` + displayList[i] + ` onclick= "displayCollab(id)">` + displayList[i]+ `</div> </li>`;
+  }
+  document.getElementById("collab-avtar-image").innerHTML = nHTML;
+}
+
+function displayCollab(){
+  opencollab();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

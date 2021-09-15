@@ -10,7 +10,11 @@ function GetNotes() {
       notesList = JSON.parse(res).data.data;
       for (let i = 0; i < notesList.length; i++) {
         if (notesList[i].isDeleted == false && notesList[i].isArchived == false) {
-        
+          let List = '';
+          for(let j=0; j<notesList[i].collaborators.length; j++){
+              List += notesList[i].collaborators[i];
+          }
+          console.log(List);
           nHTML += `<div class="notes" id="notes-text">
                           <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
                             <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
