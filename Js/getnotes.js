@@ -9,19 +9,27 @@ function GetNotes() {
       var nHTML = '';
       notesList = JSON.parse(res).data.data;
       for (let i = 0; i < notesList.length; i++) {
-        if (notesList[i].isDeleted == false && notesList[i].isArchived == false) {
-          let List = '';
-          for(let j=0; j<notesList[i].collaborators.length; j++){
-              List += notesList[i].collaborators[i];
+        if (notesList[i].isDeleted == false && notesList[i].isArchived == false) {          
+          let displayEmail = [];
+          let displayCollabrators = [];
+          displayCollabrators = notesList[i].collaborators;         
+          if( displayCollabrators.length>0){
+          for(let j=0; j<displayCollabrators.length; j++){
+              displayEmail.push(displayCollabrators[j].email)
           }
-          console.log(List);
+          }
+        let List = '';
+        for(let j=0; j<displayEmail.length; j++){
+          List += `<div style="list-style-type:none" class="display-email">` +displayEmail[j].charAt(0) + `</div>`
+        }
+         // console.log(List);
           nHTML += `<div class="notes" id="notes-text">
                           <div class="items" id="notes-color" style="background-color:`+ notesList[i].color + `">                                       
                             <div class="s3-btn" name="Open" style="background-color:`+ notesList[i].color + `" id=` + i + ` onclick="FormOpen(id);">
                               <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
             `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
             `</li>` +
-            `<li style="list-style-type:none">` +
+            `<li style="list-style-type:none">` + List +
             `</li>` +
             `</div>  
                             <div class="sub-buttons" id="display-buttons">

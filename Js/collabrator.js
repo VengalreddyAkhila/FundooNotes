@@ -55,7 +55,7 @@ let displayList = [];
 function addCollab(){  
   var nHTML = '';
   for(let i=0; i< displayList.length; i++){
-    nHTML +=  ` <li style="list-style-type:none"><div id=` + displayList[i] + ` onclick= "displayCollab(id)">` + displayList[i]+ `</div> </li>`;
+    nHTML +=  ` <li style="list-style-type:none" class = "display-email"><div id=` + displayList[i] + ` onclick= "displayCollab(id)">` + displayList[i]+ `</div> </li>`;
   }
   document.getElementById("collab-avtar-image").innerHTML = nHTML;
 }

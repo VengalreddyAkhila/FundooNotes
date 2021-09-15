@@ -672,15 +672,19 @@ word-wrap: break-word;
   float: left;
  
 } 
-.collab-avtar-image{
+
+.display-email{
   background-color: lightblue;
   width: 30px;
   border-radius: 50%;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   font-size: 20px;
-  
+  display: flex;
+  flex-direction: column;
+  margin-right: 2px;
+  align-items: center;
+  justify-content: center;
 }
-
 .popup-title, .popup-description {
 border: none;
 }
