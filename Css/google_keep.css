@@ -192,13 +192,13 @@ width: 70%;
 padding-top: 20px;
 border: white;
 }
-#Div3 {
+#popup-collab-container {
   display: none;
   transition:linear;
-  padding-left: 220px;
-  width: 70%;
+  width: 100%;
   padding-top: 20px;
   border: white;
+  background: white;
   }
 
 .Div2-contents {
@@ -207,7 +207,7 @@ border: black;
 border-radius: 10px;
 height: 250px;
 }
-.Div3-contents {
+.popup-collab-contents {
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   border: black;
   border-radius: 10px;
@@ -316,10 +316,13 @@ outline: none;
 }
 
 .default-email-container{
-padding-left: 46px;
 display: flex;
 flex-direction: row;
 }
+.popup-default-email{
+  display: flex;
+  flex-direction: row;
+  }
 
 .collaborator-button {
 border: none;
@@ -350,11 +353,18 @@ outline: none;
 
 .default-email {
 height: 30px;
-color: #5f6368;
-font-size: 13px;
+color:black;
 direction: ltr;
 font-family: 'Roboto',arial,sans-serif;
+padding-left: 10px;
 }
+.popup-email {
+  height: 30px;
+  color: black;
+  font-size: 13px;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  }
 
 /* icon styling */
 
@@ -407,7 +417,7 @@ background-color: white;
 
 .sub-buttons {
 display: none;
-padding-top: 30px;
+padding-top: 50px;
 padding-left: 20px;
 }
 
@@ -493,6 +503,9 @@ color: black;
 .collab-dropdown {
 padding-bottom: 40px;
 }
+.popup-update-collab-dropdown {
+  padding-bottom: 40px;
+  }
 
 /* collaborator display section */
 
@@ -603,7 +616,7 @@ top:0;
 left:0;
 bottom:0;
 right:0;
-z-index:101;
+z-index:200;
 width:500px;
 height:200px;
 margin:auto;
@@ -670,9 +683,14 @@ word-wrap: break-word;
   height: 30px;
   border-radius: 50%;
   float: left;
+  border: 1px solid black;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
  
 } 
-
+.collab-avtar-image{
+  display: flex;
+  flex-direction: row;
+}
 .display-email{
   background-color: lightblue;
   width: 30px;
@@ -684,6 +702,7 @@ word-wrap: break-word;
   margin-right: 2px;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 }
 .popup-title, .popup-description {
 border: none;
@@ -691,9 +710,27 @@ border: none;
 
 .popup .material-icons-outlined {
 padding-left: 20px;
-padding-top: 65px;
+padding-top: 50px;
 }
-
+.popup-collab-buttons{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  background: grey;
+  height: 25%;
+}
+.close-btn-collab{
+  background: transparent;
+  width: 20%;
+  color: black;
+  border: none;
+}
+.save-btn-collab{
+  background: transparent;
+  width: 20%;
+  color: black;
+  border: none;
+}
 /* .dropdown-toggle {
 padding-bottom: 32px;
 } */

@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../css/dashboardnew.css">
+
 </head>
 <body>
 
@@ -90,10 +91,10 @@
           <h1>Collaborators</h1>       
                  
            <div class="default-email-container" id="owneremail">
-        
+            <img src = "../Assests/akhila.jpg" alt="" class="collab-avatar"> 
             <div class="default-email" id="default-email" ></div> 
           </div>  
-          
+          <div class = "collab-email" id="collab-email"></div>
           <div class="collab-dropdown">
             <div class="dropdown">
               <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
@@ -123,42 +124,38 @@
 
       <div class="overlay" id="overlay" style="display:none;">
       <div class="popup" id="popup" style="display:none;">
-        <div class="popup-inner" id="popup-inner-content">  
-          
-        </div>  
-          
-    </div>
-    <div id="Div3">
-      <div class="Div3-contents">
-        <h1>Collaborators</h1>       
-               
-         <div class="default-email-container" id="owneremail">
-      
-          <div class="default-email" id="default-email" ></div> 
-        </div>  
-        
-        <div class="collab-dropdown">
-          <div class="dropdown">
-            <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
-            <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
-            </input>      
-          
-           <ul class="dropdown-menu dropdown-menu-dark"  id="collab-list" aria-labelledby="dropdownMenuButton2">           
-          </ul>
-          </div>            
-        </div>  
+        <div class="popup-inner" id="popup-inner-content"> 
+           
+          </div>
 
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group me-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
-              <div class="btn">                
-                <button type="button" class="btn btn-primary"   >Save</button>
+          <div class="popup-collab" id="popup-collab-container">
+            <div class="popup-collab-contents">
+              <h1>Collaborators <hr></h1>
+              <div class="popup-default-email">
+                <img src = "../Assests/akhila.jpg" alt="" class="collab-avatar"> 
+                <span class="popup-email" id="popup-email"></span>
+              </div>
+              
+              <div class="popup-update-collab-dropdown">
+                <div class="dropdown">
+                  <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
+                  <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="search-email" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="updateusersearch()">          
+                  </input> 
+                  <ul class="dropdown-menu dropdown-menu-dark"  id="popup-collab-list" aria-labelledby="dropdownMenuButton2">           
+                  </ul>
+                </div>
+              </div>
+              <div class="popup-collab-buttons" id="popup-buttons">
+                <button class="close-btn-collab" onclick="opendisplaycollab(), collabformclose()">Cancel</button>
+                <button class="save-btn-collab" onclick="UpdateCollab()">Save</button>
               </div>
             </div>
           </div>
-        </div>  
-        </div>
-    </div>
+          </div>          
+          </div>
+          
+           
+   
  
     <div id="notes"></div>
     <div id="placeholder">

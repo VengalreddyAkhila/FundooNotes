@@ -29,20 +29,21 @@ function GetNotes() {
                               <li id="update-title" style="list-style-type:none">` + notesList[i].title + " " + `</li>` +
             `<li id="update-note" style="list-style-type:none">` + notesList[i].description +
             `</li>` +
-            `<li style="list-style-type:none">` + List +
+            `<li style="list-style-type:none;display:flex;flex-direction:row;">` + List +
             `</li>` +
             `</div>  
                             <div class="sub-buttons" id="display-buttons">
                               <span class="material-icons-outlined">
                                 add_alert
                               </span>
-                              <button id="Button1" class="collaborator-button"   style="background: transparent;border: none;"  value="Click" onclick="opendisplaycollab()">
+                              <button id="Button1" class="collaborator-button"   style="background: transparent;border: none;" id=`+ notesList[i].id + ` value="Click" onclick="getnotescollab(id)">
                               </span>                             
                               <span class="material-icons-outlined">
                                 person_add_alt
                               </span>
-                              </button>
-                              </span>                             
+                              </button>                              
+                              </span>  
+                                                         
                               <div class="btn-group dropup" id="color-palette-dropdown">
                                 <button type="button" id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `" onclick="addColor(id)" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                   <span class="material-icons-outlined">

@@ -4,17 +4,32 @@ function FormOpen(i){
   console.log(selectedItem)
   document.getElementById("popup").style.display="block";
   document.getElementById("overlay").style.display="block";
+  
   var nHTML = '';
+  let displayEmail = [];
+  let displayCollabrators = [];
+  displayCollabrators = notesList[i].collaborators;         
+  if( displayCollabrators.length>0){
+  for(let j=0; j<displayCollabrators.length; j++){
+      displayEmail.push(displayCollabrators[j].email)
+  }
+  }
+let List = '';
+for(let j=0; j<displayEmail.length; j++){
+  List += `<div style="list-style-type:none" class="display-email" id="diplay-update-email">` +displayEmail[j].charAt(0) + `</div>`
+}
   nHTML += `                                                           
            <input type="text" value="`+ selectedItem.title + " "+`" class="popup-title" id="popup-title" style="background-color:`+selectedItem.color+`">` + 
           `</input>` + 
           `<input type="text" value="`+ selectedItem.description + `" class="popup-description" id="popup-description" style="background-color:`+selectedItem.color+`">` + 
-          `</input>` + `
+          `</input>` + 
+          `<li style="list-style-type:none;display:flex;flex-direction:row;">` + List +
+            `</li>` +`
           
  <span class="material-icons-outlined">
   add_alert
 </span>
-<button id="Button1" class="collaborator-button"  style="background: transparent;border: none;"  value="Click" onclick="opendisplaycollab()">
+<button id="Button1" class="collaborator-button"  style="background: transparent;border: none;"  value="Click"  onclick="opendisplaycollab('`+ selectedItem.id + `')">
 </span>                             
 <span class="material-icons-outlined">
   person_add_alt
