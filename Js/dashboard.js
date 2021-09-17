@@ -1,4 +1,11 @@
-
+function Profile() {
+   document.getElementById("userprofile").style.display = "block";
+   document.getElementById("name").innerHTML = "AkhilaReddy";
+   document.getElementById("mail").innerHTML = "akhila.it1801@gmail.com";
+}
+function logOut() {
+    document.getElementById("userprofile").style.display = "none";
+}
 let flag = true;
 function openDrawer() {
     if (flag) {

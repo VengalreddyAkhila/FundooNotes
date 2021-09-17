@@ -91,7 +91,41 @@ body {
     height: 50px;
     border-radius: 50%;
   } 
+  .userProfile {
+    display: none;
+    float: left;
+    margin-left: 80%;
+  }
+  .userProfile .myProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 8px;
+    float: left;
+    z-index: 100;
+    position: fixed;
+  }
+  .userProfile .myProfile .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 8px 0 5px 0;
+    margin-bottom: 25px;
+  }
   
+ 
+  .userProfile .myProfile button {
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+    margin-top: 15%;
+    border: none;
+    background: transparent;
+  }
   .myDrawer {
     display: flex;
     flex-direction: column;

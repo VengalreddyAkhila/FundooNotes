@@ -39,7 +39,10 @@ function closeNote(){
   $(".note-section-toggle").attr('placeholder', 'Take a note...');
   $(".main-section").css('height', '45px'); 
   $(".user-note").css('display', 'none');
+  $(".collab-avtar-image").css('display', 'none');
   $(".icons").css('display', 'none');
+  $(".note-section-toggle").css('backgroundColor', 'none');
+
 
  
   
