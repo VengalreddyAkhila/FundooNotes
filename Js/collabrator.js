@@ -18,7 +18,7 @@ function opencollab() {
   }
 }
 
- //******user searching the mail from list******** */
+//******user searching the mail from list******** */
 let usersearchList = [];
 function usersearch() {
   let email = document.getElementById("searchemail");
@@ -42,13 +42,12 @@ function usersearch() {
       })
   }
 };
- //**********user selects the mail from list******* */
+//**********user selects the mail from list******* */
 function selectemail(i) {
   console.log(i);
   document.querySelector('#searchemail').value = usersearchList[i].email;
   collabList.push(usersearchList[i])
   let collabEmail = usersearchList[i].email;
-  // collabEmail.charAt(0);
   displayList.push(collabEmail[0])
 }
 
@@ -66,24 +65,81 @@ function addCollab() {
 function displayCollab() {
   opencollab();
 }
-
+function addcollabemail() {
+  let email = document.getElementById("searchemail").value;
+  console.log(email);
+  var nHTML = '';
+  nHTML += email;
+  document.getElementById("collab-email").innerHTML = nHTML
+}
 
 
 //*************Update note opening collab***************** */
 
-function opendisplaycollab() {
+function openupdatecollab(i) {
+  console.log(i);  
+  var nHTML = '';
+  nHTML += ` 
+  <div class="popup-collab-contents">
+  <h1>Collaborators
+    <hr>
+  </h1>
+  <div class="popup-collab-email" id="popup-collab-email">
+ </div>
+ <div class="popup-default-email">
+   <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">
+   <span class="popup-email" id="popup-email"></span>
+ </div>
+
+ <div class="popup-update-collab-dropdown">
+   <div class="dropdown">
+     <img src="../Assests/collabimg.svg" alt="" class="collab-avatar">
+     <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with"
+       id="search-email" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off"
+       onkeypress="updateusersearch()">
+     </input>
+     <ul class="dropdown-menu dropdown-menu-dark" id="popup-collab-list"
+       aria-labelledby="dropdownMenuButton2">
+     </ul>
+   </div>
+ </div>
+ <div class="popup-collab-buttons" id="popup-buttons">
+   <button class="close-btn-collab" id="close-btn-collab" onclick = "openupdatecollab()" >Cancel</button>
+   <button class="save-btn-collab" id="save-btn-collab" onclick="updateNoteCollab('`+ i +`')">Save</button>
+ </div>
+ </div>`
+
+document.getElementById("popup-collab-container").innerHTML = nHTML; 
+
   if (document.getElementById('popup-inner-content')) {
 
     if (document.getElementById('popup-inner-content').style.display == 'none') {
       document.getElementById('popup-inner-content').style.display = 'block';
-      document.getElementById('popup-collab-container').style.display = 'none';
-      //document.getElementById('owneremail').innerHTML = 'Akhila Reddy';
+      document.getElementById('popup-collab-container').style.display = 'none';    
       document.getElementById('popup-email').innerHTML = 'akhila.it1801@gmail.com';
     }
     else {
       document.getElementById('popup-inner-content').style.display = 'none';
       document.getElementById('popup-collab-container').style.display = 'block';
     }
+  }
+}
+function updateNoteCollab(i) {
+  console.log(updatecollabList);
+  console.log(i);
+
+  if (updatecollabList.length > 0) {
+    let data = {
+      "collaberators": [JSON.stringify(updatecollabList)]
+    }
+    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, data, true)
+      .then((res) => {
+        console.log(res.data);
+        GetNotes();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 }
 
@@ -118,49 +174,69 @@ function selectpopupemail(i) {
 
 }
 
-function UpdateCollab(id) {
-  console.log(updatecollabList);
-  let data = {
-    "noteId": id
-  }
-    if(updatecollabList.length > 0){
-      data["collaberators"] = [JSON.stringify(updatecollabList)]
-    }
-    makePromiseCall("POST", `${Baseurl}/notes/{id}/AddcollaboratorsNotes`, true, data,true)
-      .then((res) => {
-        console.log(res.data);    
- 
-  GetNotes();
-})
-.catch((err) => {
-  console.log(err);
-      })
-}
 
- //*************display note collab*************** */
+
+
+//*************display note collab*************** */
 
 function getnotescollab(i) {
-  document.getElementById("popup").style.display="block";
-  document.getElementById("overlay").style.display="block";
-  document.getElementById("popup-collab-container").style.display="block";
-  let data = {
-    "noteId": i
-  }
-    if(updatecollabList.length > 0){
-      data["collaberators"] = [JSON.stringify(updatecollabList)]
-    }
-    makePromiseCall("POST", `${Baseurl}/notes/{id}/AddcollaboratorsNotes`, true, data,true)
-      .then((res) => {
-        console.log(res.data);    
-        FormClose();
-  GetNotes();
-})
-.catch((err) => {
-  console.log(err);
-      })
+  console.log(i)
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("popup-collab-container").style.display = "block";
+
+  var nHTML = '';
+   nHTML += ` 
+   <div class="popup-collab-contents">
+   <h1>Collaborators
+     <hr>
+   </h1>
+   <div class="popup-collab-email" id="popup-collab-email">
+  </div>
+  <div class="popup-default-email">
+    <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">
+    <span class="popup-email" id="popup-email"></span>
+  </div>
+
+  <div class="popup-update-collab-dropdown">
+    <div class="dropdown">
+      <img src="../Assests/collabimg.svg" alt="" class="collab-avatar">
+      <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with"
+        id="search-email" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off"
+        onkeypress="updateusersearch()">
+      </input>
+      <ul class="dropdown-menu dropdown-menu-dark" id="popup-collab-list"
+        aria-labelledby="dropdownMenuButton2">
+      </ul>
+    </div>
+  </div>
+  <div class="popup-collab-buttons" id="popup-buttons">
+    <button class="close-btn-collab" id="close-btn-collab" onclick = "FormClose()" >Cancel</button>
+    <button class="save-btn-collab" id="save-btn-collab" onclick="displayNoteCollab('`+ i +`')">Save</button>
+  </div>
+  </div>`
+
+document.getElementById("popup-collab-container").innerHTML = nHTML; 
+
+
 }
 
-function collabformclose(){
-  document.getElementById("popup").style.display="none";
-    document.getElementById("overlay").style.display="none";
+function displayNoteCollab(i) {
+  console.log(updatecollabList);
+  console.log(i);
+
+  if (updatecollabList.length > 0) {
+    let data = {
+      "collaberators": [JSON.stringify(updatecollabList)]
+    }
+    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, data, true)
+      .then((res) => {
+        console.log(res.data);
+         FormClose();
+        GetNotes();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 }

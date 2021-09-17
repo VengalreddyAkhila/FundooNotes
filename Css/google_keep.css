@@ -361,9 +361,9 @@ padding-left: 10px;
 .popup-email {
   height: 30px;
   color: black;
-  font-size: 13px;
   direction: ltr;
   font-family: 'Roboto',arial,sans-serif;
+  padding-left: 5px;
   }
 
 /* icon styling */
@@ -418,7 +418,6 @@ background-color: white;
 .sub-buttons {
 display: none;
 padding-top: 50px;
-padding-left: 20px;
 }
 
 .items:hover .sub-buttons {
@@ -489,15 +488,16 @@ padding-left: 1px;
 }
 
 .btn {
-padding-left: 1px;
+padding-left: 5px;
 border-color: white;
-width: 70%;
+
 }
 
 .btn:hover {
 border-color: none;
 box-shadow: none;
 color: black;
+
 }
 
 .collab-dropdown {
@@ -510,16 +510,19 @@ padding-bottom: 40px;
 /* collaborator display section */
 
 .collab-email {
-padding-left: 50px;
+padding-left: 30px;
 padding-bottom: 10px;
 }
+.popup-collab-email {
+  padding-left: 30px;
+  padding-bottom: 10px;
+  }
 
 /* collaborator add button */
 
-.add-collab {
+.add-collab-email {
 border: none;
 background-color: white;
-padding-left: 130px;
 }
 
 /* color pallete styling */
@@ -543,8 +546,8 @@ outline: none !important;
 }
 
 .color-palette div.circled {
-border-color: rgba(0, 0, 0, 0.2) !important;
-}
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  }
 
 .btn:hover {
 border: white;
@@ -598,7 +601,7 @@ background-color: #e8eaed;
 
 .overlay {
 background:rgba(0,0,0,0.8);
-opacity:0.8;
+opacity:1;
 filter:alpha(opacity=80);
 position:fixed;
 top:0px;
@@ -607,6 +610,7 @@ left:0px;
 right:0px;
 z-index:100;
 width: 120%;
+height: 120%;
 }
 
 .popup{
@@ -770,6 +774,7 @@ background-color: rgba(0,0,0,0.07);;
   .notes{
     width: 28%;
   }
+ 
 }
 @media screen and (max-width:900px){
   .item-list{
@@ -781,6 +786,7 @@ background-color: rgba(0,0,0,0.07);;
     .notes{
       width: 32%;
     }
+    
     #main{
   
       width: 100%;

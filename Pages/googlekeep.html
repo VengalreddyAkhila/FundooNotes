@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../css/google_keep.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="../css/dashboardnew.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/google_keep.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/dashboardnew.css">
 
 </head>
+
 <body>
 
   <div class="navbar">
     <div class="subnav-one">
-        <div class="menu-icon" onclick="openDrawer()">&#9776;</div>
-        <div><img src="../Assests/keep.png" class="keep-img"></div>
-        <span class="keep-txt">Fundoo</span>
+      <div class="menu-icon" onclick="openDrawer()">&#9776;</div>
+      <div><img src="../Assests/keep.png" class="keep-img"></div>
+      <span class="keep-txt">Fundoo</span>
     </div>
     <div class="subnav-two">
-        <input class="searchBar" type="text" name="search" placeholder="Search">
-        <button class="subnav-three" onclick="Profile()"><img src="../Assests/avtarimg.png" alt="Avatar"
+      <input class="searchBar" type="text" name="search" placeholder="Search">
+      <button class="subnav-three" onclick="Profile()"><img src="../Assests/avtarimg.png" alt="Avatar"
           class="avatar"></button>
     </div>
-     <!-- <div class="header-icons">
+    <!-- <div class="header-icons">
         <button class="refresh">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -47,124 +54,108 @@
             <img src="../Assests/grid1.svg" alt="grid">
         </button>
     </div>  -->
-</div>
-<div id="snackbar"></div>
-<div class="myDrawer">
-  <button onclick="GetNotes()" style="background: transparent;border: none;">
-    <div class="notes drawer"><img src="../Assests/notes.svg" alt=""><span class="drawer-span">Notes</span></div>
+  </div>
+  <div id="snackbar"></div>
+  <div class="myDrawer">
+    <button onclick="GetNotes()" style="background: transparent;border: none;">
+      <div class="notes drawer"><img src="../Assests/notes.svg" alt=""><span class="drawer-span">Notes</span></div>
     </button>
-    <div class="remainder drawer"><img src="../Assests/remainder.svg" alt=""><span
-            class="drawer-span">Remainder</span></div>
+    <div class="remainder drawer"><img src="../Assests/remainder.svg" alt=""><span class="drawer-span">Remainder</span>
+    </div>
     <div class="label drawer"><img src="../Assests/editlabels.svg" alt=""><span class="drawer-span">Edit
-            labels</span></div>
+        labels</span></div>
     <button onclick="NavbarArchive()" style="background: transparent;border: none;">
-    <div class="archive drawer"><img src="../Assests/archive.svg" alt=""><span class="drawer-span" >Archives</span>
-    </div></button>
-    <button onclick="NavbarTrash()"  style="background: transparent;border: none;" >
-    <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span" >Bin</span></div>
+      <div class="archive drawer"><img src="../Assests/archive.svg" alt=""><span class="drawer-span">Archives</span>
+      </div>
     </button>
-</div>
+    <button onclick="NavbarTrash()" style="background: transparent;border: none;">
+      <div class="trash drawer"><img src="../Assests/bin.svg" alt=""><span class="drawer-span">Bin</span></div>
+    </button>
+  </div>
 
   <!-- Note section -->
-    <div id="main">
-        
+  <div id="main">
+
     <div class="main-section" id="main-section">
       <div id="Div1" class="Div1">
         <div class="all">
           <div class="note-section" id="note-section">
             <input class="note-section-toggle" id="toggle" placeholder="Title" autocomplete="off"></input>
-            <div id="content"> 
-              <input class="user-note" type="text" id="user-note" placeholder="Take a note..." autocomplete="off"> </input>
+            <div id="content">
+              <input class="user-note" type="text" id="user-note" placeholder="Take a note..." autocomplete="off">
+              </input>
               <div class="collab-avtar">
-                <div class = "collab-avtar-image" id = "collab-avtar-image"></div>
+                <div class="collab-avtar-image" id="collab-avtar-image"></div>
               </div>
-             <!-- note-icons -->
+              <!-- note-icons -->
               <div class="icons" id="icons"></div>
-              
+
             </div>
           </div>
         </div>
-      </div> 
-      
+      </div>
+
       <div id="Div2">
         <div class="Div2-contents">
-          <h1>Collaborators</h1>       
-                 
-           <div class="default-email-container" id="owneremail">
-            <img src = "../Assests/akhila.jpg" alt="" class="collab-avatar"> 
-            <div class="default-email" id="default-email" ></div> 
-          </div>  
-          <div class = "collab-email" id="collab-email"></div>
+          <h1>Collaborators</h1>
+
+          <div class="default-email-container" id="owneremail">
+            <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">
+            <div class="default-email" id="default-email"></div>
+          </div>
+          <div class="collab-email" id="collab-email">
+          </div>
           <div class="collab-dropdown">
-            <div class="dropdown">
-              <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
-              <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="usersearch()">          
-              </input>      
-            
-             <ul class="dropdown-menu dropdown-menu-dark"  id="collab-list" aria-labelledby="dropdownMenuButton2">           
-            </ul>
-            </div>            
-          </div>  
+            <div class="dropdown" style="display: flex;flex-direction: row;">
+              <img src="../Assests/collabimg.svg" alt="" class="collab-avatar">
+              <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with"
+                id="searchemail" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off"
+                onkeypress="usersearch()">
+              </input>
+              <button type="button" id="add-collab-email" class="add-collab-email" onclick="addcollabemail()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
+
+              <ul class="dropdown-menu dropdown-menu-dark" id="collab-list" aria-labelledby="dropdownMenuButton2">
+              </ul>
+            </div>
+          </div>
 
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-              <div class="btn-group me-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
-                <div class="btn">                
-                  <button type="button" class="btn btn-primary" onclick="addCollab()"  >Save</button>
-                </div>
-              </div>
-            </div>
-          </div>  
-          </div>
-        </div>   
-
-      <!-- display note section   -->
-      <div id="item-list" class="item-list">          
-      </div>     
-
-      <div class="overlay" id="overlay" style="display:none;">
-      <div class="popup" id="popup" style="display:none;">
-        <div class="popup-inner" id="popup-inner-content"> 
-           
-          </div>
-
-          <div class="popup-collab" id="popup-collab-container">
-            <div class="popup-collab-contents">
-              <h1>Collaborators <hr></h1>
-              <div class="popup-default-email">
-                <img src = "../Assests/akhila.jpg" alt="" class="collab-avatar"> 
-                <span class="popup-email" id="popup-email"></span>
-              </div>
-              
-              <div class="popup-update-collab-dropdown">
-                <div class="dropdown">
-                  <img src = "../Assests/collabimg.svg" alt="" class="collab-avatar"> 
-                  <input class="btn btn-secondary dropdown-toggle" placeholder="Person or email to share with" id="search-email" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" onkeypress="updateusersearch()">          
-                  </input> 
-                  <ul class="dropdown-menu dropdown-menu-dark"  id="popup-collab-list" aria-labelledby="dropdownMenuButton2">           
-                  </ul>
-                </div>
-              </div>
-              <div class="popup-collab-buttons" id="popup-buttons">
-                <button class="close-btn-collab" onclick="opendisplaycollab(), collabformclose()">Cancel</button>
-                <button class="save-btn-collab" onclick="UpdateCollab()">Save</button>
+            <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-primary" onclick="opencollab()">Cancel</button>
+              <div class="btn">
+                <button type="button" class="btn btn-primary" onclick="addCollab()">Save</button>
               </div>
             </div>
           </div>
-          </div>          
-          </div>
-          
-           
-   
- 
-    <div id="notes"></div>
-    <div id="placeholder">
-        <img id="placeholder-logo" src="../Assests/bulb.imgh.svg">
-        <p id="placeholder-text">Notes you add appear here</p>
+        </div>
+      </div>
     </div>
-    
-  </div>  
-  <!-- js section--> 
+
+    <!-- display note section   -->
+    <div id="item-list" class="item-list">
+    </div>
+
+    <div class="overlay" id="overlay" style="display:none;">
+      <div class="popup" id="popup" style="display:none;">
+        <div class="popup-inner" id="popup-inner-content">
+
+        </div>
+
+        <div class="popup-collab" id="popup-collab-container">              
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <!-- js section-->
   <script src="../service/http_service.js"></script>
   <script src="../js/dashboardicons.js"></script>
   <script src="../js/addnotes.js"></script>
@@ -175,6 +166,7 @@
   <script src="../Js/collabrator.js"></script>
 
 
-   
+
 </body>
-</html> 
+
+</html>

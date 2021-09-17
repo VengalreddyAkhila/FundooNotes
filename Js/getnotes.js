@@ -33,10 +33,12 @@ function GetNotes() {
             `</li>` +
             `</div>  
                             <div class="sub-buttons" id="display-buttons">
-                              <span class="material-icons-outlined">
-                                add_alert
-                              </span>
-                              <button id="Button1" class="collaborator-button"   style="background: transparent;border: none;" id=`+ notesList[i].id + ` value="Click" onclick="getnotescollab(id)">
+                            <button class="reaminder-btn"   style="background: transparent; border:none; " >     
+                            <span class="material-icons-outlined">
+                             add_alert
+                           </span>
+                           </button>
+                              <button  class="collaborator-button"   style="background: transparent;border: none;" id=`+ notesList[i].id + ` value="Click" onclick="getnotescollab(id)">
                               </span>                             
                               <span class="material-icons-outlined">
                                 person_add_alt
@@ -76,7 +78,7 @@ function GetNotes() {
                                 
                                 <button id=`+ notesList[i].id + ` style="background-color:` + notesList[i].color + `" type="button" class="delete-buttton" onclick="trashNote(id)">
                                   <span class="material-icons-outlined">
-                                  more_vert
+                                  delete
                                   </span>
                                 </button>
                                 </div>
