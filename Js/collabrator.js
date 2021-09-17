@@ -128,19 +128,17 @@ function updateNoteCollab(i) {
   console.log(updatecollabList);
   console.log(i);
 
-  if (updatecollabList.length > 0) {
-    let data = {
-      "collaberators": [JSON.stringify(updatecollabList)]
-    }
-    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, data, true)
+ 
+    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, updatecollabList, true)
       .then((res) => {
         console.log(res.data);
+        FormClose();
         GetNotes();
       })
       .catch((err) => {
         console.log(err);
       })
-  }
+  
 }
 
 

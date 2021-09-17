@@ -225,6 +225,7 @@ align-items: right;
 padding-left: 20px;
 border: white;
 border-radius: 10px;
+background-color: white;
 width: 100%;
 box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
@@ -242,6 +243,7 @@ letter-spacing: .00625em;
 font-family: 'Google Sans',Roboto,Arial,sans-serif;
 font-size: 1rem;
 font-weight: 500;
+background-color: white;
 }
 
 .user-note {

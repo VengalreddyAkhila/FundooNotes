@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 let notesList = [];
 function GetNotes() {
+  document.getElementById("main-section").style.display = "block";
   makePromiseCall("GET", `${Baseurl}/notes/getNotesList`, true, {}, true)
     .then(res => {
       console.log(JSON.parse(res).data.data);
@@ -98,6 +99,8 @@ function GetNotes() {
 //********************NavbarArchive**************************** */
 
 function NavbarArchive() {
+  document.getElementById("main-section").style.display = "none";
+ // document.getElementById("overlay").style.display = "block";
   makePromiseCall("GET", `${Baseurl}/notes/getArchiveNotesList`, true, {}, true)
     .then(res => {
       console.log(JSON.parse(res).data.data);
@@ -116,6 +119,7 @@ function NavbarArchive() {
 //********************NavbarTrash*************************** */
 
 function NavbarTrash() {
+  document.getElementById("main-section").style.display = "none";
   makePromiseCall("GET", `${Baseurl}/notes/getTrashNotesList`, true, {}, true)
     .then(res => {
       console.log(JSON.parse(res).data.data);
