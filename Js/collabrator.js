@@ -143,36 +143,6 @@ function updateNoteCollab(i) {
   }
 }
 
-let userList = [];
-function updateusersearch() {
-  let email = document.getElementById("search-email");
-  if (email.value.length > 2) {
-    let data = {
-      searchWord: email.value
-    }
-    makePromiseCall("POST", `${Baseurl}/user/searchUserList`, true, data, true)
-      .then((res) => {
-        console.log(JSON.parse(res).data.details);
-        userList = JSON.parse(res).data.details;
-        var nHTML = '';
-        for (let i = 0; i < userList.length; i++) {
-          nHTML += ` <li style="list-style-type:none"><div id=` + i + ` onclick = "selectpopupemail(id)">` + userList[i].email + `</div> </li>`;
-        }
-        document.getElementById("popup-collab-list").innerHTML = nHTML;
-
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-};
-let updatecollabList = [];
-function selectpopupemail(i) {
-  console.log(i);
-  document.querySelector('#search-email').value = userList[i].email;
-  updatecollabList.push(userList[i])
-
-}
 
 
 
@@ -225,11 +195,12 @@ function displayNoteCollab(i) {
   console.log(updatecollabList);
   console.log(i);
 
-  if (updatecollabList.length > 0) {
-    let data = {
-      "collaberators": [JSON.stringify(updatecollabList)]
-    }
-    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, data, true)
+   //if (updatecollabList.length > 0) {
+  //   let data = {
+  //     "id" : i,
+  //     "data": [JSON.stringify(updatecollabList)]
+  //   }
+    makePromiseCall("POST", `${Baseurl}/notes/${i}/AddcollaboratorsNotes`, true, updatecollabList, true)
       .then((res) => {
         console.log(res.data);
          FormClose();
@@ -238,5 +209,42 @@ function displayNoteCollab(i) {
       .catch((err) => {
         console.log(err);
       })
+  
+}
+
+
+
+
+
+
+
+let userList = [];
+function updateusersearch() {
+  let email = document.getElementById("search-email");
+  if (email.value.length > 2) {
+    let data = {
+      searchWord: email.value
+    }
+    makePromiseCall("POST", `${Baseurl}/user/searchUserList`, true, data, true)
+      .then((res) => {
+        console.log(JSON.parse(res).data.details);
+        userList = JSON.parse(res).data.details;
+        var nHTML = '';
+        for (let i = 0; i < userList.length; i++) {
+          nHTML += ` <li style="list-style-type:none"><div id=` + i + ` onclick = "selectpopupemail(id)">` + userList[i].email + `</div> </li>`;
+        }
+        document.getElementById("popup-collab-list").innerHTML = nHTML;
+
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
+};
+let updatecollabList 
+function selectpopupemail(i) {
+  console.log(i);
+  document.querySelector('#search-email').value = userList[i].email;
+  updatecollabList= userList[i]
+
 }
