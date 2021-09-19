@@ -225,7 +225,7 @@ align-items: right;
 padding-left: 20px;
 border: white;
 border-radius: 10px;
-background-color: white;
+background-color: white ;
 width: 100%;
 box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
@@ -243,7 +243,7 @@ letter-spacing: .00625em;
 font-family: 'Google Sans',Roboto,Arial,sans-serif;
 font-size: 1rem;
 font-weight: 500;
-background-color: white;
+background-color: white ;
 }
 
 .user-note {
@@ -598,6 +598,41 @@ background-color: #e6c9a8;
 .bg-grey {
 background-color: #e8eaed;
 }
+.remainder-btn {
+  display: none;
+  float: left;
+}
+.remainder-btn .remainder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  float: left;
+  z-index: 100;
+  position: fixed;
+}
+.remainder-btn .remainder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 8px 0 5px 0;
+  margin-bottom: 25px;
+}
+
+
+.remainder-btn .reminder button {
+  width: 100px;
+  height: 40px;
+  text-decoration: none;
+  margin-top: 15%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background: transparent;
+}
 
 /* display note popup section styling */
 
@@ -612,7 +647,7 @@ left:0px;
 right:0px;
 z-index:100;
 width: 120%;
-height: 120%;
+height: 180%;
 }
 
 .popup{

@@ -26,7 +26,7 @@ function FormOpen(i) {
     `</input>` +
     `<li style="list-style-type:none;display:flex;flex-direction:row;">` + List +
     `</li>` + `
-  <button class="reaminder-btn" style="background-color:`+ selectedItem.color + ` ;border:none; " >     
+  <button class="reaminder-btn" style="background: transparent;border:none; " >     
  <span class="material-icons-outlined">
   add_alert
 </span>
@@ -223,6 +223,13 @@ function displayColor(id) {
       document.getElementById("update-note").style.backgroundColor = window
         .getComputedStyle(element, null)
         .getPropertyValue("background-color");
+        document.getElementById("popup-title").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+        document.getElementById("popup-description").style.backgroundColor = window
+        .getComputedStyle(element, null)
+        .getPropertyValue("background-color");
+
 
       let changeColor = document.getElementById("popup").style.backgroundColor;
       let data = {

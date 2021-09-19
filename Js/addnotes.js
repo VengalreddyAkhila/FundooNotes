@@ -34,7 +34,9 @@ function addNote() {
 function closeNote(){
   document.getElementById("toggle").value = "";
  document.getElementById("user-note").value = ""; 
- document.getElementById("Div1").style.backgroundColor = "";
+ //document.getElementById("notesection").style.background = "none";
+ //document.getElementById("toggle").style.background = "none";
+
 
   $(".note-section-toggle").attr('placeholder', 'Take a note...');
   $(".main-section").css('height', '45px'); 
@@ -42,10 +44,7 @@ function closeNote(){
   $(".collab-avtar-image").css('display', 'none');
   $(".icons").css('display', 'none');
   $(".note-section-toggle").css('backgroundColor', 'none');
-
-
- 
-  
+  $('.note-section').css({'background-color':'none '});   
 
 }
 //*********Archive ************* */

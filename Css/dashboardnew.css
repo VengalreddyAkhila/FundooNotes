@@ -120,10 +120,11 @@ body {
  
   .userProfile .myProfile button {
     width: 100px;
-    height: 50px;
+    height: 40px;
     text-decoration: none;
     margin-top: 15%;
-    border: none;
+    border: 1px solid grey;
+    border-radius: 10px;
     background: transparent;
   }
   .myDrawer {
@@ -224,6 +225,10 @@ body {
     .navbar{
     
       width: 100%;
+    }
+    .userProfile {
+      position: fixed;
+      margin-right: 15%;
     }
     
   }

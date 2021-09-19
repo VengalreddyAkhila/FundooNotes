@@ -7,9 +7,8 @@ function opencollab() {
 
     if (document.getElementById('Div1').style.display == 'none') {
       document.getElementById('Div1').style.display = 'block';
-      document.getElementById('Div2').style.display = 'none';
-      //document.getElementById('owneremail').innerHTML = 'Akhila Reddy';
-      document.getElementById('default-email').innerHTML = 'akhila.it1801@gmail.com';
+      document.getElementById('Div2').style.display = 'none';    
+      //document.getElementById('default-email').innerHTML = 'akhila.it1801@gmail.com';
     }
     else {
       document.getElementById('Div1').style.display = 'none';
@@ -87,7 +86,8 @@ function openupdatecollab(i) {
   <div class="popup-collab-email" id="popup-collab-email">
  </div>
  <div class="popup-default-email">
-   <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">
+   <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">akhila.it1801@gmail.com</img>
+  
    <span class="popup-email" id="popup-email"></span>
  </div>
 
@@ -116,7 +116,7 @@ document.getElementById("popup-collab-container").innerHTML = nHTML;
     if (document.getElementById('popup-inner-content').style.display == 'none') {
       document.getElementById('popup-inner-content').style.display = 'block';
       document.getElementById('popup-collab-container').style.display = 'none';    
-      document.getElementById('popup-email').innerHTML = 'akhila.it1801@gmail.com';
+     
     }
     else {
       document.getElementById('popup-inner-content').style.display = 'none';
@@ -162,7 +162,7 @@ function getnotescollab(i) {
    <div class="popup-collab-email" id="popup-collab-email">
   </div>
   <div class="popup-default-email">
-    <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">
+    <img src="../Assests/akhila.jpg" alt="" class="collab-avatar">akhila.it1801@gamil.com</img>
     <span class="popup-email" id="popup-email"></span>
   </div>
 

@@ -5,6 +5,11 @@ function Profile() {
 }
 function logOut() {
     document.getElementById("userprofile").style.display = "none";
+    localStorage.clear();
+    localStorage.removeItem("token",JSON.parse(Response).id);
+    localStorage.removeItem('firstname',JSON.parse(Response).id);
+    localStorage.removeItem('lastname',JSON.parse(Response).id);
+    window.location.href="http://localhost:5500/pages/loginpage.html"; 
 }
 let flag = true;
 function openDrawer() {

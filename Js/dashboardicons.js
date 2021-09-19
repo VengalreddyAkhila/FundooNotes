@@ -1,9 +1,20 @@
 // **************************************icons.js ***************************************************************************
 
 document.getElementById("icons").innerHTML =`
-    <span class="material-icons-outlined">
+<button style="background: transparent;border: none;"  onclick="addRemainder()">   
+<span class="material-icons-outlined">
         add_alert
     </span>
+    </button>
+    <div class="remainder-btn" id ="remainder-btn">
+    <div class="remainder">
+        <div id="remainder" >remainder</div>
+        <div id="lasttoday">lasttoday</div>
+        <div id="tommorow">tomorow</div>
+        <div id="nextweek">nextweek</div>
+        <button class = "logout-btn" onclick="logOut()">Logout</button>
+    </div>
+</div>
     <button id="Button1" class="collaborator-button" value="Click" onclick="opencollab()"/>
         <span class="material-icons-outlined">
             person_add_alt
