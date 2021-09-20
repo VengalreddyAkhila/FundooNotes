@@ -36,7 +36,6 @@ function openDrawer() {
 
 var toggle = document.getElementById("toggle");
 var content = document.getElementById("content");
-var navState=0;
 
 toggle.addEventListener("click", function() {
     content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";

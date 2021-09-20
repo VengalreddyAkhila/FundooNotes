@@ -1,3 +1,3 @@
 function addRemainder(){
-    $(".remainder-btn").css('display', 'none');
+    document.getElementById('remainder-btn').style.display = "block";
 }
