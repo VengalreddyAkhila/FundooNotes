@@ -1,4 +1,4 @@
-// **************************************icons.js ***************************************************************************
+// ************************************** main note icons.js ***************************************************************************
 
 document.getElementById("icons").innerHTML =`
 <button style="background: transparent;border: none;" value="Click"  onclick="addRemainder()"/>   
@@ -13,7 +13,7 @@ document.getElementById("icons").innerHTML =`
         </span>
     </button>
     <div class="btn-group dropup" id="color-palette-dropdown">
-        <button type="button" id="btn-colors" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <button type="button" id="btn-colors" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"  aria-expanded="false">
         <span class="material-icons-outlined">
             palette
         </span>

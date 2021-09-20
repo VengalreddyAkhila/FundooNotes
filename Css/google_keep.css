@@ -260,6 +260,10 @@ font-weight: 500;
 #icons .material-icons-outlined {
 color: #202124;
 opacity: 0.71;
+padding-top: 10px;
+}
+.material-icons-outlined .note{
+  display: inline-block;
 }
 
 .sub-buttons .material-icons-outlined{
@@ -603,7 +607,7 @@ background-color: #e8eaed;
  
 
 }
-.remainder-btn .remainder {
+.remainder-btn .remainder h1{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -619,6 +623,7 @@ background-color: #e8eaed;
   margin: 8px 0 5px 0;
   margin-bottom: 40px;
 }
+
 
 
 /* display note popup section styling */
@@ -841,7 +846,27 @@ background-color: rgba(0,0,0,0.07);;
    }
   
  }
+@media screen and (max-width:400px) {
+  .Div1{    
+    padding-left: 70px;
+  }
+  .note-section{    
+    padding-left: 20px;
+    width: 100%;
+  }
+  .icons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
+
+  }
+  #note-close{
+    border: 2px solid red;
+    float: right;
+  }
+  
+}
   
   
   

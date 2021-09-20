@@ -9,7 +9,7 @@ function logOut() {
     localStorage.removeItem("token",JSON.parse(Response).id);
     localStorage.removeItem('firstname',JSON.parse(Response).id);
     localStorage.removeItem('lastname',JSON.parse(Response).id);
-    window.location.href="http://localhost:5500/pages/loginpage.html"; 
+    window.location.href="../pages/loginpage.html"; 
 }
 let flag = true;
 function openDrawer() {
@@ -40,6 +40,9 @@ var content = document.getElementById("content");
 toggle.addEventListener("click", function() {
     content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
 });
-
+function openNote(){
+    document.querySelector("#toggle").style.display = "block";
+    document.querySelector("#icons").style.display = "block";
+}
 
   

@@ -3,13 +3,16 @@
 const Baseurl = "http://fundoonotes.incubation.bridgelabz.com/api";
 var ArchiveData = "";
 let collabList = [];
+title = document.getElementById("toggle");
+description = document.getElementById("user-note");
 
 function addNote() {
   console.log(collabList);
+  
   let colorData = document.getElementById("note-section").style.backgroundColor;
   let data = {
-    "title": document.getElementById("toggle").value,
-    "description": document.getElementById("user-note").value
+    "title": title.value,
+    "description": description.value
   }
   if(collabList.length > 0){
     data["collaberators"] = [JSON.stringify(collabList)]
@@ -32,19 +35,32 @@ function addNote() {
 
 };
 function closeNote(){
-  document.getElementById("toggle").value = "";
- document.getElementById("user-note").value = ""; 
- //document.getElementById("notesection").style.background = "none";
- //document.getElementById("toggle").style.background = "none";
+  title.value = "";
+  description.value = ""; 
+ document.querySelector("#toggle").style.display  = "none";
+ document.querySelector("#icons").style.display = "none";
+ document.getElementById("note-section").style.backgroundColor = globalThis
+      .getComputedStyle(element, null)
+      .getPropertyValue("background-color");
 
 
-  $(".note-section-toggle").attr('placeholder', 'Take a note...');
-  $(".main-section").css('height', '45px'); 
-  $(".user-note").css('display', 'none');
-  $(".collab-avtar-image").css('display', 'none');
-  $(".icons").css('display', 'none');
-  $(".note-section-toggle").css('backgroundColor', 'none');
-  $('.note-section').css({'background-color':'none '});   
+ document.getElementById("toggle").style.backgroundColor = "none";
+ document.getElementById("user-note").style.backgroundColor = "none";
+ document.getElementById("collab-avtar-image").style.background = "none";
+ document.getElementById("icons").value = "";
+ document.getElementById("Div1").style.background = "none";
+ document.getElementById("note-close").style.background = "none";
+
+ 
+
+
+  // $(".note-section-toggle").attr('placeholder', 'Take a note...');
+  // $(".main-section").css('height', '45px'); 
+  // $(".user-note").css('display', 'none');
+  // $(".collab-avtar-image").css('display', 'none');
+  // $(".icons").css('display', 'none');
+  // $(".note-section-toggle").css('backgroundColor', 'none');
+  // $('.note-section').css({'background-color':'none '});   
 
 }
 //*********Archive ************* */
@@ -81,10 +97,7 @@ function addColor(id) {
         document.getElementById("btn-colors").style.backgroundColor = window
         .getComputedStyle(element, null)
         .getPropertyValue("background-color");
-        // document.getElementById("popup-close-container").style.backgroundColor = window
-        // .getComputedStyle(element, null)
-        // .getPropertyValue("background-color");
-
+  
       document.getElementById("update-title").style.backgroundColor = window
         .getComputedStyle(element, null)
         .getPropertyValue("background-color");
