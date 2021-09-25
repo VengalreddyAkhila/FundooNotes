@@ -341,7 +341,7 @@ background-color: white;
 }
 
 .note-closing {
-padding-left: 200px;
+
 padding-bottom: 10px;
 }
 /* .note:hover {
@@ -803,6 +803,9 @@ background-color: rgba(0,0,0,0.07);;
   .notes{
     width: 28%;
   }
+  .note{
+    padding-left: 80px;
+  }
  
 }
 @media screen and (max-width:900px){
@@ -820,6 +823,9 @@ background-color: rgba(0,0,0,0.07);;
   
       width: 100%;
     }
+    .note{
+      padding-left: 80px;
+    }
 }
 @media screen and (max-width:800px){
   .main-section{
@@ -831,6 +837,9 @@ background-color: rgba(0,0,0,0.07);;
   .note{
     padding-left: 50px;
   }
+  .popup{
+    margin-left: 80px;
+  }
 }
 
  @media screen and (max-width:600px){
@@ -838,11 +847,33 @@ background-color: rgba(0,0,0,0.07);;
    .main-section{
     width: 120%;
   }
+  .note-closing{
+    margin-bottom: 10%;
+  }
    
  }
  @media screen  and (max-width:500px){
    .notes{
      width: 62%;
+   }
+   .Div1{
+   
+     padding-left: 80px;
+     
+   }
+   .main-section{
+     width: 90%;
+   }
+   .items{
+     width: 140%;
+   }
+   
+   .material-icons-outlined{
+     padding-right: 2px
+   }
+   .popup{
+     width: 100%;
+     margin-left: 10px;
    }
   
  }

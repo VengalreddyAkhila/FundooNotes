@@ -192,3 +192,30 @@ label {
     font-size: 10px;
     flex-direction: column;
 }
+@media screen and (max-width:1024px) and (min-width:901px) {
+ 
+   .form{
+      height: 100%;
+      margin-bottom: 80%;
+  }
+}
+@media screen and (max-width:800px) and (min-width:601px) {
+ 
+    .form{
+       height: 100%;
+       margin-bottom: 60%;
+   }
+ }
+ @media screen and (max-width:600px) and (min-width:401px) {
+ 
+    .form{
+       height: 80%;
+       margin-bottom: 30%;
+   }
+ }
+ @media screen and (max-width:400px){
+     .form{
+         height: 80%;
+         margin-bottom: 50%;
+     }
+ }

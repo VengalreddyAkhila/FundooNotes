@@ -129,24 +129,24 @@ window.addEventListener('DOMContentLoaded',(event) => {
     });
 });
 
-    //  function next () {
+     function next () {
        
-    //      let data={
-    //          "firstName" : document.getElementById("first_name").value,
-    //          "lastName" : document.getElementById("last_name").value,
-    //          "email" : document.getElementById("email").value + "@gmail.com",
-    //          "service" : "advance",
-    //          "password" : document.getElementById("password").value            
-    //      }     
-    //      makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
-    //      .then((Response) => {
-    //          console.log(Response);
-    //          window.location.href="http://localhost:5500/pages/loginpage.html"; 
+         let data={
+             "firstName" : document.getElementById("first_name").value,
+             "lastName" : document.getElementById("last_name").value,
+             "email" : document.getElementById("email").value + "@gmail.com",
+             "service" : "advance",
+             "password" : document.getElementById("password").value            
+         }     
+         makePromiseCall("POST","http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp",true,data)
+         .then((Response) => {
+             console.log(Response);
+             window.location.href="../Pages/loginpage.html"; 
              
-    //      })
-    //      .catch()
-    //      console.log("error");
-    //  }
+         })
+         .catch()
+         console.log("error");
+     }
         
        
          

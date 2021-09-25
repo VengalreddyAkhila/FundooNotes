@@ -103,7 +103,7 @@ body {
     width: 220px;
     height: 220px;
     background-color: white;
-    border: 1px solid grey;
+    
     border-radius: 8px;
     float: left;
     z-index: 100;
@@ -320,7 +320,7 @@ body {
       display: none;
     }
     .avatar{
-      margin-left: 100%;
+     
       border: none;
       
     }

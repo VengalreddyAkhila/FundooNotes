@@ -15,13 +15,15 @@ let flag = true;
 function openDrawer() {
     if (flag) {
         flag = false;
-        $(".drawer").css("width", "300px");
-        $(".myDrawer").css("width", "300px");
+        $(".drawer").css("width", "200px");
+        $(".myDrawer").css("width", "200px");
         $(".drawer").css("border-radius", "0px 25px 25px 0px");
         $(".drawer-span").css("display", "flex");
-        $(".drawer-span").css("margin-left", "40px");
+        $(".drawer-span").css("margin-left", "30px");
         $(".main-section").css("left", "45%");
         $(".item-list").css("left", "15%");
+        $(".Div1").css("left", "15%");
+        $("#main").css("left", "15%");
     }
     else {
         flag = true;
@@ -40,9 +42,9 @@ var content = document.getElementById("content");
 toggle.addEventListener("click", function() {
     content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
 });
-function openNote(){
-    document.querySelector("#toggle").style.display = "block";
-    document.querySelector("#icons").style.display = "block";
-}
+// function openNote(){
+//     document.querySelector("#toggle").style.display = "block";
+//     document.querySelector("#icons").style.display = "block";
+// }
 
   

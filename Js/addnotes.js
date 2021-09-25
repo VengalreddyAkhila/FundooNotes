@@ -39,14 +39,13 @@ function closeNote(){
   description.value = ""; 
  document.querySelector("#toggle").style.display  = "none";
  document.querySelector("#icons").style.display = "none";
- document.getElementById("note-section").style.backgroundColor = globalThis
-      .getComputedStyle(element, null)
-      .getPropertyValue("background-color");
+ document.querySelector("#icons").style.display = "none";
+
 
 
  document.getElementById("toggle").style.backgroundColor = "none";
  document.getElementById("user-note").style.backgroundColor = "none";
- document.getElementById("collab-avtar-image").style.background = "none";
+ document.getElementById("collab-avtar-image").style.display = "none";
  document.getElementById("icons").value = "";
  document.getElementById("Div1").style.background = "none";
  document.getElementById("note-close").style.background = "none";

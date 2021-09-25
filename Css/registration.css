@@ -286,41 +286,100 @@ label{
         margin-top: 10%;
     }
     .form{        
-        width: 90%;
+        width: 70%;
     }  
     .button_text{
      
         width: 80%;
     } 
+    .header_content{     
+        height: 60%;
+        width: 60%;
+        margin-top: 30%;
+    }  
 }
-@media  screen and (max-width:600px) {
+@media  screen and (max-width:600px) and (min-width:401px) {
     /* .floating_input{
         width: 370px;
-    }
+    }*/
     .form{
         border: none;
         width: 100%;
-    } */
+    } 
     .sub_heading{
         width: 150%;
         bottom: 10%;       
     }
     .form{        
-        width: 100%;
+        width: 80%;
     }   
     .button_text{
      
         width: 100%;
-        width: 20%;
+       
     } 
+    .header_content{     
+        height: 60%;
+        width: 100%;
+        margin-top: 40%;
+    }
+    .button a{
+       
+        width: 50%;
+    }
 }
 @media screen and (max-width: 1024px) {
   .header_content{     
-      height: auto;
-      width: auto;
+      height: 60%;
+      width: 100%;
+      margin-right: 25%;
   }  
   .button_text{
    
     width: 80%;
 } 
+}
+@media screen and (max-width:400px) {
+ .form{
+     border: none;
+ }   
+ .header_content{     
+    height: 60%;
+    width: 80%;  
+
+}  
+.line3{
+    width: 250%;
+    
+}
+.line1{
+    width: 200%;
+}
+.label_sec{
+    margin-top: 50%;
+}
+.heading{
+    margin-top: 50%;   
+    width: 100%;
+}
+.submit_button{
+    width: 40%;
+}
+}
+@media screen and (max-width:376px) {
+    .header_content{
+        
+            height: 60%;
+            width: 80%;        
+        
+    }
+    .label_sec{
+        margin-top: 60%;
+        width: 200%;
+    }
+    .heading{
+        margin-top: 200%;   
+        width: 200%;
+    }
+    
 }

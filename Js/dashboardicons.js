@@ -45,7 +45,7 @@ document.getElementById("icons").innerHTML =`
     <span class="material-icons-outlined">
         more_vert
     </span>
-    <span class="note-closing">
+    <span class="note-closing" style="position:absolute;">
     <input type="button" class="note" id="note-close" value="close" onclick="addNote()" />
     </span>
 `
